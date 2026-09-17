@@ -11,11 +11,13 @@ JSON array. Every object has exactly three fields:
 
 ```json
 {
-  "task_id": "1919_A",
+  "task_id": 1,
   "description": "The complete programming-task description...",
   "candidate_code": "The candidate Python program..."
 }
 ```
+
+`task_id` is a unique, one-based sequential integer ranging from 1 to 645.
 
 The file deliberately excludes correctness labels, candidate-specific IDs,
 counterexamples, generated outputs, test results, model names, difficulty
@@ -41,7 +43,7 @@ MirrorData is derived from the 645-case `CoCoClaNeL_experiments.json` split in
 the [HoarePrompt-data repository](https://github.com/msv-lab/HoarePrompt-data).
 The transformation is intentionally minimal:
 
-- `task_id` is copied to `task_id`.
+- A sequential `task_id` from 1 to 645 is assigned in source-file order.
 - `description` is copied to `description`.
 - `generated_code` is copied to `candidate_code`.
 - Every other source field is removed.
