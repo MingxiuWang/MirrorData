@@ -1478,10 +1478,10 @@
  {
   "task_id": 165,
   "index": 164,
-  "verdict": "correct",
+  "verdict": "incorrect",
   "confidence": "high",
-  "reason": "Sorts, then repeatedly pops the two smallest remaining and takes their min (= the popped smaller one), equivalent to optimal greedy sum of even-indexed sorted elements.",
-  "failing_input": null,
+  "reason": "CORRECTED after independent adjudication: Code does numbers=input().split() then sorts STRINGS (lexicographic) before int conversion. Ran it: input '1\\n2\\n1 2 10 20' outputs 3 but correct max score (pair 1,2 and 10,20) is 11.",
+  "failing_input": "1\n2\n1 2 10 20",
   "sample_test": "sample_pass"
  },
  {
@@ -1649,10 +1649,10 @@
  {
   "task_id": 184,
   "index": 183,
-  "verdict": "correct",
+  "verdict": "incorrect",
   "confidence": "high",
-  "reason": "Logic identical to another verified-correct candidate for this problem; brute force confirms 0 mismatches over 20000 random arrays.",
-  "failing_input": null,
+  "reason": "CORRECTED after independent adjudication: Brute force over all (i,j,x) confirms true answer for [1,1,2,2] is 2 (can only keep one differing-value end run); candidate prints 1.",
+  "failing_input": "1\n4\n1 1 2 2\n",
   "sample_test": "sample_pass"
  },
  {
@@ -1667,27 +1667,27 @@
  {
   "task_id": 186,
   "index": 185,
-  "verdict": "incorrect",
+  "verdict": "correct",
   "confidence": "high",
-  "reason": "Incomplete code: only defines count_beautiful_pairs, never reads stdin, calls it, or prints; produces no output (confirmed by empty actual_stdout).",
+  "reason": "CORRECTED after independent adjudication: Ran the full candidate (it does read stdin/print, contra claude's claim): matches sample output exactly and passes 200 random brute-force checks.",
   "failing_input": null,
   "sample_test": "sample_pass"
  },
  {
   "task_id": 187,
   "index": 186,
-  "verdict": "correct",
+  "verdict": "incorrect",
   "confidence": "high",
-  "reason": "Correct O(n) residue-pair counting (matches required -a mod x, a mod y); verified against brute force over 3000 random cases, 0 mismatches.",
-  "failing_input": null,
+  "reason": "CORRECTED after independent adjudication: Executed candidate on the statement's own sample (x=5,y=2,a=[1,2,7,4,9,6]): outputs 10, but true/brute-force answer is 2. Sums independent x- and y-residue matches instead of joint (x,y) pair counts.",
+  "failing_input": "1\n6 5 2\n1 2 7 4 9 6",
   "sample_test": "sample_mismatch"
  },
  {
   "task_id": 188,
   "index": 187,
-  "verdict": "incorrect",
+  "verdict": "correct",
   "confidence": "high",
-  "reason": "Counts x-condition and y-condition matches separately (sum) instead of jointly (AND), massively overcounts; sample output (10,10,16,...) vs expected (2,0,1,...).",
+  "reason": "CORRECTED after independent adjudication: Ran candidate on the full 7-case sample: output exactly '2 0 1 3 5 7 0' matching expected. Joint (rx,ry) residue key correctly enforces both x and y conditions simultaneously; claude's overcount claim",
   "failing_input": null,
   "sample_test": "sample_pass"
  },
@@ -1910,9 +1910,9 @@
  {
   "task_id": 213,
   "index": 212,
-  "verdict": "correct",
+  "verdict": "incorrect",
   "confidence": "high",
-  "reason": "Sample EOF is a harness artifact for this interactive problem. Real interactor simulation: exhaustive n<=6 and random n up to 1000 all give correct max-XOR pair within budget.",
+  "reason": "CORRECTED after independent adjudication: Algorithm itself verified correct (exhaustive n<=8, random to 5000, within 3n queries). But final answer print lacks flush=True while stdout is block-buffered on a pipe, causing hang/Idleness-Limit-Ex",
   "failing_input": null,
   "sample_test": "runtime_error"
  },
@@ -2243,19 +2243,19 @@
  {
   "task_id": 250,
   "index": 249,
-  "verdict": "incorrect",
+  "verdict": "correct",
   "confidence": "high",
-  "reason": "'maxx' bookkeeping is wrong, producing duplicate values (not a permutation). Verified 86/300 random tests output invalid (non-permutation) results.",
-  "failing_input": "1\n7\n-1 -3 2 -3 2 -2 3\n",
+  "reason": "CORRECTED after independent adjudication: Ran claude's alleged failing input directly: candidate outputs [1,3,0,5,2,6,4], which is a valid permutation whose derived a exactly matches the given array. 500+ random stress tests (n up to 2000) an",
+  "failing_input": null,
   "sample_test": "sample_pass"
  },
  {
   "task_id": 251,
   "index": 250,
-  "verdict": "correct",
+  "verdict": "incorrect",
   "confidence": "high",
-  "reason": "Backward recurrence res[i]=mex-a[i], mex=min(mex,res[i]) from mex=n; verified on 300 random tests and runs fast at n=2*10^5.",
-  "failing_input": null,
+  "reason": "CORRECTED after independent adjudication: a=[-1,-2,3,1] is legal (achieved by p=(1,2,0,3) per brute force) but candidate outputs [1,2,0,1], not a permutation. Exhaustive n<=7 found 46 such failures.",
+  "failing_input": "1\n4\n-1 -2 3 1",
   "sample_test": "sample_pass"
  },
  {
@@ -2711,10 +2711,10 @@
  {
   "task_id": 302,
   "index": 301,
-  "verdict": "correct",
+  "verdict": "incorrect",
   "confidence": "high",
-  "reason": "Same correct greedy algorithm as index 300 with int sentinel 10**12, always overwritten since m>=1.",
-  "failing_input": null,
+  "reason": "CORRECTED after independent adjudication: Ran code on n=2001,m=1,a_i=b_i=1e9: true min cost is 2001e9, but 'best' sentinel is 10**12 and is never overwritten since all real candidates exceed it (comparison only accepts smaller); prints 100000",
+  "failing_input": "1\n2001 1\n",
   "sample_test": "sample_pass"
  },
  {
@@ -3017,19 +3017,19 @@
  {
   "task_id": 336,
   "index": 335,
-  "verdict": "incorrect",
+  "verdict": "correct",
   "confidence": "high",
-  "reason": "Same flawed fixed-range single-pass split logic as index333 (kkk gate doesn't fix it); brute force says feasible but candidate says infeasible.",
-  "failing_input": "1\n3\n66 99 71",
+  "reason": "CORRECTED after independent adjudication: Ran claude's alleged failing input '66 99 71' directly: candidate prints YES, matching brute force (splitting 99->9,9 or similar makes it sortable). 500 random/adversarial stress tests vs brute force",
+  "failing_input": null,
   "sample_test": "sample_pass"
  },
  {
   "task_id": 337,
   "index": 336,
-  "verdict": "correct",
+  "verdict": "incorrect",
   "confidence": "high",
-  "reason": "Identical logic to index332 (verified correct); passed 30000+ random-array brute force comparisons and edge cases.",
-  "failing_input": null,
+  "reason": "CORRECTED after independent adjudication: [11,11,1] is achievable (split both 11s -> [1,1,1,1,1], sorted) so answer is YES, but single left-to-right sweep prints No. Verified by running the code.",
+  "failing_input": "1\n3\n11 11 1",
   "sample_test": "sample_pass"
  },
  {
@@ -4340,10 +4340,10 @@
  {
   "task_id": 483,
   "index": 482,
-  "verdict": "correct",
+  "verdict": "incorrect",
   "confidence": "high",
-  "reason": "Equivalent water-filling algorithm tracking floor (ans) and count-above-floor (res); verified against exhaustive brute force on 29 random small cases, 0 mismatches.",
-  "failing_input": null,
+  "reason": "CORRECTED after independent adjudication: For n=3,k=1,a=[3,3,2], max possible windows is L-n+1=9-3+1=7 (buying the missing 3 gives equal counts, tiling 123123123 achieves 7); candidate prints 8, an impossible value exceeding the trivial upper",
+  "failing_input": "1\n3 1\n3 3 2\n",
   "sample_test": "sample_pass"
  },
  {
@@ -4439,9 +4439,9 @@
  {
   "task_id": 494,
   "index": 493,
-  "verdict": "correct",
-  "confidence": "medium",
-  "reason": "Logic equivalent to correct greedy (uses e[k:].index/in, monotonic k); passes random tests; measured ~1.0s at n=m=2e5 worst case, borderline but plausibly within TL.",
+  "verdict": "incorrect",
+  "confidence": "high",
+  "reason": "CORRECTED after independent adjudication: Algorithm is correct (verified vs sample/logic) but re-slices e[k:] every step (O(len) copy each time); worst case (a=b=all '0', n=m=2e5, single test case allowed by sum constraint) measured ~0.75s in",
   "failing_input": null,
   "sample_test": "sample_pass"
  },
@@ -4484,10 +4484,10 @@
  {
   "task_id": 499,
   "index": 498,
-  "verdict": "correct",
+  "verdict": "incorrect",
   "confidence": "high",
-  "reason": "Validated the mod-chain conditions on 5 sample + 29 random/edge cases incl. n=500.",
-  "failing_input": null,
+  "reason": "CORRECTED after independent adjudication: Ran candidate on x=[236,473] (n=3): produces a=[237,473,946]; 946 mod 473 = 0, not the required 473. The final step 'ans[-1]=ans[-2]+arr[-1]' never checks arr[-1] < ans[-2] before adding.",
+  "failing_input": "1\n3\n236 473",
   "sample_test": "sample_mismatch"
  },
  {
@@ -4754,10 +4754,10 @@
  {
   "task_id": 529,
   "index": 528,
-  "verdict": "correct",
+  "verdict": "incorrect",
   "confidence": "high",
-  "reason": "Same heap-sweep algorithm as 527 with equivalent incremental bookkeeping; matched exhaustive brute force on 250+ random cases.",
-  "failing_input": null,
+  "reason": "CORRECTED after independent adjudication: Exhaustive-subset brute force (2^n) found 12/2000 random n=6,k=1 cases where candidate's heap bookkeeping undercounts, e.g. a=[1,1,3,5,4,4], b=[3,3,3,1,3,5] gives candidate 0 vs true optimum 1.",
+  "failing_input": "1\n6 1\n1 1 3 5 4 4\n3 3 3 1 3 5\n",
   "sample_test": "sample_pass"
  },
  {
@@ -4889,10 +4889,10 @@
  {
   "task_id": 544,
   "index": 543,
-  "verdict": "correct",
+  "verdict": "incorrect",
   "confidence": "high",
-  "reason": "Tracks each player's position via moves; on throw checks thrower's current cell against goal lists (auto-handles own goals). Matches all 3 samples exactly.",
-  "failing_input": null,
+  "reason": "CORRECTED after independent adjudication: Problem says any entity (player or ball) can move; an uncarried Quaffle move action '.Q U/D/L/R' is legal but code's players dict never registers '.Q', causing KeyError crash. Reproduced directly.",
+  "failing_input": "3 5\n.. .. R0 .. ..\nRG .. .Q .. BG\n.. .. B0 .. ..\n1\n.Q R",
   "sample_test": "sample_pass"
  },
  {
@@ -4907,10 +4907,10 @@
  {
   "task_id": 546,
   "index": 545,
-  "verdict": "correct",
+  "verdict": "incorrect",
   "confidence": "high",
-  "reason": "Correct move/eliminate/score simulation; sorts simultaneous eliminations alphabetically. A latent internal bug sets ball pos to [-1,-1] when carrier is eliminated, but this never surfaces in output since that cell is guaranteed non-goal and later carries self-correct on move. Passes all 3 samples plus a custom double-elimination test.",
-  "failing_input": null,
+  "reason": "CORRECTED after independent adjudication: Constructed a valid action sequence (carrier eliminated by Bludger off any goal, then dropped Quaffle moved and rethrown into own goal): candidate outputs FINAL SCORE 0 0 while spec-compliant sim give",
+  "failing_input": "3 3\n.. R0 ..\nRG .Q BG\n.. .B B0\n8\nR0 D\nR0 C .Q\nR0 D\n.Q R\n.Q U\nB0 U\nB0 C .Q\nB0 T",
   "sample_test": "sample_pass"
  },
  {
@@ -5636,10 +5636,10 @@
  {
   "task_id": 627,
   "index": 626,
-  "verdict": "correct",
+  "verdict": "incorrect",
   "confidence": "high",
-  "reason": "Validated against the problem's conditions (1<=x_i<=1e9, sum(x)<k_i*x_i for all i, -1 exactly when sum(1/k_i)>=1) on all 6 sample cases plus 37 random/edge cases; the sample diff is an equally valid alternative distribution.",
-  "failing_input": null,
+  "reason": "CORRECTED after independent adjudication: Uses float '/' on huge products (up to 20^50), losing precision; with k=[20]*10+[19]*9 outputs bets ~5e15, violating the required 1<=x_i<=1e9 bound. Reproduced by running the code.",
+  "failing_input": "1\n19\n20 20 20 20 20 20 20 20 20 20 19 19 19 19 19 19 19 19 19",
   "sample_test": "sample_mismatch"
  },
  {
@@ -5654,10 +5654,10 @@
  {
   "task_id": 629,
   "index": 628,
-  "verdict": "correct",
+  "verdict": "incorrect",
   "confidence": "high",
-  "reason": "Validated against the problem's conditions (1<=x_i<=1e9, sum(x)<k_i*x_i for all i, -1 exactly when sum(1/k_i)>=1) on all 6 sample cases plus 37 random/edge cases; the sample diff is an equally valid alternative distribution.",
-  "failing_input": null,
+  "reason": "CORRECTED after independent adjudication: Ran code on n=19, all k_i=20: uses raw product (20^19) instead of lcm(=20), producing bets ~2.6e23 per outcome, violating the required 1<=x_i<=1e9 output constraint even though a valid small (all-1s)",
+  "failing_input": "1\n19\n20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20",
   "sample_test": "sample_mismatch"
  },
  {
@@ -5681,10 +5681,10 @@
  {
   "task_id": 632,
   "index": 631,
-  "verdict": "correct",
+  "verdict": "incorrect",
   "confidence": "high",
-  "reason": "Validated against the problem's conditions (1<=x_i<=1e9, sum(x)<k_i*x_i for all i, -1 exactly when sum(1/k_i)>=1) on all 6 sample cases plus 37 random/edge cases; the sample diff is an equally valid alternative distribution.",
-  "failing_input": null,
+  "reason": "CORRECTED after independent adjudication: Ran candidate on n=19, all k_i=20 (valid: sum 1/k_i=0.95<1, so answer exists e.g. all x_i=1). Candidate outputs x_i=prod/k_i ~2.6e23, violating the required 1<=x_i<=1e9 bound; should use lcm(k_i)=20 i",
+  "failing_input": "1\n19\n20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20",
   "sample_test": "sample_mismatch"
  },
  {
