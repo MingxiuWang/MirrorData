@@ -5,90 +5,292 @@
     "model": "gpt-5.6-luna",
     "reasoning_effort": "medium",
     "history_isolation": "Ten independent temporary batch workspaces, each containing only data/mirror_data.json; no git data, prior results, or resumed sessions.",
-    "batch_size": 65,
-    "batch_count": 10,
-    "started_at": "2026-09-22T04:08:26.161Z",
-    "completed_at": "2026-09-22T04:45:25.961Z",
-    "duration_ms": 2219800,
-    "token_usage": {
-      "cli_reported_tokens_used": 894300,
+    "execution": {
+      "mode": "strictly_sequential",
+      "parallel_execution": false,
+      "max_concurrency": 1,
+      "batch_size": 65,
+      "batch_count": 10,
+      "observed_session_overlaps": 0,
+      "sequencing_note": "Each Codex process completed and its output validated before the next process started.",
       "batches": [
         {
+          "batch": 1,
           "range_start": 1,
           "range_end": 65,
-          "cli_reported_tokens_used": 89034,
-          "duration_ms": 200936
+          "session_id": "01a0c74d-007f-7dd0-8255-4aea4e4635fa",
+          "started_at": "2026-09-22T04:08:27.519Z",
+          "completed_at": "2026-09-22T04:11:46.963Z",
+          "session_wall_clock_ms": 199444,
+          "reported_task_duration_ms": 199373,
+          "token_usage": {
+            "input_tokens": 630043,
+            "cached_input_tokens": 545024,
+            "uncached_input_tokens": 85019,
+            "output_tokens": 4015,
+            "reasoning_output_tokens": 496,
+            "total_tokens": 634058,
+            "cli_reported_tokens_used": 89034
+          }
         },
         {
+          "batch": 2,
           "range_start": 66,
           "range_end": 130,
-          "cli_reported_tokens_used": 79953,
-          "duration_ms": 179301
+          "session_id": "01a0c750-13ef-7871-b340-d91f0c62f6bc",
+          "started_at": "2026-09-22T04:11:49.103Z",
+          "completed_at": "2026-09-22T04:14:46.898Z",
+          "session_wall_clock_ms": 177795,
+          "reported_task_duration_ms": 177714,
+          "token_usage": {
+            "input_tokens": 410036,
+            "cached_input_tokens": 338944,
+            "uncached_input_tokens": 71092,
+            "output_tokens": 8861,
+            "reasoning_output_tokens": 4843,
+            "total_tokens": 418897,
+            "cli_reported_tokens_used": 79953
+          }
         },
         {
+          "batch": 3,
           "range_start": 131,
           "range_end": 195,
-          "cli_reported_tokens_used": 101369,
-          "duration_ms": 217010
+          "session_id": "01a0c752-d32b-7703-a0aa-f6257b0fbe16",
+          "started_at": "2026-09-22T04:14:49.131Z",
+          "completed_at": "2026-09-22T04:18:24.735Z",
+          "session_wall_clock_ms": 215604,
+          "reported_task_duration_ms": 215529,
+          "token_usage": {
+            "input_tokens": 647605,
+            "cached_input_tokens": 555520,
+            "uncached_input_tokens": 92085,
+            "output_tokens": 9284,
+            "reasoning_output_tokens": 5073,
+            "total_tokens": 656889,
+            "cli_reported_tokens_used": 101369
+          }
         },
         {
+          "batch": 4,
           "range_start": 196,
           "range_end": 260,
-          "cli_reported_tokens_used": 83735,
-          "duration_ms": 203605
+          "session_id": "01a0c756-257c-71c0-9bf8-e82f09665f85",
+          "started_at": "2026-09-22T04:18:26.812Z",
+          "completed_at": "2026-09-22T04:21:48.959Z",
+          "session_wall_clock_ms": 202147,
+          "reported_task_duration_ms": 202056,
+          "token_usage": {
+            "input_tokens": 486819,
+            "cached_input_tokens": 411392,
+            "uncached_input_tokens": 75427,
+            "output_tokens": 8308,
+            "reasoning_output_tokens": 3801,
+            "total_tokens": 495127,
+            "cli_reported_tokens_used": 83735
+          }
         },
         {
+          "batch": 5,
           "range_start": 261,
           "range_end": 325,
-          "cli_reported_tokens_used": 112595,
-          "duration_ms": 236367
+          "session_id": "01a0c759-4388-7112-a0e2-f75df4633107",
+          "started_at": "2026-09-22T04:21:51.112Z",
+          "completed_at": "2026-09-22T04:25:45.968Z",
+          "session_wall_clock_ms": 234856,
+          "reported_task_duration_ms": 234769,
+          "token_usage": {
+            "input_tokens": 1059734,
+            "cached_input_tokens": 958720,
+            "uncached_input_tokens": 101014,
+            "output_tokens": 11581,
+            "reasoning_output_tokens": 7141,
+            "total_tokens": 1071315,
+            "cli_reported_tokens_used": 112595
+          }
         },
         {
+          "batch": 6,
           "range_start": 326,
           "range_end": 390,
-          "cli_reported_tokens_used": 96327,
-          "duration_ms": 260578
+          "session_id": "01a0c75c-e2bc-7552-82f4-f8126cd86a14",
+          "started_at": "2026-09-22T04:25:48.476Z",
+          "completed_at": "2026-09-22T04:30:07.137Z",
+          "session_wall_clock_ms": 258661,
+          "reported_task_duration_ms": 258540,
+          "token_usage": {
+            "input_tokens": 526852,
+            "cached_input_tokens": 440064,
+            "uncached_input_tokens": 86788,
+            "output_tokens": 9539,
+            "reasoning_output_tokens": 5617,
+            "total_tokens": 536391,
+            "cli_reported_tokens_used": 96327
+          }
         },
         {
+          "batch": 7,
           "range_start": 391,
           "range_end": 455,
-          "cli_reported_tokens_used": 89077,
-          "duration_ms": 240645
+          "session_id": "01a0c760-df61-7bb1-9ea7-65269326a271",
+          "started_at": "2026-09-22T04:30:09.761Z",
+          "completed_at": "2026-09-22T04:34:08.593Z",
+          "session_wall_clock_ms": 238832,
+          "reported_task_duration_ms": 238709,
+          "token_usage": {
+            "input_tokens": 481423,
+            "cached_input_tokens": 401152,
+            "uncached_input_tokens": 80271,
+            "output_tokens": 8806,
+            "reasoning_output_tokens": 4696,
+            "total_tokens": 490229,
+            "cli_reported_tokens_used": 89077
+          }
         },
         {
+          "batch": 8,
           "range_start": 456,
           "range_end": 520,
-          "cli_reported_tokens_used": 85852,
-          "duration_ms": 274629
+          "session_id": "01a0c764-8ca3-75c1-9230-fe2ae0291cc9",
+          "started_at": "2026-09-22T04:34:10.723Z",
+          "completed_at": "2026-09-22T04:38:44.026Z",
+          "session_wall_clock_ms": 273303,
+          "reported_task_duration_ms": 273233,
+          "token_usage": {
+            "input_tokens": 531255,
+            "cached_input_tokens": 455936,
+            "uncached_input_tokens": 75319,
+            "output_tokens": 10533,
+            "reasoning_output_tokens": 6637,
+            "total_tokens": 541788,
+            "cli_reported_tokens_used": 85852
+          }
         },
         {
+          "batch": 9,
           "range_start": 521,
           "range_end": 585,
-          "cli_reported_tokens_used": 85363,
-          "duration_ms": 197500
+          "session_id": "01a0c768-c023-7b71-9231-bdd92cfd456a",
+          "started_at": "2026-09-22T04:38:46.051Z",
+          "completed_at": "2026-09-22T04:42:01.740Z",
+          "session_wall_clock_ms": 195689,
+          "reported_task_duration_ms": 195611,
+          "token_usage": {
+            "input_tokens": 539531,
+            "cached_input_tokens": 462336,
+            "uncached_input_tokens": 77195,
+            "output_tokens": 8168,
+            "reasoning_output_tokens": 4618,
+            "total_tokens": 547699,
+            "cli_reported_tokens_used": 85363
+          }
         },
         {
+          "batch": 10,
           "range_start": 586,
           "range_end": 645,
-          "cli_reported_tokens_used": 70995,
-          "duration_ms": 202077
+          "session_id": "01a0c76b-c649-7401-822c-324d50298211",
+          "started_at": "2026-09-22T04:42:04.233Z",
+          "completed_at": "2026-09-22T04:45:24.808Z",
+          "session_wall_clock_ms": 200575,
+          "reported_task_duration_ms": 200493,
+          "token_usage": {
+            "input_tokens": 388933,
+            "cached_input_tokens": 326400,
+            "uncached_input_tokens": 62533,
+            "output_tokens": 8462,
+            "reasoning_output_tokens": 4677,
+            "total_tokens": 397395,
+            "cli_reported_tokens_used": 70995
+          }
         }
       ]
     },
-    "session_ids": [
-      "01a0c74d-007f-7dd0-8255-4aea4e4635fa",
-      "01a0c750-13ef-7871-b340-d91f0c62f6bc",
-      "01a0c752-d32b-7703-a0aa-f6257b0fbe16",
-      null,
-      null,
-      "01a0c75c-e2bc-7552-82f4-f8126cd86a14",
-      null,
-      null,
-      "01a0c768-c023-7b71-9231-bdd92cfd456a",
-      null
-    ],
+    "clock_time": {
+      "request_started_at": "2026-09-22T03:59:56.969Z",
+      "accepted_pipeline_started_at": "2026-09-22T04:08:26.161Z",
+      "accepted_pipeline_completed_at": "2026-09-22T04:45:25.961Z",
+      "accepted_pipeline_wall_clock_ms": 2219800,
+      "accepted_pipeline_wall_clock": "00:36:59.800",
+      "accepted_codex_sessions_wall_clock_ms": 2196906,
+      "accepted_reported_task_duration_ms": 2196027,
+      "accepted_orchestration_and_between_sessions_ms": 22894,
+      "original_remote_verified_at": "2026-09-22T04:47:04.950Z",
+      "accepted_start_to_remote_verification_ms": 2318789,
+      "accepted_start_to_remote_verification": "00:38:38.789",
+      "original_final_response_completed_at": "2026-09-22T04:47:22.349Z",
+      "full_request_to_remote_verification_ms": 2827981,
+      "full_request_to_remote_verification": "00:47:07.981",
+      "full_request_to_final_response_ms": 2845380,
+      "full_request_to_final_response": "00:47:25.380",
+      "scope_note": "Wall-clock intervals include model thinking, Codex/tool execution, workspace setup, validation, merge, result installation, commit, push, and verification as applicable. The full-request interval also includes the discarded preliminary attempt and coordination time."
+    },
+    "token_usage": {
+      "conventions": {
+        "input_tokens_note": "input_tokens includes cached_input_tokens.",
+        "output_tokens_note": "reasoning_output_tokens is a subset of output_tokens.",
+        "total_tokens_formula": "input_tokens + output_tokens",
+        "cli_reported_tokens_used_formula": "uncached_input_tokens + output_tokens"
+      },
+      "accepted_evaluation_workers": {
+        "input_tokens": 5702231,
+        "cached_input_tokens": 4895488,
+        "uncached_input_tokens": 806743,
+        "output_tokens": 87557,
+        "reasoning_output_tokens": 47599,
+        "total_tokens": 5789788,
+        "cli_reported_tokens_used": 894300
+      },
+      "discarded_preliminary_attempt": {
+        "session_id": "01a0c746-aea2-7b52-8770-43366ef66ce5",
+        "disposition": "excluded_from_final verdicts and accepted comparison result",
+        "started_at": "2026-09-22T04:01:33.346Z",
+        "completed_at": "2026-09-22T04:04:10.319Z",
+        "session_wall_clock_ms": 156973,
+        "reported_task_duration_ms": 156886,
+        "token_usage": {
+          "input_tokens": 554702,
+          "cached_input_tokens": 465408,
+          "uncached_input_tokens": 89294,
+          "output_tokens": 7603,
+          "reasoning_output_tokens": 3904,
+          "total_tokens": 562305,
+          "cli_reported_tokens_used": 96897
+        }
+      },
+      "all_evaluation_workers_including_discarded_attempt": {
+        "input_tokens": 6256933,
+        "cached_input_tokens": 5360896,
+        "uncached_input_tokens": 896037,
+        "output_tokens": 95160,
+        "reasoning_output_tokens": 51503,
+        "total_tokens": 6352093,
+        "cli_reported_tokens_used": 991197
+      },
+      "orchestration_controller": {
+        "input_tokens": 7110959,
+        "cached_input_tokens": 6906112,
+        "uncached_input_tokens": 204847,
+        "output_tokens": 15279,
+        "reasoning_output_tokens": 7585,
+        "total_tokens": 7126238,
+        "derived_uncached_input_plus_output": 220126,
+        "counter_baseline_at": "2026-09-21T02:39:50.109Z",
+        "counter_end_at": "2026-09-22T04:47:22.342Z",
+        "note": "Delta of the controller session's cumulative token counters across this request; recorded separately from Luna evaluation workers."
+      },
+      "entire_request_all_models": {
+        "input_tokens": 13367892,
+        "cached_input_tokens": 12267008,
+        "uncached_input_tokens": 1100884,
+        "output_tokens": 110439,
+        "reasoning_output_tokens": 59088,
+        "total_tokens": 13478331,
+        "derived_uncached_input_plus_output": 1211323
+      }
+    },
     "cost_usd": null,
-    "cost_note": "Unavailable: Codex CLI did not report monetary cost and no reliable gpt-5.6-luna price was available."
+    "cost_note": "Unavailable: Codex CLI and controller logs did not report monetary cost, and no reliable gpt-5.6-luna price was available; no dollar estimate was invented."
   },
   "summary": {
     "total": 645,
