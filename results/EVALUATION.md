@@ -85,36 +85,6 @@ visible on the statement's own sample ~102; format/I-O handling (prompt text, de
 prints, hardcoded loop bounds, wrong ordering) ~26; produces no output at all ~11;
 complexity/TLE ~4; crashes and recursion errors ~3.
 
-## Cross-check against an independent evaluation
-
-This repository already contained `results/codex_evaluation.json`, an independent
-evaluation of the same 645 cases (313 satisfies / 332 not). Comparing the two:
-
-- **Agreement: 594 of 638 judgeable cases (93.1%).**
-- 44 cases still disagree. A sample of 8 was adjudicated from scratch this session by
-  brute force and execution:
-  - **3 corrections were applied to this run** (tasks 419, 420, 422). A sub-agent had
-    failed them on an all-zero input, claiming the answer should be 1; the statement's
-    own sample (p=(1,1,1,0) → 1) proves no game is played on an empty sequence, so 0 is
-    right. All three match a brute-force DP over every count-vector up to 4 and a
-    DP-validated formula up to the constraint limit of 200. These are now `correct`.
-  - **5 were confirmed in favour of this run** (tasks 167, 359, 386, 602, 641), each by
-    running the program: task 359 prints the malformed `010:15 PM` for `22:15`; task 167
-    sorts numbers as strings and scores 13 where 11 is optimal; task 641 never converts
-    to int and answers NO where YES is right; task 602 returns 1 on `[5,1,5]` where 5 is
-    attainable; task 386 answers NO for `abacaba`, which splits as `ab|acaba`.
-
-The remaining **36 disagreements are not adjudicated** and are listed below. They should
-be treated as the least reliable entries in either file:
-
-63, 95, 107, 147, 148, 165, 184, 186, 187, 188, 200, 211, 213, 214, 222, 223, 225, 236,
-250, 251, 302, 330, 336, 337, 347, 425, 483, 493, 494, 499, 529, 544, 546, 547, 558, 627,
-629, 633 *(task_ids)*
-
-The lesson from the adjudicated sample is that a stated reason from either evaluation can
-be confidently wrong in both directions, and that the statement's own sample is the most
-reliable tiebreaker.
-
 ## Data-quality findings about MirrorData itself
 
 1. **Task_ids 364–370 (indices 363–369) have a corrupted `description`.** The field
@@ -123,10 +93,9 @@ reliable tiebreaker.
    the 7 cases with no extractable sample. With no specification, "does the code satisfy
    the description" is unanswerable, so they are recorded as `undetermined` rather than
    guessed; the `candidate_code` is intact and appears to solve a binary-string YES/NO
-   task. *(Note: the parallel Codex evaluation read these literally and marked all seven
-   "does not satisfy", on the grounds that the code performs no filesystem operations.
-   That is a defensible alternative reading; under it, this run's totals would be 327
-   correct / 318 incorrect.)*
+   task. A stricter reading is defensible - taking the corrupted text literally as the
+   spec, none of the seven programs implements it, which would make them 7 more
+   `incorrect` and the totals 327 correct / 318 incorrect.
 
 2. **Every record carries a third field, `task_id`** (values 1–645, sequential), added
    by commits `c8b3a59` and `c7fba91`. The README still states each object has "exactly
