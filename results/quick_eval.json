@@ -1,0 +1,3872 @@
+[
+ {
+  "task_id": 1,
+  "index": 0,
+  "verdict": "incorrect",
+  "reason": "special-cases a==1 as Alice regardless of parity; wrong when a=1,b odd(>1)"
+ },
+ {
+  "task_id": 2,
+  "index": 1,
+  "verdict": "correct",
+  "reason": "abs(a-b)%2==0 same parity as a+b; matches derived rule"
+ },
+ {
+  "task_id": 3,
+  "index": 2,
+  "verdict": "correct",
+  "reason": "(a+b)%2==0 -> Bob else Alice; correct parity rule"
+ },
+ {
+  "task_id": 4,
+  "index": 3,
+  "verdict": "correct",
+  "reason": "same correct parity rule, just different input parsing"
+ },
+ {
+  "task_id": 5,
+  "index": 4,
+  "verdict": "incorrect",
+  "reason": "if-check un-indented, runs once after loop (only last test case) plus lowercase/format issue"
+ },
+ {
+  "task_id": 6,
+  "index": 5,
+  "verdict": "correct",
+  "reason": "(a+b)&1==0 -> Bob else Alice; correct parity rule"
+ },
+ {
+  "task_id": 7,
+  "index": 6,
+  "verdict": "incorrect",
+  "reason": "prints P-M without abs; negative for all-minus strings (e.g. all '-' gives -5 not 5)"
+ },
+ {
+  "task_id": 8,
+  "index": 7,
+  "verdict": "correct",
+  "reason": "computes abs(#plus-#minus), matches all examples and correct formula"
+ },
+ {
+  "task_id": 9,
+  "index": 8,
+  "verdict": "incorrect",
+  "reason": "unrelated bracket-balance heuristic; fails example 4 (--+++++++-) giving 3 not 4"
+ },
+ {
+  "task_id": 10,
+  "index": 9,
+  "verdict": "incorrect",
+  "reason": "prints signed P-M except special-cased all-minus; wrong sign for mixed strings with M>P not all '-'"
+ },
+ {
+  "task_id": 11,
+  "index": 10,
+  "verdict": "correct",
+  "reason": "builds actual two subsequences and counts true ascents; verified against examples and adversarial case"
+ },
+ {
+  "task_id": 12,
+  "index": 11,
+  "verdict": "correct",
+  "reason": "standard two-tail greedy (la=lb swap on overflow); matches both given examples exactly"
+ },
+ {
+  "task_id": 13,
+  "index": 12,
+  "verdict": "incorrect",
+  "reason": "typo 'x==y' (no-op) instead of 'x=y'; fails to update tail, undercounts/miscounts on constructed case"
+ },
+ {
+  "task_id": 14,
+  "index": 13,
+  "verdict": "correct",
+  "reason": "equivalent two-tail greedy with deferred swap fix at loop top; matches given examples and reasoning"
+ },
+ {
+  "task_id": 15,
+  "index": 14,
+  "verdict": "incorrect",
+  "reason": "stale 'a' never updated after initial prefix scan; undercounts ascents on constructed case [6,1,2,5,1,1]"
+ },
+ {
+  "task_id": 16,
+  "index": 15,
+  "verdict": "incorrect",
+  "reason": "Only counts walks ending at p[-1] via plain binomial DP; ignores rest of multiset p entirely."
+ },
+ {
+  "task_id": 17,
+  "index": 16,
+  "verdict": "correct",
+  "reason": "Computes max lower bound, min upper bound, subtracts excluded values in range; matches examples."
+ },
+ {
+  "task_id": 18,
+  "index": 17,
+  "verdict": "correct",
+  "reason": "Same correct max/min bound + exclusion-count logic as valid interval solution."
+ },
+ {
+  "task_id": 19,
+  "index": 18,
+  "verdict": "incorrect",
+  "reason": "Uses 'if bx>=ax: return 0', wrongly zeroing valid single-value case bx==ax."
+ },
+ {
+  "task_id": 20,
+  "index": 19,
+  "verdict": "correct",
+  "reason": "num=min(less)-max(big)+1 with num<1 check (not >=), then subtracts in-range exclusions correctly."
+ },
+ {
+  "task_id": 21,
+  "index": 20,
+  "verdict": "incorrect",
+  "reason": "Finds and prints one valid k value instead of counting all valid integers; wrong output entirely."
+ },
+ {
+  "task_id": 22,
+  "index": 21,
+  "verdict": "correct",
+  "reason": "Correct O(n log n) prefix/window recurrence for Alice-remove/Bob-flip game, matches example traces."
+ },
+ {
+  "task_id": 23,
+  "index": 22,
+  "verdict": "correct",
+  "reason": "Equivalent correct sliding window recurrence over sorted array, verified against example."
+ },
+ {
+  "task_id": 24,
+  "index": 23,
+  "verdict": "incorrect",
+  "reason": "Hardcodes 'if removals==6 and negatives==3: return 0' (test hack); also resets window to 0 on IndexError."
+ },
+ {
+  "task_id": 25,
+  "index": 24,
+  "verdict": "correct",
+  "reason": "Correct incremental S(i) recurrence over descending sorted array, tracks running max correctly."
+ },
+ {
+  "task_id": 26,
+  "index": 25,
+  "verdict": "incorrect",
+  "reason": "ans2 never updated in loop; only compares final ans1 vs initial S(0), missing true max (fails example 5)."
+ },
+ {
+  "task_id": 27,
+  "index": 26,
+  "verdict": "incorrect",
+  "reason": "Type-2 op ignores multiplier x (always just doubles once); also materializes huge array, exponential blowup."
+ },
+ {
+  "task_id": 28,
+  "index": 27,
+  "verdict": "incorrect",
+  "reason": "Takes min of dist(p0,p2) and dist(p1,p3) only; fails when both happen to be diagonal pairs."
+ },
+ {
+  "task_id": 29,
+  "index": 28,
+  "verdict": "correct",
+  "reason": "Side = max(x)-min(x) over all 4 corners, order-independent and always correct for axis-aligned square."
+ },
+ {
+  "task_id": 30,
+  "index": 29,
+  "verdict": "incorrect",
+  "reason": "Third branch computes abs(y1-y2) using mismatched pair; gives 0 for perimeter-order input (0,0)(2,0)(2,2)(0,2)."
+ },
+ {
+  "task_id": 31,
+  "index": 30,
+  "verdict": "correct",
+  "reason": "Sorted-corner square area via side^2, matches all examples exactly."
+ },
+ {
+  "task_id": 32,
+  "index": 31,
+  "verdict": "incorrect",
+  "reason": "Prints raw float (e.g. '9.0') instead of int; no round(), wrong output format."
+ },
+ {
+  "task_id": 33,
+  "index": 32,
+  "verdict": "incorrect",
+  "reason": "Equal-count branch prints total ones count instead of mismatch/2; e.g. s=1100,t=1010 gives 2 not 1."
+ },
+ {
+  "task_id": 34,
+  "index": 33,
+  "verdict": "correct",
+  "reason": "max(add-needed, remove-needed) is the correct formula, verified on all examples."
+ },
+ {
+  "task_id": 35,
+  "index": 34,
+  "verdict": "incorrect",
+  "reason": "Adjacency-based greedy pairing overcounts; s=0011,t=1100 gives 3 instead of correct 2."
+ },
+ {
+  "task_id": 36,
+  "index": 35,
+  "verdict": "incorrect",
+  "reason": "Skips first hd positions by index not by type; s=00110,t=00001 gives 3 instead of correct 2."
+ },
+ {
+  "task_id": 37,
+  "index": 36,
+  "verdict": "correct",
+  "reason": "sum of min(a*gap,b) checked against f; matches all example cases, no overflow in Python."
+ },
+ {
+  "task_id": 38,
+  "index": 37,
+  "verdict": "incorrect",
+  "reason": "Omits the initial gap from time 0 to first message; fails even the first sample test (gives YES not NO)."
+ },
+ {
+  "task_id": 39,
+  "index": 38,
+  "verdict": "correct",
+  "reason": "Equivalent sum of min(a*gap,b)<f logic; matches all provided examples."
+ },
+ {
+  "task_id": 40,
+  "index": 39,
+  "verdict": "correct",
+  "reason": "Heap-based greedy matching; manually verified against 4 diverse sample cases, all match."
+ },
+ {
+  "task_id": 41,
+  "index": 40,
+  "verdict": "correct",
+  "reason": "Two-pointer front/back assignment on sorted arrays; verified against multiple sample cases."
+ },
+ {
+  "task_id": 42,
+  "index": 41,
+  "verdict": "correct",
+  "reason": "Two-pointer greedy with max(t1,t2); verified against multiple sample cases matching exactly."
+ },
+ {
+  "task_id": 43,
+  "index": 42,
+  "verdict": "correct",
+  "reason": "Parity/interval reachability logic verified against all 12 sample cases exactly."
+ },
+ {
+  "task_id": 44,
+  "index": 43,
+  "verdict": "correct",
+  "reason": "Cleaner parity/interval solution verified against all 12 sample cases exactly."
+ },
+ {
+  "task_id": 45,
+  "index": 44,
+  "verdict": "incorrect",
+  "reason": "Even-branch typo uses yb instead of ya for r bound, breaking symmetry; diverges on constructed case."
+ },
+ {
+  "task_id": 46,
+  "index": 45,
+  "verdict": "correct",
+  "reason": "Ad hoc but matches all 12 sample cases exactly via manual check"
+ },
+ {
+  "task_id": 47,
+  "index": 46,
+  "verdict": "correct",
+  "reason": "Correct condition: exists i with a[i]!=c[i] and b[i]!=c[i]"
+ },
+ {
+  "task_id": 48,
+  "index": 47,
+  "verdict": "incorrect",
+  "reason": "for-else with no break always executes else, overwriting to NO always"
+ },
+ {
+  "task_id": 49,
+  "index": 48,
+  "verdict": "correct",
+  "reason": "Position-wise check matches correct formula, shortcut consistent"
+ },
+ {
+  "task_id": 50,
+  "index": 49,
+  "verdict": "incorrect",
+  "reason": "Checks 'x not in a' (whole string membership) not positional a[i], wrong"
+ },
+ {
+  "task_id": 51,
+  "index": 50,
+  "verdict": "correct",
+  "reason": "Correctly implements positional a[i]!=c[i] and b[i]!=c[i] condition"
+ },
+ {
+  "task_id": 52,
+  "index": 51,
+  "verdict": "incorrect",
+  "reason": "Builds template with a[i].upper() which breaks match check; fails sample 1"
+ },
+ {
+  "task_id": 53,
+  "index": 52,
+  "verdict": "correct",
+  "reason": "Standard prefix-count technique for equal-top-two exponent triangles"
+ },
+ {
+  "task_id": 54,
+  "index": 53,
+  "verdict": "incorrect",
+  "reason": "total_sum filters by count value not key order; wrong logic, breaks on unequal counts"
+ },
+ {
+  "task_id": 55,
+  "index": 54,
+  "verdict": "correct",
+  "reason": "Correct ascending distinct-value prefix technique, verified against example"
+ },
+ {
+  "task_id": 56,
+  "index": 55,
+  "verdict": "incorrect",
+  "reason": "Has 'if j>1000: break' cutting off computation for many distinct values"
+ },
+ {
+  "task_id": 57,
+  "index": 56,
+  "verdict": "incorrect",
+  "reason": "Iterates dict in insertion order not sorted value order; fails sample 2 (gives 0 vs expected 2)"
+ },
+ {
+  "task_id": 58,
+  "index": 57,
+  "verdict": "correct",
+  "reason": "Sentinel-padded prefix cost arrays verified correct against all 5 sample queries"
+ },
+ {
+  "task_id": 59,
+  "index": 58,
+  "verdict": "incorrect",
+  "reason": "Same as correct version but has stray debug print(b,\"B\") polluting output"
+ },
+ {
+  "task_id": 60,
+  "index": 59,
+  "verdict": "correct",
+  "reason": "d1/d2 prefix arrays verified correct against all 5 sample queries"
+ },
+ {
+  "task_id": 61,
+  "index": 60,
+  "verdict": "incorrect",
+  "reason": "sentinel 1.11e7 too small vs coords up to 1e9, mis-detects closest city at boundaries"
+ },
+ {
+  "task_id": 62,
+  "index": 61,
+  "verdict": "correct",
+  "reason": "forward/backward edge-cost prefix sums with huge sentinel; matches editorial approach"
+ },
+ {
+  "task_id": 63,
+  "index": 62,
+  "verdict": "incorrect",
+  "reason": "sentinel 99999999 too small vs coords up to 1e9, wrong closest-city detection at ends"
+ },
+ {
+  "task_id": 64,
+  "index": 63,
+  "verdict": "correct",
+  "reason": "binary double/add1 decomposition; traced X=2,5 give correct subsequence counts"
+ },
+ {
+  "task_id": 65,
+  "index": 64,
+  "verdict": "correct",
+  "reason": "recursive construction; traced X=2,5 reproduce exact sample arrays"
+ },
+ {
+  "task_id": 66,
+  "index": 65,
+  "verdict": "correct",
+  "reason": "recursive shift construction; traced X=2,5 give correct counts (2 and 5)"
+ },
+ {
+  "task_id": 67,
+  "index": 66,
+  "verdict": "correct",
+  "reason": "power-of-2 greedy construction; verified f=5,13,37 for all 3 non-trivial samples"
+ },
+ {
+  "task_id": 68,
+  "index": 67,
+  "verdict": "incorrect",
+  "reason": "off-by-one vs correct variant; traced X=5 yields array with f=6, not 5"
+ },
+ {
+  "task_id": 69,
+  "index": 68,
+  "verdict": "correct",
+  "reason": "compacts input, counts zeros between first and last '1'; standard correct method"
+ },
+ {
+  "task_id": 70,
+  "index": 69,
+  "verdict": "incorrect",
+  "reason": "keeps raw spaced string but slices with cell-index n, misaligned; fails sample 1"
+ },
+ {
+  "task_id": 71,
+  "index": 70,
+  "verdict": "correct",
+  "reason": "trims leading/trailing zeros, counts remaining zeros; matches all samples"
+ },
+ {
+  "task_id": 72,
+  "index": 71,
+  "verdict": "incorrect",
+  "reason": "same correct logic but stray print(a) debug statement corrupts output format"
+ },
+ {
+  "task_id": 73,
+  "index": 72,
+  "verdict": "correct",
+  "reason": "direct per-second simulation of firing/movement; matches both provided samples"
+ },
+ {
+  "task_id": 74,
+  "index": 73,
+  "verdict": "correct",
+  "reason": "sorted prefix-sum vs distance*k check, the standard solution; matches all 5 samples"
+ },
+ {
+  "task_id": 75,
+  "index": 74,
+  "verdict": "incorrect",
+  "reason": "compares cumulative bullets to distance only, missing *k factor; fails sample 1"
+ },
+ {
+  "task_id": 76,
+  "index": 75,
+  "verdict": "incorrect",
+  "reason": "Condition requires S>=2m+ones instead of correct S>=m+ones; rejects valid YES cases"
+ },
+ {
+  "task_id": 77,
+  "index": 76,
+  "verdict": "correct",
+  "reason": "Prefix sum + ones count, condition S-m>=ones matches correct S>=m+ones rule"
+ },
+ {
+  "task_id": 78,
+  "index": 77,
+  "verdict": "incorrect",
+  "reason": "Ignores ones count entirely, requires S>=2m always; too strict, wrong for ones>0 cases"
+ },
+ {
+  "task_id": 79,
+  "index": 78,
+  "verdict": "correct",
+  "reason": "b[i] tracks m+ones minimal sum correctly, compares against real prefix sum, matches condition"
+ },
+ {
+  "task_id": 80,
+  "index": 79,
+  "verdict": "incorrect",
+  "reason": "Same correct logic as prior but leftover debug print(*a) emits extra unwanted output line"
+ },
+ {
+  "task_id": 81,
+  "index": 80,
+  "verdict": "correct",
+  "reason": "Prefix-sum+binary-search two-direction approach; reproduces sample outputs exactly"
+ },
+ {
+  "task_id": 82,
+  "index": 81,
+  "verdict": "correct",
+  "reason": "Records actual completing letters per window plus true missing letter from leftover bitmask; valid witness"
+ },
+ {
+  "task_id": 83,
+  "index": 82,
+  "verdict": "incorrect",
+  "reason": "Uses fixed last letter instead of real completing letters for witness; produced string can actually be a subsequence"
+ },
+ {
+  "task_id": 84,
+  "index": 83,
+  "verdict": "incorrect",
+  "reason": "Missing-letter search checks against whole-history s1 not current tail, can emit letter outside first k alphabet"
+ },
+ {
+  "task_id": 85,
+  "index": 84,
+  "verdict": "correct",
+  "reason": "win set correctly tracks current incomplete window; ans records real completing letters; valid construction"
+ },
+ {
+  "task_id": 86,
+  "index": 85,
+  "verdict": "incorrect",
+  "reason": "Missing return in loop causes multiple witness lines printed when >1 letter missing from win"
+ },
+ {
+  "task_id": 87,
+  "index": 86,
+  "verdict": "correct",
+  "reason": "Repeats full k-letter alphabet block n times giving length nk, provably minimal and valid"
+ },
+ {
+  "task_id": 88,
+  "index": 87,
+  "verdict": "incorrect",
+  "reason": "Alphabet string truncated to 23 letters (missing x,y,z), fails when k>23"
+ },
+ {
+  "task_id": 89,
+  "index": 88,
+  "verdict": "correct",
+  "reason": "Repeats full 26-letter alphabet sliced to k, n times; matches proven-minimal nk construction"
+ },
+ {
+  "task_id": 90,
+  "index": 89,
+  "verdict": "incorrect",
+  "reason": "Hardcodes exactly 2 copies of alphabet block regardless of n; wrong/insufficient for n>=3"
+ },
+ {
+  "task_id": 91,
+  "index": 90,
+  "verdict": "correct",
+  "reason": "Checks both divisor sides i and x//i against n*d<=x condition correctly"
+ },
+ {
+  "task_id": 92,
+  "index": 91,
+  "verdict": "incorrect",
+  "reason": "Skips odd divisors when x even (parity-based loop step), misses valid answers"
+ },
+ {
+  "task_id": 93,
+  "index": 92,
+  "verdict": "correct",
+  "reason": "Full loop over divisors via isqrt, both conditions checked independently, correct"
+ },
+ {
+  "task_id": 94,
+  "index": 93,
+  "verdict": "incorrect",
+  "reason": "elif makes x//i branch unreachable (n<=i implies n<=x//i), misses large divisors"
+ },
+ {
+  "task_id": 95,
+  "index": 94,
+  "verdict": "correct",
+  "reason": "Formula k*A/C + m*k(k-1)/(2C^2) matches derivation and all sample outputs"
+ },
+ {
+  "task_id": 96,
+  "index": 95,
+  "verdict": "incorrect",
+  "reason": "Uses n*(n-1) instead of n*(n-1)//2 for pair count, breaks formula"
+ },
+ {
+  "task_id": 97,
+  "index": 96,
+  "verdict": "incorrect",
+  "reason": "Ignores probability of pair selection entirely; fails sample case 3"
+ },
+ {
+  "task_id": 98,
+  "index": 97,
+  "verdict": "correct",
+  "reason": "p/q formula matches derivation exactly, verified against all sample cases"
+ },
+ {
+  "task_id": 99,
+  "index": 98,
+  "verdict": "correct",
+  "reason": "Simple majority count over odd length 5 string, correct"
+ },
+ {
+  "task_id": 100,
+  "index": 99,
+  "verdict": "correct",
+  "reason": "Same correct majority-count logic as other correct variant"
+ },
+ {
+  "task_id": 101,
+  "index": 100,
+  "verdict": "incorrect",
+  "reason": "Final if/else printing outside the per-test loop, only prints once for all cases"
+ },
+ {
+  "task_id": 102,
+  "index": 101,
+  "verdict": "correct",
+  "reason": "Compares first two 1-count rows; distinguishes square (equal) vs triangle (differ)"
+ },
+ {
+  "task_id": 103,
+  "index": 102,
+  "verdict": "incorrect",
+  "reason": "Prints raw list k instead of SQUARE/TRIANGLE strings; no triangle output at all"
+ },
+ {
+  "task_id": 104,
+  "index": 103,
+  "verdict": "correct",
+  "reason": "Detects row with count==1 for triangle vs count>1 only for square, matches all samples"
+ },
+ {
+  "task_id": 105,
+  "index": 104,
+  "verdict": "correct",
+  "reason": "Correct O(n) digit-sum prefix precomputation answering queries in O(1)"
+ },
+ {
+  "task_id": 106,
+  "index": 105,
+  "verdict": "incorrect",
+  "reason": "precompute loop uses stale leftover n from input reading, not max(numbers); table left zero-filled"
+ },
+ {
+  "task_id": 107,
+  "index": 106,
+  "verdict": "correct",
+  "reason": "precomputes digit-sum prefix sums up to 2e5, correct bound and recurrence"
+ },
+ {
+  "task_id": 108,
+  "index": 107,
+  "verdict": "correct",
+  "reason": "same precompute-prefix-sum approach, correct bound and logic"
+ },
+ {
+  "task_id": 109,
+  "index": 108,
+  "verdict": "incorrect",
+  "reason": "sums range(n) not range(1,n+1), accumulates across test cases, prints once total not per case"
+ },
+ {
+  "task_id": 110,
+  "index": 109,
+  "verdict": "correct",
+  "reason": "pairs value with complement via dict, matches expected max(count,complement count) logic"
+ },
+ {
+  "task_id": 111,
+  "index": 110,
+  "verdict": "incorrect",
+  "reason": "print(ans) is inside inner for-loop over elements, prints n lines per test case instead of one"
+ },
+ {
+  "task_id": 112,
+  "index": 111,
+  "verdict": "correct",
+  "reason": "correct complement-pairing dict logic with proper deletion on zero count"
+ },
+ {
+  "task_id": 113,
+  "index": 112,
+  "verdict": "incorrect",
+  "reason": "same logic but never deletes zero-count dict entries, gives wrong answer for some element orders"
+ },
+ {
+  "task_id": 114,
+  "index": 113,
+  "verdict": "correct",
+  "reason": "binary halving to locate group level and position, matches all worked examples"
+ },
+ {
+  "task_id": 115,
+  "index": 114,
+  "verdict": "correct",
+  "reason": "precomputes group sizes list, locates interval containing k, correct formula"
+ },
+ {
+  "task_id": 116,
+  "index": 115,
+  "verdict": "incorrect",
+  "reason": "list L is built but never appended to (missing L.append), so main loop never executes, no output"
+ },
+ {
+  "task_id": 117,
+  "index": 116,
+  "verdict": "correct",
+  "reason": "iterative halving equivalent to correct approach, matches examples"
+ },
+ {
+  "task_id": 118,
+  "index": 117,
+  "verdict": "correct",
+  "reason": "computes first/last black index correctly, formula lastB-firstB+1 verified against example"
+ },
+ {
+  "task_id": 119,
+  "index": 118,
+  "verdict": "incorrect",
+  "reason": "never reads t or loops over test cases; misreads first line (t) as the W/B string itself"
+ },
+ {
+  "task_id": 120,
+  "index": 119,
+  "verdict": "correct",
+  "reason": "standard greedy: pick letter whose current count equals trace value, valid reconstruction"
+ },
+ {
+  "task_id": 121,
+  "index": 120,
+  "verdict": "correct",
+  "reason": "Standard greedy: pick letter whose count equals trace value, b reset per test case."
+ },
+ {
+  "task_id": 122,
+  "index": 121,
+  "verdict": "incorrect",
+  "reason": "Count array b declared outside test-case loop, not reset between test cases -> wrong for t>1."
+ },
+ {
+  "task_id": 123,
+  "index": 122,
+  "verdict": "correct",
+  "reason": "Bucket keyed by trace value itself; provably bounded by 26, verified valid on samples."
+ },
+ {
+  "task_id": 124,
+  "index": 123,
+  "verdict": "incorrect",
+  "reason": "Reversal indexing mismatch places letters at wrong positions; fails codeforces sample trace at i=5."
+ },
+ {
+  "task_id": 125,
+  "index": 124,
+  "verdict": "incorrect",
+  "reason": "Uses list 'in' checks (O(n) each) causing TLE, and greedy order-dependent assignment can misjudge feasible cases."
+ },
+ {
+  "task_id": 126,
+  "index": 125,
+  "verdict": "correct",
+  "reason": "Correct condition: only_a<=k/2, only_b<=k/2, union of relevant values covers 1..k; O(n+m)."
+ },
+ {
+  "task_id": 127,
+  "index": 126,
+  "verdict": "incorrect",
+  "reason": "Ignores set coverage/overlap entirely, just counts <=k elements per array with off-by-one skipping last index."
+ },
+ {
+  "task_id": 128,
+  "index": 127,
+  "verdict": "incorrect",
+  "reason": "Code reads wrong input format (n,m,k + two arrays), solving a different problem, not the l/r query task."
+ },
+ {
+  "task_id": 129,
+  "index": 128,
+  "verdict": "correct",
+  "reason": "RLE blocks + bisect to find run containing l; correctly outputs boundary pair or -1 -1, verified on samples."
+ },
+ {
+  "task_id": 130,
+  "index": 129,
+  "verdict": "incorrect",
+  "reason": "Leftover debug code: 'if tc>5: continue' skips all query output whenever more than 5 test cases exist."
+ },
+ {
+  "task_id": 131,
+  "index": 130,
+  "verdict": "incorrect",
+  "reason": "Ignores k entirely (alternates over whole n); for n=10,k=4 sample gives window sums 22/24, diff=2>1."
+ },
+ {
+  "task_id": 132,
+  "index": 131,
+  "verdict": "incorrect",
+  "reason": "Fills each residue class with increasing values only (no alternating direction); n=10,k=4 gives window sums 21..27."
+ },
+ {
+  "task_id": 133,
+  "index": 132,
+  "verdict": "incorrect",
+  "reason": "Plain recursive DFS with only sys.setrecursionlimit raised (no bigger thread stack); crashes for deep graphs up to 2e5."
+ },
+ {
+  "task_id": 134,
+  "index": 133,
+  "verdict": "incorrect",
+  "reason": "DFS path list is never popped on backtrack, so reconstructed cycle can include extraneous vertices from dead-end branches."
+ },
+ {
+  "task_id": 135,
+  "index": 134,
+  "verdict": "incorrect",
+  "reason": "Only checks b%2==0, ignoring a and the degenerate a==2b/b==2a case; fails e.g. a=4,b=1 (should be Yes)."
+ },
+ {
+  "task_id": 136,
+  "index": 135,
+  "verdict": "correct",
+  "reason": "Handles a=2b/b=2a exceptions correctly via a1!=b, b1!=a checks; matches all sample cases incl. 6x3."
+ },
+ {
+  "task_id": 137,
+  "index": 136,
+  "verdict": "incorrect",
+  "reason": "Outputs Yes whenever a or b even, ignoring a=2b/b=2a exception; fails sample case 6 3 (No expected)."
+ },
+ {
+  "task_id": 138,
+  "index": 137,
+  "verdict": "incorrect",
+  "reason": "elif (a-b==-a,a) is a nonempty tuple, always truthy; logic collapses to 'both even'; fails sample 3 2."
+ },
+ {
+  "task_id": 139,
+  "index": 138,
+  "verdict": "incorrect",
+  "reason": "OR of a/2==b, b/2==a wrongly returns No if either holds; fails sample input 2 4 (expected Yes)."
+ },
+ {
+  "task_id": 140,
+  "index": 139,
+  "verdict": "correct",
+  "reason": "Reduces to max count of distinct a_i within a window of width n via sorted distinct+bisect; matches all samples."
+ },
+ {
+  "task_id": 141,
+  "index": 140,
+  "verdict": "incorrect",
+  "reason": "Only tests window anchored at max element (m-a_i+1<=n), not all windows; fails when max is isolated from cluster."
+ },
+ {
+  "task_id": 142,
+  "index": 141,
+  "verdict": "correct",
+  "reason": "Divisor-based case A/B (P|n-x, P|n+x-2) with k>=x boundary; boundary duplicates are harmless; matches all samples."
+ },
+ {
+  "task_id": 143,
+  "index": 142,
+  "verdict": "incorrect",
+  "reason": "Print statement is commented out ('# print(...)'), so no output is ever produced."
+ },
+ {
+  "task_id": 144,
+  "index": 143,
+  "verdict": "correct",
+  "reason": "Same correct divisor approach, explicit x!=1 guard for case B; verified matches sample n=76 x=4 -> 9."
+ },
+ {
+  "task_id": 145,
+  "index": 144,
+  "verdict": "correct",
+  "reason": "Correct r=k-1 divisor counting with valid n>=3x-2 short-circuit; verified against sample n=76 x=4 -> 9."
+ },
+ {
+  "task_id": 146,
+  "index": 145,
+  "verdict": "incorrect",
+  "reason": "range(1,int(w//1)) excludes floor(sqrt(q)) itself for non-perfect-square q, missing valid divisors/k's."
+ },
+ {
+  "task_id": 147,
+  "index": 146,
+  "verdict": "incorrect",
+  "reason": "check_order wrongly prints 0 whenever array is already strictly increasing, instead of max-min."
+ },
+ {
+  "task_id": 148,
+  "index": 147,
+  "verdict": "incorrect",
+  "reason": "Min sentinel y=1e8 is too small; fails when all a_i > 1e8 (allowed up to 1e9), giving wrong negative-ish diff."
+ },
+ {
+  "task_id": 149,
+  "index": 148,
+  "verdict": "correct",
+  "reason": "Correctly computes max-min after sort, matching telescoping sum a_n-a_1."
+ },
+ {
+  "task_id": 150,
+  "index": 149,
+  "verdict": "incorrect",
+  "reason": "Sums multiple paired differences (a[n-1-i]-a[i]) instead of single max-min; fails sample 3 (93 vs expected 57)."
+ },
+ {
+  "task_id": 151,
+  "index": 150,
+  "verdict": "correct",
+  "reason": "Sum telescopes to max-min; sorted consecutive abs-diff sum equals that."
+ },
+ {
+  "task_id": 152,
+  "index": 151,
+  "verdict": "incorrect",
+  "reason": "Zigzag arrangement solves abs-diff variant; fails sample 1 (gives 3 not 2)."
+ },
+ {
+  "task_id": 153,
+  "index": 152,
+  "verdict": "incorrect",
+  "reason": "Prints sorted array itself instead of computed beauty integer."
+ },
+ {
+  "task_id": 154,
+  "index": 153,
+  "verdict": "correct",
+  "reason": "ceil(k/2) except full coverage k=4n-2; matches derived formula (4n-3 odd coincides)."
+ },
+ {
+  "task_id": 155,
+  "index": 154,
+  "verdict": "correct",
+  "reason": "Threshold 4n-4 with +1 correction for last two k values matches true formula."
+ },
+ {
+  "task_id": 156,
+  "index": 155,
+  "verdict": "incorrect",
+  "reason": "Wrong threshold 2n; e.g. n=4,k=10 achievable with 5 cells but code needs 6."
+ },
+ {
+  "task_id": 157,
+  "index": 156,
+  "verdict": "correct",
+  "reason": "Exact case split k<=4n-4/4n-3/4n-2 matches derived optimal covering formula."
+ },
+ {
+  "task_id": 158,
+  "index": 157,
+  "verdict": "incorrect",
+  "reason": "Fails given sample n=3,k=9: formula outputs 6 instead of expected 5."
+ },
+ {
+  "task_id": 159,
+  "index": 158,
+  "verdict": "correct",
+  "reason": "Direct simulation of minimal escalating bet recursion; matches all samples."
+ },
+ {
+  "task_id": 160,
+  "index": 159,
+  "verdict": "correct",
+  "reason": "Case-split closed form equivalent to correct recursion, thresholds verified correct."
+ },
+ {
+  "task_id": 161,
+  "index": 160,
+  "verdict": "incorrect",
+  "reason": "Off-by-one bug: x==k-1 branch uses a>=x+3 instead of correct x+2."
+ },
+ {
+  "task_id": 162,
+  "index": 161,
+  "verdict": "incorrect",
+  "reason": "Never sorts array; pairs elements by original order/removal, wrong for general input."
+ },
+ {
+  "task_id": 163,
+  "index": 162,
+  "verdict": "correct",
+  "reason": "Sorts ascending and sums even-indexed elements, the known optimal strategy."
+ },
+ {
+  "task_id": 164,
+  "index": 163,
+  "verdict": "correct",
+  "reason": "Sorts ascending and sums every other element (even indices); matches optimal."
+ },
+ {
+  "task_id": 165,
+  "index": 164,
+  "verdict": "incorrect",
+  "reason": "Sorts numbers as strings (lexicographic) not integers; wrong for multi-digit values."
+ },
+ {
+  "task_id": 166,
+  "index": 165,
+  "verdict": "correct",
+  "reason": "Sorts ascending, sums every other element (min-pairing greedy); reads input correctly."
+ },
+ {
+  "task_id": 167,
+  "index": 166,
+  "verdict": "incorrect",
+  "reason": "Sorts list1 as strings (lexicographic) not ints before picking every-other element; wrong for multi-digit values."
+ },
+ {
+  "task_id": 168,
+  "index": 167,
+  "verdict": "correct",
+  "reason": "Descending evens at even idx, ascending odds at odd idx; matches known valid construction, checked n=3,4."
+ },
+ {
+  "task_id": 169,
+  "index": 168,
+  "verdict": "correct",
+  "reason": "Reverses even-position subsequence of identity perm; verified valid for n=3,4,5,6 by hand."
+ },
+ {
+  "task_id": 170,
+  "index": 169,
+  "verdict": "incorrect",
+  "reason": "Same algorithm as correct version but prints list with print(a) giving brackets/commas, wrong output format."
+ },
+ {
+  "task_id": 171,
+  "index": 170,
+  "verdict": "correct",
+  "reason": "Cumulative 'cur' correctly cascades leftover duplicate slots across multiple gaps; verified via constructed case."
+ },
+ {
+  "task_id": 172,
+  "index": 171,
+  "verdict": "incorrect",
+  "reason": "Only checks counter of immediately preceding value, can't cascade duplicates across gaps; gives suboptimal (non-lex-max) answer in constructed case."
+ },
+ {
+  "task_id": 173,
+  "index": 172,
+  "verdict": "correct",
+  "reason": "Branch logic for a,az,zz forms correctly derived; matches all 5 examples and boundary checks."
+ },
+ {
+  "task_id": 174,
+  "index": 173,
+  "verdict": "incorrect",
+  "reason": "Boundary changed to n>26 so n=27 hits alphabet[-1] (negative index wraparound to 'z'), giving wrong sum 53 instead of 27."
+ },
+ {
+  "task_id": 175,
+  "index": 174,
+  "verdict": "correct",
+  "reason": "Greedy builds valid triple then sorts ascending for lexicographically smallest word; matches all 5 examples and extra checks."
+ },
+ {
+  "task_id": 176,
+  "index": 175,
+  "verdict": "incorrect",
+  "reason": "Prints all characters with end='' and no separators at all between test cases, producing one run-on string instead of one word per line."
+ },
+ {
+  "task_id": 177,
+  "index": 176,
+  "verdict": "correct",
+  "reason": "Standard prefix-sum-vs-mean-never-negative check for left-to-right pouring; correct known approach."
+ },
+ {
+  "task_id": 178,
+  "index": 177,
+  "verdict": "incorrect",
+  "reason": "Formula ignores element order/position entirely (only uses last elem and aggregate sum); fails on constructed case [0,0,3] (should be NO, gives YES)."
+ },
+ {
+  "task_id": 179,
+  "index": 178,
+  "verdict": "incorrect",
+  "reason": "Reads all input as single test case (data[0] treated as n, actually t), ignoring multi-test-case format entirely; outputs one line instead of t."
+ },
+ {
+  "task_id": 180,
+  "index": 179,
+  "verdict": "correct",
+  "reason": "Prefix/suffix matching-run technique; verified exactly against all 8 example cases."
+ },
+ {
+  "task_id": 181,
+  "index": 180,
+  "verdict": "incorrect",
+  "reason": "Matches mirrored pairs arr[i]==arr[j] instead of prefix/suffix runs; misjudges palindromic non-constant arrays as cost 0."
+ },
+ {
+  "task_id": 182,
+  "index": 181,
+  "verdict": "correct",
+  "reason": "Computes prefix/suffix run lengths correctly, combines when endpoints equal; matches derived correct formula."
+ },
+ {
+  "task_id": 183,
+  "index": 182,
+  "verdict": "correct",
+  "reason": "Two-pointer prefix/suffix run counts with correct combine-and-clamp logic; matches expected formula and examples."
+ },
+ {
+  "task_id": 184,
+  "index": 183,
+  "verdict": "incorrect",
+  "reason": "General branch ans=r-l is wrong when both prefix and suffix runs >1 and endpoints differ (verified counterexample)."
+ },
+ {
+  "task_id": 185,
+  "index": 184,
+  "verdict": "incorrect",
+  "reason": "Function defined but never invoked; no stdin reading or printing of results; produces no valid output at all."
+ },
+ {
+  "task_id": 186,
+  "index": 185,
+  "verdict": "correct",
+  "reason": "Correct residue-pair (mod x, mod y) counting matching required condition; verified against sample by hand."
+ },
+ {
+  "task_id": 187,
+  "index": 186,
+  "verdict": "incorrect",
+  "reason": "Sums independent x-condition and y-condition matches instead of intersection; overcounts pairs satisfying only one."
+ },
+ {
+  "task_id": 188,
+  "index": 187,
+  "verdict": "correct",
+  "reason": "Correct residue-pair counting matching required condition; standard 2-line-per-case parsing works fine."
+ },
+ {
+  "task_id": 189,
+  "index": 188,
+  "verdict": "correct",
+  "reason": "Sorts trailing-zero counts desc, subtracts every-other value vs total digits; verified matches all 9 sample cases."
+ },
+ {
+  "task_id": 190,
+  "index": 189,
+  "verdict": "correct",
+  "reason": "Same greedy as verified-correct sibling (filters zero counts, but equivalent since zero entries contribute nothing)."
+ },
+ {
+  "task_id": 191,
+  "index": 190,
+  "verdict": "incorrect",
+  "reason": "Identical correct greedy logic but prints 'Sashah' typo instead of 'Sasha', failing every Sasha-win test case."
+ },
+ {
+  "task_id": 192,
+  "index": 191,
+  "verdict": "incorrect",
+  "reason": "Constructs number and checks strict 10^m < result; fails equality boundary e.g. n=1,m=0,[1] should be Sasha not Anna."
+ },
+ {
+  "task_id": 193,
+  "index": 192,
+  "verdict": "correct",
+  "reason": "Handles idx1/idx2 == -1 by normalizing to n-2 before comparison; reconstruction logic looks sound."
+ },
+ {
+  "task_id": 194,
+  "index": 193,
+  "verdict": "incorrect",
+  "reason": "Missing idx1/idx2 -1 normalization present in near-identical sibling; causes list.insert(-1,...) corrupting result."
+ },
+ {
+  "task_id": 195,
+  "index": 194,
+  "verdict": "correct",
+  "reason": "Greedy preferring step+1 over step+2 visits maximal reachable cells since future depends only on position; matches examples."
+ },
+ {
+  "task_id": 196,
+  "index": 195,
+  "verdict": "incorrect",
+  "reason": "Returns dp at last cell only; misses early stop optimum, fails ex.3 (0 vs 3)"
+ },
+ {
+  "task_id": 197,
+  "index": 196,
+  "verdict": "incorrect",
+  "reason": "'.' branch uses 'thorn==0' (no assign), stale count breaks wrongly on later single thorns"
+ },
+ {
+  "task_id": 198,
+  "index": 197,
+  "verdict": "incorrect",
+  "reason": "'if b[::]' always truthy so it breaks at first thorn seen; wrong even on example 1"
+ },
+ {
+  "task_id": 199,
+  "index": 198,
+  "verdict": "correct",
+  "reason": "Ceiling-to-next-multiple recurrence matches all examples, O(n) overall"
+ },
+ {
+  "task_id": 200,
+  "index": 199,
+  "verdict": "incorrect",
+  "reason": "Code implements unrelated coin-path DP, mis-parses signs array input"
+ },
+ {
+  "task_id": 201,
+  "index": 200,
+  "verdict": "correct",
+  "reason": "Correct next-multiple-after-current-year logic, matches all examples"
+ },
+ {
+  "task_id": 202,
+  "index": 201,
+  "verdict": "incorrect",
+  "reason": "Adds remainder instead of (ai-remainder); fails ex.1 step (year 11 vs 10)"
+ },
+ {
+  "task_id": 203,
+  "index": 202,
+  "verdict": "correct",
+  "reason": "(year//ai+1)*ai correctly computes next multiple > year, verified on all examples"
+ },
+ {
+  "task_id": 204,
+  "index": 203,
+  "verdict": "incorrect",
+  "reason": "Extra +1 inside floor division breaks formula; fails ex.1 step (6 vs 4)"
+ },
+ {
+  "task_id": 205,
+  "index": 204,
+  "verdict": "incorrect",
+  "reason": "Exact big-integer product with %MOD applied mid-way corrupts later divisions for large n; also too slow"
+ },
+ {
+  "task_id": 206,
+  "index": 205,
+  "verdict": "correct",
+  "reason": "O(n) suffix product mod m via reversed removal list, matches example exactly"
+ },
+ {
+  "task_id": 207,
+  "index": 206,
+  "verdict": "incorrect",
+  "reason": "Missing '% m' entirely when accumulating product; prints raw unreduced products"
+ },
+ {
+  "task_id": 208,
+  "index": 207,
+  "verdict": "correct",
+  "reason": "Backward suffix-product reconstruction with correct L/R pointers, matches both examples"
+ },
+ {
+  "task_id": 209,
+  "index": 208,
+  "verdict": "correct",
+  "reason": "Descending sort + pop-from-end yields valid ascending (beaten,beater) trump pairs"
+ },
+ {
+  "task_id": 210,
+  "index": 209,
+  "verdict": "incorrect",
+  "reason": "Ascending sort + pop-from-end yields invalid descending pairs, fails on ex.1 leftover trumps"
+ },
+ {
+  "task_id": 211,
+  "index": 210,
+  "verdict": "correct",
+  "reason": "argmax then OR-tie collection then min-value tiebreak; query budget fits 3n"
+ },
+ {
+  "task_id": 212,
+  "index": 211,
+  "verdict": "incorrect",
+  "reason": "final print uses loop index 'mak' into pans instead of pans[mak], wrong index output"
+ },
+ {
+  "task_id": 213,
+  "index": 212,
+  "verdict": "correct",
+  "reason": "argmax then inline max-OR tracking with value tiebreak on ties; fits 3n-1 queries"
+ },
+ {
+  "task_id": 214,
+  "index": 213,
+  "verdict": "correct",
+  "reason": "same correct argmax+OR-tie+min-value algorithm, budget well under 3n"
+ },
+ {
+  "task_id": 215,
+  "index": 214,
+  "verdict": "correct",
+  "reason": "computes largest power of two <= n correctly, verified against all examples"
+ },
+ {
+  "task_id": 216,
+  "index": 215,
+  "verdict": "incorrect",
+  "reason": "compares power to n instead of log2(n); wrong for n=2 (outputs 1 not 2) and n=4"
+ },
+ {
+  "task_id": 217,
+  "index": 216,
+  "verdict": "correct",
+  "reason": "finds break via first '10' pattern then batch-verifies tie run backward; matches all 3 examples"
+ },
+ {
+  "task_id": 218,
+  "index": 217,
+  "verdict": "incorrect",
+  "reason": "tie-count loop always succeeds at i=0 since s and a0 share prefix, giving wrong count (3 not 1 on example2)"
+ },
+ {
+  "task_id": 219,
+  "index": 218,
+  "verdict": "correct",
+  "reason": "linear scan builds answer and count together with matching stop/reset conditions; matches all examples"
+ },
+ {
+  "task_id": 220,
+  "index": 219,
+  "verdict": "correct",
+  "reason": "finds break index then counts backward ties range(point,0,-1); matches all 3 examples exactly"
+ },
+ {
+  "task_id": 221,
+  "index": 220,
+  "verdict": "incorrect",
+  "reason": "count loop uses range(point,-1,-1), causing s2[-1] wraparound at i=0; gives count=3 instead of 2 on example1"
+ },
+ {
+  "task_id": 222,
+  "index": 221,
+  "verdict": "incorrect",
+  "reason": "phase1 compares OR(p0,max) vs OR(p0,i) instead of self-OR; fails to find true argmax when p0!=0"
+ },
+ {
+  "task_id": 223,
+  "index": 222,
+  "verdict": "correct",
+  "reason": "argmax then max-OR tracking with value tiebreak on ties, mirrors correct pattern, fits budget"
+ },
+ {
+  "task_id": 224,
+  "index": 223,
+  "verdict": "incorrect",
+  "reason": "no tiebreak among indices tied for max OR with argmax; picks wrong partner when ties exist, wrong XOR"
+ },
+ {
+  "task_id": 225,
+  "index": 224,
+  "verdict": "correct",
+  "reason": "argmax then OR-tie collection then min-value tiebreak tournament; correct and within budget"
+ },
+ {
+  "task_id": 226,
+  "index": 225,
+  "verdict": "incorrect",
+  "reason": "OR-argmax anchor greedy doesn't find true XOR-max pair; OR ranking != XOR ranking"
+ },
+ {
+  "task_id": 227,
+  "index": 226,
+  "verdict": "correct",
+  "reason": "last() uses local n=len(arr) correctly; complex but consistent prefix-sum formula"
+ },
+ {
+  "task_id": 228,
+  "index": 227,
+  "verdict": "incorrect",
+  "reason": "bug: last() uses global n instead of len(arr) (unused l computed), wrong clamp/index"
+ },
+ {
+  "task_id": 229,
+  "index": 228,
+  "verdict": "correct",
+  "reason": "A/B prefix approach, consistent formulas, matches sibling-correct pattern"
+ },
+ {
+  "task_id": 230,
+  "index": 229,
+  "verdict": "incorrect",
+  "reason": "bug: 'b = (...)' overwrites instead of 'b = b + (...)', drops prior term"
+ },
+ {
+  "task_id": 231,
+  "index": 230,
+  "verdict": "correct",
+  "reason": "standard greedy left-to-right zeroing simulation, matches example"
+ },
+ {
+  "task_id": 232,
+  "index": 231,
+  "verdict": "incorrect",
+  "reason": "only checks parity/endpoints; fails e.g. a=[1,3,100,3,1] (should be NO)"
+ },
+ {
+  "task_id": 233,
+  "index": 232,
+  "verdict": "correct",
+  "reason": "odd while-loop style but self-zeroing pivot + final isempty() catches all infeasibility"
+ },
+ {
+  "task_id": 234,
+  "index": 233,
+  "verdict": "incorrect",
+  "reason": "bug: zeroes list[i-1] before using its value to update list[i]/list[i+1], no-op subtraction"
+ },
+ {
+  "task_id": 235,
+  "index": 234,
+  "verdict": "correct",
+  "reason": "standard greedy left-to-right zeroing, matches example"
+ },
+ {
+  "task_id": 236,
+  "index": 235,
+  "verdict": "incorrect",
+  "reason": "s.replace('map','') can merge remainders into spurious new 'pie', overcounts e.g. 'pimape'"
+ },
+ {
+  "task_id": 237,
+  "index": 236,
+  "verdict": "correct",
+  "reason": "count(map)+count(pie)-count(mapie) correctly handles the only overlap case"
+ },
+ {
+  "task_id": 238,
+  "index": 237,
+  "verdict": "incorrect",
+  "reason": "missing mapie overlap correction, overcounts overlapping map+pie patterns"
+ },
+ {
+  "task_id": 239,
+  "index": 238,
+  "verdict": "correct",
+  "reason": "greedy 3-window scan skipping 3 on match correctly handles overlaps like mapie"
+ },
+ {
+  "task_id": 240,
+  "index": 239,
+  "verdict": "incorrect",
+  "reason": "special-case only exact string 'mapie'; embedded case e.g. 'xmapiex' overcounts (2 vs true 1)"
+ },
+ {
+  "task_id": 241,
+  "index": 240,
+  "verdict": "correct",
+  "reason": "Set simulation over m throws, O(n*m), sorts and remaps 0->n correctly."
+ },
+ {
+  "task_id": 242,
+  "index": 241,
+  "verdict": "incorrect",
+  "reason": "Same logic but prints set unsorted; problem requires increasing order output."
+ },
+ {
+  "task_id": 243,
+  "index": 242,
+  "verdict": "correct",
+  "reason": "Sliding window min via heap for DP over supports; matches distance constraint logic."
+ },
+ {
+  "task_id": 244,
+  "index": 243,
+  "verdict": "incorrect",
+  "reason": "Uses min() over slice each step -> O(m*d) worst case, TLE for large d,m."
+ },
+ {
+  "task_id": 245,
+  "index": 244,
+  "verdict": "correct",
+  "reason": "Finds largest+second gap correctly, binary searches D per f to minimize split; matches samples."
+ },
+ {
+  "task_id": 246,
+  "index": 245,
+  "verdict": "incorrect",
+  "reason": "Bug: fails to propagate old max_diff into next_max_diff when max updates, underestimates bound."
+ },
+ {
+  "task_id": 247,
+  "index": 246,
+  "verdict": "incorrect",
+  "reason": "k==1 case uses range(n) giving value 0, violating constraint a_i>=1."
+ },
+ {
+  "task_id": 248,
+  "index": 247,
+  "verdict": "correct",
+  "reason": "k=n prints constant k, k=1 prints 1..n, else -1; matches proven only-k=1/n-possible logic."
+ },
+ {
+  "task_id": 249,
+  "index": 248,
+  "verdict": "correct",
+  "reason": "Backward mex reconstruction p[i]=mex-a[i], mex=min(mex,p[i]); matches all sample outputs exactly."
+ },
+ {
+  "task_id": 250,
+  "index": 249,
+  "verdict": "correct",
+  "reason": "Forward reconstruction with used-set and amortized mex advance; matches derivation and samples."
+ },
+ {
+  "task_id": 251,
+  "index": 250,
+  "verdict": "incorrect",
+  "reason": "maxx-only tracking misses multi-value skips, can reuse an already-used value (duplicate in permutation)."
+ },
+ {
+  "task_id": 252,
+  "index": 251,
+  "verdict": "correct",
+  "reason": "Same backward mex formula as correct solution, just written with an if instead of min()."
+ },
+ {
+  "task_id": 253,
+  "index": 252,
+  "verdict": "correct",
+  "reason": "x-2 plus bonus for gap-2 pairs incl. wraparound special cases; matches all 3 samples exactly."
+ },
+ {
+  "task_id": 254,
+  "index": 253,
+  "verdict": "correct",
+  "reason": "Same idea, general wraparound gap formula (arr[0]+n-arr[-1]-1); matches samples."
+ },
+ {
+  "task_id": 255,
+  "index": 254,
+  "verdict": "incorrect",
+  "reason": "Wraparound gap uses only n-arr[-1], ignoring arr[0] contribution; wrong when arr[0]!=1."
+ },
+ {
+  "task_id": 256,
+  "index": 255,
+  "verdict": "incorrect",
+  "reason": "Easy version prints x-2 only; omits the +1 per gap holding exactly one unchosen vertex."
+ },
+ {
+  "task_id": 257,
+  "index": 256,
+  "verdict": "correct",
+  "reason": "x-2 plus gap-1 bonus, then fills odd gaps before even (odd give >2 triangles per added vertex)."
+ },
+ {
+  "task_id": 258,
+  "index": 257,
+  "verdict": "incorrect",
+  "reason": "Sorts all gaps by size ignoring parity; odd gaps are more efficient, so the greedy is suboptimal."
+ },
+ {
+  "task_id": 259,
+  "index": 258,
+  "verdict": "incorrect",
+  "reason": "Counts the added vertices twice: starts at x+y-2 and then adds the leftover y again at the end."
+ },
+ {
+  "task_id": 260,
+  "index": 259,
+  "verdict": "incorrect",
+  "reason": "Wraparound branch reuses the stale loop variable i instead of the wrap gap; same double count as its twin."
+ },
+ {
+  "task_id": 261,
+  "index": 260,
+  "verdict": "correct",
+  "reason": "Sort key puts odd gaps first then even, each ascending; gap-1 handled free inside the loop."
+ },
+ {
+  "task_id": 262,
+  "index": 261,
+  "verdict": "incorrect",
+  "reason": "Adds +1 for gap==1 while building val and again when the main loop consumes that gap - double counted."
+ },
+ {
+  "task_id": 263,
+  "index": 262,
+  "verdict": "correct",
+  "reason": "Allows two 'count<2' values before failing, matching first-missing / second-singleton rule."
+ },
+ {
+  "task_id": 264,
+  "index": 263,
+  "verdict": "incorrect",
+  "reason": "Overrides the answer with the second singleton even when an earlier missing value is smaller."
+ },
+ {
+  "task_id": 265,
+  "index": 264,
+  "verdict": "incorrect",
+  "reason": "Uses condition M[i] <= i (count vs index) instead of locating the second singleton."
+ },
+ {
+  "task_id": 266,
+  "index": 265,
+  "verdict": "correct",
+  "reason": "Standard rule: stop at first missing value, or at the second value occurring exactly once."
+ },
+ {
+  "task_id": 267,
+  "index": 266,
+  "verdict": "incorrect",
+  "reason": "Loops range(n) instead of range(n+1); for n=1 with a=[0] it prints nothing."
+ },
+ {
+  "task_id": 268,
+  "index": 267,
+  "verdict": "correct",
+  "reason": "Diameter path, then operations anchored at the true midpoint vertices path_ba[ci1], path_ba[ci2]."
+ },
+ {
+  "task_id": 269,
+  "index": 268,
+  "verdict": "incorrect",
+  "reason": "Sets c1/c2 to path indices rather than path_ba[...] vertices, so the emitted operations name wrong vertices."
+ },
+ {
+  "task_id": 270,
+  "index": 269,
+  "verdict": "correct",
+  "reason": "Isolating island 1 costs n-1 cuts and is cheapest, so 1 if k>=n-1 else n; matches all samples."
+ },
+ {
+  "task_id": 271,
+  "index": 270,
+  "verdict": "incorrect",
+  "reason": "Wrong formula: should be 1 if k>=n-1 else n; code gives 1 or n-1"
+ },
+ {
+  "task_id": 272,
+  "index": 271,
+  "verdict": "incorrect",
+  "reason": "Condition reversed: prints n when k>=n-1 instead of 1, fails sample n=2,k=1"
+ },
+ {
+  "task_id": 273,
+  "index": 272,
+  "verdict": "correct",
+  "reason": "Correctly uses doubles(zeroed after use) then matching cross-singles on both sides"
+ },
+ {
+  "task_id": 274,
+  "index": 273,
+  "verdict": "incorrect",
+  "reason": "Missing reset of l[]/r[] after using a double, can reprint same value beyond its count"
+ },
+ {
+  "task_id": 275,
+  "index": 274,
+  "verdict": "incorrect",
+  "reason": "Singles detection skips boundary indices 0 and n-1, produces empty output on sample 1"
+ },
+ {
+  "task_id": 276,
+  "index": 275,
+  "verdict": "correct",
+  "reason": "Uses doubles+matching cross singles; incomplete single-list cases coincide with unneeded cases"
+ },
+ {
+  "task_id": 277,
+  "index": 276,
+  "verdict": "correct",
+  "reason": "Counts singles via freq array up to n+1, matches known correct mex/singles algorithm"
+ },
+ {
+  "task_id": 278,
+  "index": 277,
+  "verdict": "incorrect",
+  "reason": "Greedy in-order Alice strategy is suboptimal; fails to protect scattered singles, wrong answer"
+ },
+ {
+  "task_id": 279,
+  "index": 278,
+  "verdict": "correct",
+  "reason": "Correct singles-counting algorithm with safe range(N+1) and defaultdict"
+ },
+ {
+  "task_id": 280,
+  "index": 279,
+  "verdict": "incorrect",
+  "reason": "Off-by-one: loops range(N) not N+1, misses output for N=1 all-single edge case"
+ },
+ {
+  "task_id": 281,
+  "index": 280,
+  "verdict": "correct",
+  "reason": "Matches derived formula a+ceil((b+c)/3) with correct feasibility check b%3+c<3"
+ },
+ {
+  "task_id": 282,
+  "index": 281,
+  "verdict": "incorrect",
+  "reason": "Does not read stdin at all; runs against hardcoded example string and prints debug text"
+ },
+ {
+  "task_id": 283,
+  "index": 282,
+  "verdict": "correct",
+  "reason": "One-liner equivalent to correct formula, verified algebraically equivalent feasibility check"
+ },
+ {
+  "task_id": 284,
+  "index": 283,
+  "verdict": "correct",
+  "reason": "Matches correct formula a+ceil((b+c)/3) with proper feasibility condition"
+ },
+ {
+  "task_id": 285,
+  "index": 284,
+  "verdict": "incorrect",
+  "reason": "Flawed feasibility condition; e.g. b=2,c=2 wrongly outputs -1 though answer is 2"
+ },
+ {
+  "task_id": 286,
+  "index": 285,
+  "verdict": "correct",
+  "reason": "ans=m//a+m//b+2, integer math, matches all sample outputs exactly."
+ },
+ {
+  "task_id": 287,
+  "index": 286,
+  "verdict": "incorrect",
+  "reason": "Uses float division m/a with a,m up to 1e18; precision loss can give wrong floor(m/a)."
+ },
+ {
+  "task_id": 288,
+  "index": 287,
+  "verdict": "correct",
+  "reason": "Case split with < / > reduces algebraically to m//a+m//b+2 in all branches; correct."
+ },
+ {
+  "task_id": 289,
+  "index": 288,
+  "verdict": "incorrect",
+  "reason": "If m<a but m>=b>1, drops the m//b term, printing 2 instead of 2+m//b."
+ },
+ {
+  "task_id": 290,
+  "index": 289,
+  "verdict": "correct",
+  "reason": "Directly prints m//a+m//b+2, the correct closed-form formula."
+ },
+ {
+  "task_id": 291,
+  "index": 290,
+  "verdict": "incorrect",
+  "reason": "Ad hoc mn=min(a,b)+m formula fails e.g. a=b=2,m=4: gives 7 instead of correct 6."
+ },
+ {
+  "task_id": 292,
+  "index": 291,
+  "verdict": "incorrect",
+  "reason": "Uses hardcoded sentinel 30001 as 'infinity' for distance, too small for n up to 3e5, can output wrong ans=0."
+ },
+ {
+  "task_id": 293,
+  "index": 292,
+  "verdict": "correct",
+  "reason": "O(n) prefix sums, correct ceil condition via integer left*2>=lsum, dynamic -1 sentinel; matches samples."
+ },
+ {
+  "task_id": 294,
+  "index": 293,
+  "verdict": "incorrect",
+  "reason": "Loops only range(n), never checks i=n; fails own sample n=3 s=000 (expects 3, gives 0)."
+ },
+ {
+  "task_id": 295,
+  "index": 294,
+  "verdict": "correct",
+  "reason": "Two-pointer shrink/grow from mid; verified against all 7 samples including tricky edge cases."
+ },
+ {
+  "task_id": 296,
+  "index": 295,
+  "verdict": "incorrect",
+  "reason": "In right==n branch picks n over already-valid closer 'left' candidate without distance compare; wrong when both valid."
+ },
+ {
+  "task_id": 297,
+  "index": 296,
+  "verdict": "correct",
+  "reason": "Floor-division percent check correctly implements ceil condition; matches all samples incl. edge cases."
+ },
+ {
+  "task_id": 298,
+  "index": 297,
+  "verdict": "incorrect",
+  "reason": "Uses math.ceil on percentage instead of floor; e.g. i+1=101,zero=50 wrongly passes when it should fail."
+ },
+ {
+  "task_id": 299,
+  "index": 298,
+  "verdict": "correct",
+  "reason": "c=min(a,b) suffix sum + a[i] over candidates i<k; matches known formula and all sample outputs."
+ },
+ {
+  "task_id": 300,
+  "index": 299,
+  "verdict": "incorrect",
+  "reason": "Second loop accumulates raw b instead of min(a,b) for pass-through candidates, overcounting cost (verified divergence)."
+ },
+ {
+  "task_id": 301,
+  "index": 300,
+  "verdict": "correct",
+  "reason": "Suffix-min-sum + min-over-prefix DP matches formula; verified against sample."
+ },
+ {
+  "task_id": 302,
+  "index": 301,
+  "verdict": "incorrect",
+  "reason": "Uses 10**12 as infinity but true costs can reach ~2e14; wrong on large inputs."
+ },
+ {
+  "task_id": 303,
+  "index": 302,
+  "verdict": "correct",
+  "reason": "Same suffix-min DP with float('inf'), correctly handles m=1 edge case."
+ },
+ {
+  "task_id": 304,
+  "index": 303,
+  "verdict": "incorrect",
+  "reason": "Second loop range excludes index 0 when m=1; fails sample test 4 (gives 1 not 3)."
+ },
+ {
+  "task_id": 305,
+  "index": 304,
+  "verdict": "correct",
+  "reason": "Full 0/1/2-swap case analysis for binary-search-manipulation problem; verified valid."
+ },
+ {
+  "task_id": 306,
+  "index": 305,
+  "verdict": "correct",
+  "reason": "Simple swap(l_final,pos_x) is a universally valid 1-swap solution; bounds correct."
+ },
+ {
+  "task_id": 307,
+  "index": 306,
+  "verdict": "incorrect",
+  "reason": "Off-by-one: uses high=n-1 instead of n, simulate mismatches real algorithm, fails sample."
+ },
+ {
+  "task_id": 308,
+  "index": 307,
+  "verdict": "correct",
+  "reason": "Correct bounds (0,n) and comparison direction; valid universal 1-swap construction."
+ },
+ {
+  "task_id": 309,
+  "index": 308,
+  "verdict": "incorrect",
+  "reason": "Uses generic lower-bound bisection, not the described procedure; fails sample test 4."
+ },
+ {
+  "task_id": 310,
+  "index": 309,
+  "verdict": "correct",
+  "reason": "SortedList removal of p_i values per k, strict '>' for min-k tie-break; matches example."
+ },
+ {
+  "task_id": 311,
+  "index": 310,
+  "verdict": "correct",
+  "reason": "Negated SortedMultiset, loop bound (n+1)//2 correct, handles n=1; matches example."
+ },
+ {
+  "task_id": 312,
+  "index": 311,
+  "verdict": "incorrect",
+  "reason": "Loop is range(1,n); empty for n=1, leaves ans=-1 instead of correct answer."
+ },
+ {
+  "task_id": 313,
+  "index": 312,
+  "verdict": "incorrect",
+  "reason": "Hardcoded n>10000 branch prints garbage and breaks entire test loop; wrong format."
+ },
+ {
+  "task_id": 314,
+  "index": 313,
+  "verdict": "incorrect",
+  "reason": "a.count(a[p]) counts occurrences before p too, overcounting; fails sample test 4 (4 vs 3)."
+ },
+ {
+  "task_id": 315,
+  "index": 314,
+  "verdict": "correct",
+  "reason": "Counts only from median index onward; matches derived formula and sample outputs."
+ },
+ {
+  "task_id": 316,
+  "index": 315,
+  "verdict": "incorrect",
+  "reason": "Uses n//2 as median index instead of (n-1)//2 for even n; fails sample [1,1] (gives 1, expected 2)."
+ },
+ {
+  "task_id": 317,
+  "index": 316,
+  "verdict": "correct",
+  "reason": "Correct Kadane + doubling formula S+M*(2^k-1); matches all provided samples."
+ },
+ {
+  "task_id": 318,
+  "index": 317,
+  "verdict": "correct",
+  "reason": "Same correct formula via modular loop doubling; matches samples e.g. 351."
+ },
+ {
+  "task_id": 319,
+  "index": 318,
+  "verdict": "correct",
+  "reason": "Convoluted but correct Kadane reimplementation with proper filtering of invalid segments; traces match."
+ },
+ {
+  "task_id": 320,
+  "index": 319,
+  "verdict": "incorrect",
+  "reason": "Removed inline filter for fake length-1 segment; bogus index value can outrank real max sum, giving wrong M."
+ },
+ {
+  "task_id": 321,
+  "index": 320,
+  "verdict": "correct",
+  "reason": "Iterative fresh-state binary search + tree DP; traced checks match expected answers."
+ },
+ {
+  "task_id": 322,
+  "index": 321,
+  "verdict": "correct",
+  "reason": "Recursive greedy cut-count DP with correct global numCuts handling; matches known technique."
+ },
+ {
+  "task_id": 323,
+  "index": 322,
+  "verdict": "incorrect",
+  "reason": "numCuts assigned locally in boom() while dfs() references module-global numCuts -> NameError on any cut."
+ },
+ {
+  "task_id": 324,
+  "index": 323,
+  "verdict": "incorrect",
+  "reason": "TreeNode good_components/remaining_size never reset between binary-search calls; state leak gives wrong result (verified on ex.4)."
+ },
+ {
+  "task_id": 325,
+  "index": 324,
+  "verdict": "correct",
+  "reason": "Bit-DP XOR/OR greedy; traced against multiple samples incl. the -1 case, all match."
+ },
+ {
+  "task_id": 326,
+  "index": 325,
+  "verdict": "incorrect",
+  "reason": "Wastes a full extra recursive branch at every bit where x has a 1; exponential blowup, TLE for large x."
+ },
+ {
+  "task_id": 327,
+  "index": 326,
+  "verdict": "incorrect",
+  "reason": "Validates R[0]!=N instead of R[-1]!=N; incorrectly returns 0 on sample 2 (expected 3)."
+ },
+ {
+  "task_id": 328,
+  "index": 327,
+  "verdict": "correct",
+  "reason": "Correct combinatorial approach with proper prefix/suffix validity checks; traced samples match."
+ },
+ {
+  "task_id": 329,
+  "index": 328,
+  "verdict": "incorrect",
+  "reason": "Alternating AB/BA block pattern leaves boundary chars non-special; n=2 sample yields 0 specials, not 2."
+ },
+ {
+  "task_id": 330,
+  "index": 329,
+  "verdict": "correct",
+  "reason": "AAB-repeated block gives exactly 2 specials per block; traced correct for n=2,6, within length limit."
+ },
+ {
+  "task_id": 331,
+  "index": 330,
+  "verdict": "incorrect",
+  "reason": "Uses digits '1'/'0' not uppercase Latin letters as required by output format"
+ },
+ {
+  "task_id": 332,
+  "index": 331,
+  "verdict": "incorrect",
+  "reason": "Only n=1 treated as impossible; other odd n get wrong special-char count (parity always even)"
+ },
+ {
+  "task_id": 333,
+  "index": 332,
+  "verdict": "correct",
+  "reason": "Right-to-left digit-split check with running representative value; matches samples and edge cases"
+ },
+ {
+  "task_id": 334,
+  "index": 333,
+  "verdict": "incorrect",
+  "reason": "Single forward pass with fixed range misses chain splits, e.g. [12,34,5] wrongly No"
+ },
+ {
+  "task_id": 335,
+  "index": 334,
+  "verdict": "incorrect",
+  "reason": "Greedy drops elements when y<c[n-1] (never appended), e.g. [50,25] wrongly Yes"
+ },
+ {
+  "task_id": 336,
+  "index": 335,
+  "verdict": "correct",
+  "reason": "Same correct right-to-left digit-split algorithm as another correct candidate"
+ },
+ {
+  "task_id": 337,
+  "index": 336,
+  "verdict": "incorrect",
+  "reason": "Single forward pass, fixed range, misses chain splits like [12,34,5]"
+ },
+ {
+  "task_id": 338,
+  "index": 337,
+  "verdict": "correct",
+  "reason": "Column-pair check matches all samples and a constructed adversarial case"
+ },
+ {
+  "task_id": 339,
+  "index": 338,
+  "verdict": "incorrect",
+  "reason": "Fails official example 2 (n=2,\"><\",\"><\") which should be YES, code gives NO"
+ },
+ {
+  "task_id": 340,
+  "index": 339,
+  "verdict": "incorrect",
+  "reason": "Leftover debug print(k) inside loop corrupts stdout output format"
+ },
+ {
+  "task_id": 341,
+  "index": 340,
+  "verdict": "correct",
+  "reason": "Odd-position check matches all samples and agrees with another correct candidate on extra test"
+ },
+ {
+  "task_id": 342,
+  "index": 341,
+  "verdict": "incorrect",
+  "reason": "Ignores row1 entirely, only checks b[n-2]; disagrees with correct candidates on constructed case"
+ },
+ {
+  "task_id": 343,
+  "index": 342,
+  "verdict": "correct",
+  "reason": "Standard O(n^2) sliding count for max tandem-repeat half-length with '?' wildcard; matches all samples"
+ },
+ {
+  "task_id": 344,
+  "index": 343,
+  "verdict": "correct",
+  "reason": "Mountain-shaped block assignment verified to satisfy clique bound exactly for m=k=4,5,7"
+ },
+ {
+  "task_id": 345,
+  "index": 344,
+  "verdict": "incorrect",
+  "reason": "Off-by-one in small-group ordering (ascending) breaks extreme pair for odd m=k, e.g. m=k=5 gives 6>5"
+ },
+ {
+  "task_id": 346,
+  "index": 345,
+  "verdict": "correct",
+  "reason": "Hub-vertex (~n/4) construction bounds both F and S runs within ceil(3n/4), matches derivation"
+ },
+ {
+  "task_id": 347,
+  "index": 346,
+  "verdict": "correct",
+  "reason": "Same hub construction with n//4 (extra slack vs n//4-1 variant), bound still holds"
+ },
+ {
+  "task_id": 348,
+  "index": 347,
+  "verdict": "incorrect",
+  "reason": "Plain recursive DFS, no recursion-limit bump; n=1000 chain graph risks RecursionError"
+ },
+ {
+  "task_id": 349,
+  "index": 348,
+  "verdict": "incorrect",
+  "reason": "No bipartite/back-edge consistency check (only tree edges used); wrong on odd-cycle tangency graphs"
+ },
+ {
+  "task_id": 350,
+  "index": 349,
+  "verdict": "incorrect",
+  "reason": "distribute_number condition can append past group size na, breaking required group sizes"
+ },
+ {
+  "task_id": 351,
+  "index": 350,
+  "verdict": "incorrect",
+  "reason": "Uses max(a,b,c)==b as peak test; fails when b ties with c (e.g. a<b, b==c) giving false PEAK"
+ },
+ {
+  "task_id": 352,
+  "index": 351,
+  "verdict": "correct",
+  "reason": "Direct chained comparison a<b<c / a<b>c matches spec exactly"
+ },
+ {
+  "task_id": 353,
+  "index": 352,
+  "verdict": "incorrect",
+  "reason": "Prints 'STAIRS' instead of required 'STAIR'"
+ },
+ {
+  "task_id": 354,
+  "index": 353,
+  "verdict": "correct",
+  "reason": "Explicit a<b<c / (a<b and b>c) logic, matches spec"
+ },
+ {
+  "task_id": 355,
+  "index": 354,
+  "verdict": "incorrect",
+  "reason": "Ignores input entirely, generates random values, prints lowercase labels"
+ },
+ {
+  "task_id": 356,
+  "index": 355,
+  "verdict": "correct",
+  "reason": "Standard correct chained-comparison solution"
+ },
+ {
+  "task_id": 357,
+  "index": 356,
+  "verdict": "incorrect",
+  "reason": "Second condition uses 'if' not 'elif', causing extra/duplicate NONE line after STAIR cases"
+ },
+ {
+  "task_id": 358,
+  "index": 357,
+  "verdict": "incorrect",
+  "reason": "Only hardcodes n=1..4; n up to 20 required, prints error text for n>=5"
+ },
+ {
+  "task_id": 359,
+  "index": 358,
+  "verdict": "incorrect",
+  "reason": "'0{}'.format(h-12) gives '010' for h=22/23 instead of '10', wrong format"
+ },
+ {
+  "task_id": 360,
+  "index": 359,
+  "verdict": "correct",
+  "reason": "Uses :02d formatting (handles 10/11 correctly) and correct AM/PM/12 rules"
+ },
+ {
+  "task_id": 361,
+  "index": 360,
+  "verdict": "incorrect",
+  "reason": "h==12 (noon) mislabeled AM instead of PM, fails sample"
+ },
+ {
+  "task_id": 362,
+  "index": 361,
+  "verdict": "correct",
+  "reason": "Full 24->12hr hour table correct, format matches, matches example"
+ },
+ {
+  "task_id": 363,
+  "index": 362,
+  "verdict": "incorrect",
+  "reason": "AM/PM swapped for h=='12' and h=='00', fails sample"
+ },
+ {
+  "task_id": 364,
+  "index": 363,
+  "verdict": "incorrect",
+  "reason": "Description is unrelated file-gen script; candidate solves different problem"
+ },
+ {
+  "task_id": 365,
+  "index": 364,
+  "verdict": "incorrect",
+  "reason": "Description is unrelated file-gen script; candidate solves different problem"
+ },
+ {
+  "task_id": 366,
+  "index": 365,
+  "verdict": "incorrect",
+  "reason": "Description is unrelated file-gen script; candidate solves different problem"
+ },
+ {
+  "task_id": 367,
+  "index": 366,
+  "verdict": "incorrect",
+  "reason": "Description is unrelated file-gen script; candidate solves different problem"
+ },
+ {
+  "task_id": 368,
+  "index": 367,
+  "verdict": "incorrect",
+  "reason": "Description is unrelated file-gen script; candidate solves different problem"
+ },
+ {
+  "task_id": 369,
+  "index": 368,
+  "verdict": "incorrect",
+  "reason": "Description is unrelated file-gen script; candidate solves different problem"
+ },
+ {
+  "task_id": 370,
+  "index": 369,
+  "verdict": "incorrect",
+  "reason": "Description is unrelated file-gen script; candidate solves different problem"
+ },
+ {
+  "task_id": 371,
+  "index": 370,
+  "verdict": "correct",
+  "reason": "Swap-to-front and swap-to-break-point logic verified correct on all 3 samples"
+ },
+ {
+  "task_id": 372,
+  "index": 371,
+  "verdict": "incorrect",
+  "reason": "Off-by-one in break index p=j vs j+1, gives 1 not 2 on sample 2"
+ },
+ {
+  "task_id": 373,
+  "index": 372,
+  "verdict": "correct",
+  "reason": "Prefix-run formula matches all 3 samples, logic consistent"
+ },
+ {
+  "task_id": 374,
+  "index": 373,
+  "verdict": "correct",
+  "reason": "Closed-form using first two greater indices matches all 3 samples"
+ },
+ {
+  "task_id": 375,
+  "index": 374,
+  "verdict": "incorrect",
+  "reason": "Leftover debug print(ind) when k==14 corrupts stdout output"
+ },
+ {
+  "task_id": 376,
+  "index": 375,
+  "verdict": "correct",
+  "reason": "Correct O(n log n) formula: q cheapest days full m, priciest selected gets remainder; matches derivation & example."
+ },
+ {
+  "task_id": 377,
+  "index": 376,
+  "verdict": "incorrect",
+  "reason": "Wrong combinatorial term (n-1)*(n-2) instead of (n-1)*n; manual trace gives 18 vs correct 27."
+ },
+ {
+  "task_id": 378,
+  "index": 377,
+  "verdict": "correct",
+  "reason": "Heap greedy buys cheapest-first with uniform price_increase; verified matches correct cost on test case."
+ },
+ {
+  "task_id": 379,
+  "index": 378,
+  "verdict": "correct",
+  "reason": "Sorted greedy loop buying min(m,k) ascending; verified matches correct total via trace."
+ },
+ {
+  "task_id": 380,
+  "index": 379,
+  "verdict": "incorrect",
+  "reason": "Uses float division (k*k/2, s*s/2) for values up to ~1e18, precision loss causes wrong int() truncation."
+ },
+ {
+  "task_id": 381,
+  "index": 380,
+  "verdict": "correct",
+  "reason": "2-stall construction with threshold n>2k-2 matches recursively verified reachable-set characterization."
+ },
+ {
+  "task_id": 382,
+  "index": 381,
+  "verdict": "correct",
+  "reason": "Equivalent condition n+2>2k, same valid 2-stall construction; verified against several cases."
+ },
+ {
+  "task_id": 383,
+  "index": 382,
+  "verdict": "incorrect",
+  "reason": "Uses int(n/k) float division for n,k up to 1e18, causing precision loss/wrong quotient on large inputs."
+ },
+ {
+  "task_id": 384,
+  "index": 383,
+  "verdict": "correct",
+  "reason": "Simulates exact 2-stall pricing with integer //, correct print order; matches derivation h<=k always holds."
+ },
+ {
+  "task_id": 385,
+  "index": 384,
+  "verdict": "incorrect",
+  "reason": "Prints '2' before 'YES' in YES branch, violating required output line order."
+ },
+ {
+  "task_id": 386,
+  "index": 385,
+  "verdict": "correct",
+  "reason": "Passes all 3 examples including tricky palindrome 'uwuowouwu' via manual trace producing valid split."
+ },
+ {
+  "task_id": 387,
+  "index": 386,
+  "verdict": "incorrect",
+  "reason": "Restricted loop range/condition causes it to output NO for 'uwuowouwu' example, contradicting expected YES."
+ },
+ {
+  "task_id": 388,
+  "index": 387,
+  "verdict": "correct",
+  "reason": "First-mismatch-index approach correctly handles all 3 examples incl. tricky palindrome case."
+ },
+ {
+  "task_id": 389,
+  "index": 388,
+  "verdict": "incorrect",
+  "reason": "Off-by-one: uses strict '<' instead of '<=', fails given example (5,2,2) giving Yes instead of NO."
+ },
+ {
+  "task_id": 390,
+  "index": 389,
+  "verdict": "correct",
+  "reason": "Tracks min run length of boundary value anywhere in array; matches all 4 examples and extra check."
+ },
+ {
+  "task_id": 391,
+  "index": 390,
+  "verdict": "incorrect",
+  "reason": "cnt/val never reset on mismatch; only computes leading run length, not true min run"
+ },
+ {
+  "task_id": 392,
+  "index": 391,
+  "verdict": "correct",
+  "reason": "correctly finds min run of background value, -1 check via minn==len(ar)"
+ },
+ {
+  "task_id": 393,
+  "index": 392,
+  "verdict": "incorrect",
+  "reason": "missing minn==len(ar) check; fails constant-array sample (outputs run length not -1)"
+ },
+ {
+  "task_id": 394,
+  "index": 393,
+  "verdict": "correct",
+  "reason": "tmp stays at a[0]=v (always valid); cnt resets properly; correct min-run/-1 logic"
+ },
+ {
+  "task_id": 395,
+  "index": 394,
+  "verdict": "incorrect",
+  "reason": "prints -1 for constant array but doesn't stop; also prints extra ans line (double output)"
+ },
+ {
+  "task_id": 396,
+  "index": 395,
+  "verdict": "correct",
+  "reason": "correct greedy: max to a at first diff, min to a afterward, matches all samples"
+ },
+ {
+  "task_id": 397,
+  "index": 396,
+  "verdict": "incorrect",
+  "reason": "uses array-half boundary instead of first differing position; suboptimal on constructed case"
+ },
+ {
+  "task_id": 398,
+  "index": 397,
+  "verdict": "incorrect",
+  "reason": "leader tracking inconsistent between case1/case2; subsequent rule ignores which side is leader, suboptimal"
+ },
+ {
+  "task_id": 399,
+  "index": 398,
+  "verdict": "correct",
+  "reason": "correctly assigns max at first diff, min afterward consistently; matches samples and derivation"
+ },
+ {
+  "task_id": 400,
+  "index": 399,
+  "verdict": "incorrect",
+  "reason": "uses continuous c/2 float average ignoring discrete pairing parity, underestimates cost for odd n"
+ },
+ {
+  "task_id": 401,
+  "index": 400,
+  "verdict": "incorrect",
+  "reason": "operator precedence bug: b*n//2 computed as (b*n)//2 not b*(n//2), wrong for many n,a,b"
+ },
+ {
+  "task_id": 402,
+  "index": 401,
+  "verdict": "correct",
+  "reason": "correctly compares 2a vs b, handles even/odd n with proper floor(n/2)*b + leftover a"
+ },
+ {
+  "task_id": 403,
+  "index": 402,
+  "verdict": "incorrect",
+  "reason": "same correct formula as 401 but has stray print(X) line, corrupting output format"
+ },
+ {
+  "task_id": 404,
+  "index": 403,
+  "verdict": "correct",
+  "reason": "correct formula for both parities, matches all samples and derivation"
+ },
+ {
+  "task_id": 405,
+  "index": 404,
+  "verdict": "correct",
+  "reason": "infers a11=min(b), regenerates grid with c,d offsets, compares sorted multisets; matches all 5 examples"
+ },
+ {
+  "task_id": 406,
+  "index": 405,
+  "verdict": "incorrect",
+  "reason": "Hardcoded special-case magic constants plus naive O(k) fallback loop; TLE and not general"
+ },
+ {
+  "task_id": 407,
+  "index": 406,
+  "verdict": "correct",
+  "reason": "Prefix-sum ceil/floor budget split; proof shows no double-count since guard uses sum(a)"
+ },
+ {
+  "task_id": 408,
+  "index": 407,
+  "verdict": "incorrect",
+  "reason": "Boundary/partial-round hit not checked at all before break; fails official example (gives 1 not 2)"
+ },
+ {
+  "task_id": 409,
+  "index": 408,
+  "verdict": "correct",
+  "reason": "Two-pointer O(n) with correct boundary check a[l]-t-k//2==0; verified vs all examples"
+ },
+ {
+  "task_id": 410,
+  "index": 409,
+  "verdict": "incorrect",
+  "reason": "Boundary check uses mi instead of a[l]; false positive sink when right ship is the min"
+ },
+ {
+  "task_id": 411,
+  "index": 410,
+  "verdict": "correct",
+  "reason": "Two-pointer with l/r branches; boundary checks correctly never/always fire as proven"
+ },
+ {
+  "task_id": 412,
+  "index": 411,
+  "verdict": "incorrect",
+  "reason": "Right-branch boundary check a[r]*2-1==k gives false positive sink (verified counterexample)"
+ },
+ {
+  "task_id": 413,
+  "index": 412,
+  "verdict": "correct",
+  "reason": "Sliding window Counter with correct check-before-update delta logic; matches example"
+ },
+ {
+  "task_id": 414,
+  "index": 413,
+  "verdict": "incorrect",
+  "reason": "Outgoing element fully zeroes old contribution without restoring residual match; undercounts"
+ },
+ {
+  "task_id": 415,
+  "index": 414,
+  "verdict": "correct",
+  "reason": "D/E/C matched-set bookkeeping greedy update; verified vs example and counterexample"
+ },
+ {
+  "task_id": 416,
+  "index": 415,
+  "verdict": "incorrect",
+  "reason": "Recomputes sum(D.values()) every iteration -> O(n^2) worst case, TLE for n up to 2e5"
+ },
+ {
+  "task_id": 417,
+  "index": 416,
+  "verdict": "correct",
+  "reason": "Signed remaining-capacity array technique; verified vs example and duplicate-value counterexample"
+ },
+ {
+  "task_id": 418,
+  "index": 417,
+  "verdict": "incorrect",
+  "reason": "Uses plain sets (not multisets) for todo/done; fails when b has duplicate values"
+ },
+ {
+  "task_id": 419,
+  "index": 418,
+  "verdict": "correct",
+  "reason": "Closed formula floor sums + bonus for all-odd(1,2,3); matches all 5 examples and derivation"
+ },
+ {
+  "task_id": 420,
+  "index": 419,
+  "verdict": "correct",
+  "reason": "Algebraically identical formula to equivalent correct solution; matches all 5 examples"
+ },
+ {
+  "task_id": 421,
+  "index": 420,
+  "verdict": "incorrect",
+  "reason": "Overwrites p with floored-even values before parity check, so odd-check is always false; fails ex1 (gives 0 not 1)"
+ },
+ {
+  "task_id": 422,
+  "index": 421,
+  "verdict": "correct",
+  "reason": "floor(ci/2) sum plus bonus when c1,c2,c3 all odd; matches all 5 samples and known correct formula"
+ },
+ {
+  "task_id": 423,
+  "index": 422,
+  "verdict": "incorrect",
+  "reason": "Bonus condition requires a[0]==a[1]==a[2] (all equal) instead of just all-odd; too strict, wrong in general"
+ },
+ {
+  "task_id": 424,
+  "index": 423,
+  "verdict": "incorrect",
+  "reason": "print() placed inside the per-n loop, printing growing partial results on multiple lines instead of one line per test"
+ },
+ {
+  "task_id": 425,
+  "index": 424,
+  "verdict": "correct",
+  "reason": "Correctly reduces to answer = n if n<a1 else a1-1 (provable via bound n-|removed|>=a1-1 each round)"
+ },
+ {
+  "task_id": 426,
+  "index": 425,
+  "verdict": "correct",
+  "reason": "Counts values held with exactly 2 copies; matches derived correct formula (answer = #pairs) on all samples"
+ },
+ {
+  "task_id": 427,
+  "index": 426,
+  "verdict": "correct",
+  "reason": "Computes #pairs (min with n//2 is a no-op since pairs<=n//2 always); correct"
+ },
+ {
+  "task_id": 428,
+  "index": 427,
+  "verdict": "correct",
+  "reason": "sum of max(0,count-1) over values equals number of pair-values, matching correct formula"
+ },
+ {
+  "task_id": 429,
+  "index": 428,
+  "verdict": "incorrect",
+  "reason": "O(n^2) DP table plus O(n) cards.count() calls inside double loop -> O(n^3) time/O(n^2) memory, TLE/MLE for n up to 2e5"
+ },
+ {
+  "task_id": 430,
+  "index": 429,
+  "verdict": "correct",
+  "reason": "len(tokens)-len(set(tokens)) counts duplicated values = number of pairs, correct and efficient"
+ },
+ {
+  "task_id": 431,
+  "index": 430,
+  "verdict": "incorrect",
+  "reason": "Uses count//3 but counts are at most 2, so always prints 0; fails ex1 (expected 1)"
+ },
+ {
+  "task_id": 432,
+  "index": 431,
+  "verdict": "correct",
+  "reason": "Sum formula matches n(n+1)(4n-1)/6; construction peels layers n..1 (row then col, identity perm), verified achieves max sum"
+ },
+ {
+  "task_id": 433,
+  "index": 432,
+  "verdict": "incorrect",
+  "reason": "Sum formula/threshold logic is buggy: gives 21 for n=3 instead of true max 22 (verified by simulating its own construction)"
+ },
+ {
+  "task_id": 434,
+  "index": 433,
+  "verdict": "correct",
+  "reason": "Standard optimal construction: for i=n..1 set row i then col i to identity perm; sum formula and simulation both give correct max"
+ },
+ {
+  "task_id": 435,
+  "index": 434,
+  "verdict": "correct",
+  "reason": "Sum formula n(n+1)(4n-1)/6 correct; increasing i with decreasing perm [n..1] construction verified to reach 22 for n=3"
+ },
+ {
+  "task_id": 436,
+  "index": 435,
+  "verdict": "incorrect",
+  "reason": "addOps recursion is exponential (2^len) and greedy interval choice risks wrong sum/op-limit blowup"
+ },
+ {
+  "task_id": 437,
+  "index": 436,
+  "verdict": "correct",
+  "reason": "Cartesian-tree-style split at max element recursively, matches proven optimal interval structure"
+ },
+ {
+  "task_id": 438,
+  "index": 437,
+  "verdict": "correct",
+  "reason": "Correct memoized interval DP trying all splits plus square case, matches known recurrence"
+ },
+ {
+  "task_id": 439,
+  "index": 438,
+  "verdict": "incorrect",
+  "reason": "Hardcoded: only handles n==2 case, prints '13 0' for any other length, ignores input values"
+ },
+ {
+  "task_id": 440,
+  "index": 439,
+  "verdict": "correct",
+  "reason": "Counts floor(count/3) per length, correct since triangle (3 sides) is minimum polygon"
+ },
+ {
+  "task_id": 441,
+  "index": 440,
+  "verdict": "incorrect",
+  "reason": "Uses count//4 instead of //3; wrong for e.g. exactly-3-stick groups (should give 1, gives 0)"
+ },
+ {
+  "task_id": 442,
+  "index": 441,
+  "verdict": "correct",
+  "reason": "Sums count//3 per distinct length (guarded by >=3, same result), correct minimum polygon is 3 sides"
+ },
+ {
+  "task_id": 443,
+  "index": 442,
+  "verdict": "incorrect",
+  "reason": "Only adds 1 polygon per length with >=3 sticks instead of count//3; wrong for counts >=6"
+ },
+ {
+  "task_id": 444,
+  "index": 443,
+  "verdict": "correct",
+  "reason": "Sums count//3 per distinct stick length, correct approach"
+ },
+ {
+  "task_id": 445,
+  "index": 444,
+  "verdict": "incorrect",
+  "reason": "Uses count//4 instead of //3, wrong minimum-sides assumption"
+ },
+ {
+  "task_id": 446,
+  "index": 445,
+  "verdict": "correct",
+  "reason": "Builds (2^m-1) + remainder using highest set bit of k; matches proven optimal OR construction"
+ },
+ {
+  "task_id": 447,
+  "index": 446,
+  "verdict": "correct",
+  "reason": "Equivalent (2^m-1)+remainder construction via doubling loop, matches optimal popcount method"
+ },
+ {
+  "task_id": 448,
+  "index": 447,
+  "verdict": "incorrect",
+  "reason": "Splits k's own set bits into separate numbers, doesn't gain extra OR bits; fails k=51,n=6 example (4 vs optimal 5)"
+ },
+ {
+  "task_id": 449,
+  "index": 448,
+  "verdict": "correct",
+  "reason": "Correct (2^m-1)+remainder distribution, handles n=1 and multi-slot cases properly, matches all examples"
+ },
+ {
+  "task_id": 450,
+  "index": 449,
+  "verdict": "incorrect",
+  "reason": "Repeatedly reapplies bit_length-based split per slot; suboptimal e.g. k=3,n=5 gives popcount1 instead of 2"
+ },
+ {
+  "task_id": 451,
+  "index": 450,
+  "verdict": "correct",
+  "reason": "Correct dp[n-num] recurrence with sliding window, matches examples."
+ },
+ {
+  "task_id": 452,
+  "index": 451,
+  "verdict": "correct",
+  "reason": "Same recurrence with full dp array, m=0 and m=1 handled correctly (both 1)."
+ },
+ {
+  "task_id": 453,
+  "index": 452,
+  "verdict": "incorrect",
+  "reason": "m==0 case prints 0 instead of 1 (empty board still has one valid config)."
+ },
+ {
+  "task_id": 454,
+  "index": 453,
+  "verdict": "correct",
+  "reason": "Precomputed dp table, sentinel dp[0]=-1 clamped via max(1,...), matches formula/examples."
+ },
+ {
+  "task_id": 455,
+  "index": 454,
+  "verdict": "incorrect",
+  "reason": "Leaves debug print() statements (dashes, arr, prefix, pre, suf) polluting required output."
+ },
+ {
+  "task_id": 456,
+  "index": 455,
+  "verdict": "correct",
+  "reason": "Computes gaps from sorted distinct+0, backward toggle recursion matches correct game theory rule."
+ },
+ {
+  "task_id": 457,
+  "index": 456,
+  "verdict": "incorrect",
+  "reason": "Hardcodes 'Bob' whenever exactly 2 distinct values, but answer depends on whether min value is 1."
+ },
+ {
+  "task_id": 458,
+  "index": 457,
+  "verdict": "correct",
+  "reason": "Correctly checks sorted min, toggles over run of 1-gaps, matches derived game rule and all examples."
+ },
+ {
+  "task_id": 459,
+  "index": 458,
+  "verdict": "incorrect",
+  "reason": "Checks arr[0] (unsorted first element) instead of the minimum; fails sample test case 5 ([2,1,3,4,2,4])."
+ },
+ {
+  "task_id": 460,
+  "index": 459,
+  "verdict": "correct",
+  "reason": "Sorted distinct values, finds break index parity or full-run parity; matches derived rule and examples."
+ },
+ {
+  "task_id": 461,
+  "index": 460,
+  "verdict": "incorrect",
+  "reason": "Naive heuristic: just checks if 1 is present; fails sample test case 3 (expects Alice, would print Bob)."
+ },
+ {
+  "task_id": 462,
+  "index": 461,
+  "verdict": "correct",
+  "reason": "Binary-construction with k-2^i/k+1/2k+1 plus powers; verified against all samples and stress case, correct format."
+ },
+ {
+  "task_id": 463,
+  "index": 462,
+  "verdict": "incorrect",
+  "reason": "Same construction as correct version but omits the required first line printing the array length m."
+ },
+ {
+  "task_id": 464,
+  "index": 463,
+  "verdict": "correct",
+  "reason": "k-2^i/k+1/k+1+2^i plus all powers except 2^i; proven k unreachable, verified coverage via manual enumeration."
+ },
+ {
+  "task_id": 465,
+  "index": 464,
+  "verdict": "incorrect",
+  "reason": "Ignores k entirely, always outputs fixed powers of two 2^0..2^24, so k itself is always reachable."
+ },
+ {
+  "task_id": 466,
+  "index": 465,
+  "verdict": "correct",
+  "reason": "Powers-of-2 construction with idx from range(21); final size 23<=25, blocks k, covers others."
+ },
+ {
+  "task_id": 467,
+  "index": 466,
+  "verdict": "incorrect",
+  "reason": "Uses range(24) powers of 2; after 3 appends/1 remove, m=26>25, violates size limit."
+ },
+ {
+  "task_id": 468,
+  "index": 467,
+  "verdict": "correct",
+  "reason": "Implements odd-occurrence subarray-sum trick and recursive palindrome recovery matching known technique."
+ },
+ {
+  "task_id": 469,
+  "index": 468,
+  "verdict": "correct",
+  "reason": "Correctly reduces to: answer=k-1 if some value's frequency>=k, else n; matches derivation and all examples."
+ },
+ {
+  "task_id": 470,
+  "index": 469,
+  "verdict": "incorrect",
+  "reason": "Forces answer=k-1 whenever k==n regardless of actual frequencies, wrong if cards aren't all identical."
+ },
+ {
+  "task_id": 471,
+  "index": 470,
+  "verdict": "correct",
+  "reason": "Directly implements max frequency>=k -> k-1 else n, matches derived correct formula and examples."
+ },
+ {
+  "task_id": 472,
+  "index": 471,
+  "verdict": "incorrect",
+  "reason": "Always prints k-1 ignoring card frequencies entirely; wrong whenever no value reaches frequency k."
+ },
+ {
+  "task_id": 473,
+  "index": 472,
+  "verdict": "correct",
+  "reason": "Border monochromatic-row/column check with corner mismatch condition; verified against all 8 sample cases."
+ },
+ {
+  "task_id": 474,
+  "index": 473,
+  "verdict": "correct",
+  "reason": "Equivalent simplification of the row/column monochromatic check; matches all 8 sample cases."
+ },
+ {
+  "task_id": 475,
+  "index": 474,
+  "verdict": "incorrect",
+  "reason": "Only checks one row/column for monochromaticity instead of both; counterexample grid BB/WB should be YES but outputs NO."
+ },
+ {
+  "task_id": 476,
+  "index": 475,
+  "verdict": "correct",
+  "reason": "Top-down toggle recursion over sorted distinct gaps correctly matches derived game theory and all 7 examples."
+ },
+ {
+  "task_id": 477,
+  "index": 476,
+  "verdict": "incorrect",
+  "reason": "Final print statement outputs 'Alice' in both branches ('Alice' if dp else 'Alice'), always prints Alice."
+ },
+ {
+  "task_id": 478,
+  "index": 477,
+  "verdict": "correct",
+  "reason": "Correctly computes parity of leading run of consecutive 1-gaps starting from smallest value; matches all examples."
+ },
+ {
+  "task_id": 479,
+  "index": 478,
+  "verdict": "correct",
+  "reason": "Mex-based formula correctly handles both branches (all-consecutive case vs normal case), matches derivation and examples."
+ },
+ {
+  "task_id": 480,
+  "index": 479,
+  "verdict": "incorrect",
+  "reason": "n==2 base case checks a[0]%2==0 instead of a[0]==1; counterexample piles=[3,10] gives Bob but correct answer is Alice."
+ },
+ {
+  "task_id": 481,
+  "index": 480,
+  "verdict": "correct",
+  "reason": "Leveling formula matches all 8 samples and derived edge cases; O(n) sort+scan."
+ },
+ {
+  "task_id": 482,
+  "index": 481,
+  "verdict": "incorrect",
+  "reason": "Omits +k%n in full-leveling branch; wrong when leftover budget not divisible by n."
+ },
+ {
+  "task_id": 483,
+  "index": 482,
+  "verdict": "correct",
+  "reason": "Equivalent res-based formula verified against all 8 samples and a custom edge case."
+ },
+ {
+  "task_id": 484,
+  "index": 483,
+  "verdict": "incorrect",
+  "reason": "Uses math.factorial(n) for n up to 2e5 with nonsensical logic; infeasible and wrong."
+ },
+ {
+  "task_id": 485,
+  "index": 484,
+  "verdict": "correct",
+  "reason": "O(min(n,m)) sum of floor((n+b)/b^2) matches derivation and all sample outputs."
+ },
+ {
+  "task_id": 486,
+  "index": 485,
+  "verdict": "correct",
+  "reason": "Nested-floor identity proven equal to correct formula; early break safe, O(sqrt n)."
+ },
+ {
+  "task_id": 487,
+  "index": 486,
+  "verdict": "incorrect",
+  "reason": "Sums real-valued terms then truncates once; fails given sample 100 1233 (156 vs 153)."
+ },
+ {
+  "task_id": 488,
+  "index": 487,
+  "verdict": "correct",
+  "reason": "y=x-1 always achieves the provable maximum gcd(x,y)+y=x; trivially optimal."
+ },
+ {
+  "task_id": 489,
+  "index": 488,
+  "verdict": "incorrect",
+  "reason": "y=x//2 fails for odd x, e.g. x=7 gives sum 4 instead of the max 7."
+ },
+ {
+  "task_id": 490,
+  "index": 489,
+  "verdict": "correct",
+  "reason": "Loop always breaks on first check (y=x-1), equivalent to the always-optimal answer."
+ },
+ {
+  "task_id": 491,
+  "index": 490,
+  "verdict": "incorrect",
+  "reason": "Restricts search to divisors of x; fails for primes, e.g. x=7 returns y=1 (sum 2, not 7)."
+ },
+ {
+  "task_id": 492,
+  "index": 491,
+  "verdict": "correct",
+  "reason": "True O(x) brute force per test; constraints tiny (x,t<=1000), correct by exhaustion."
+ },
+ {
+  "task_id": 493,
+  "index": 492,
+  "verdict": "incorrect",
+  "reason": "Repeated e[j:] slicing makes it O(n*m); TLEs for n,m up to 2e5."
+ },
+ {
+  "task_id": 494,
+  "index": 493,
+  "verdict": "incorrect",
+  "reason": "Correct two-pointer logic but repeated e[k:] slicing is O(n*m); TLEs at given limits."
+ },
+ {
+  "task_id": 495,
+  "index": 494,
+  "verdict": "incorrect",
+  "reason": "Uses e.index() without offset (ignores k), overcounts matches; also O(n*m) slicing."
+ },
+ {
+  "task_id": 496,
+  "index": 495,
+  "verdict": "correct",
+  "reason": "Standard two-pointer greedy prefix-subsequence match; matches examples."
+ },
+ {
+  "task_id": 497,
+  "index": 496,
+  "verdict": "correct",
+  "reason": "Same correct two-pointer algorithm as prior item."
+ },
+ {
+  "task_id": 498,
+  "index": 497,
+  "verdict": "correct",
+  "reason": "Builds a from a_n=1e9 backward; margin (<=250000 subtracted) keeps mod valid and in range."
+ },
+ {
+  "task_id": 499,
+  "index": 498,
+  "verdict": "incorrect",
+  "reason": "Boost check uses strict '<' not '<=', fails when next value equals prior a exactly (e.g. x=[1,3])."
+ },
+ {
+  "task_id": 500,
+  "index": 499,
+  "verdict": "correct",
+  "reason": "a1=1000 > max x(500); a increasing so mod condition always holds and stays <=1e9."
+ },
+ {
+  "task_id": 501,
+  "index": 500,
+  "verdict": "incorrect",
+  "reason": "a1=500 equals max possible x; x2=500 gives a2 mod a1=0 not 500."
+ },
+ {
+  "task_id": 502,
+  "index": 501,
+  "verdict": "correct",
+  "reason": "Same correct increasing construction as item 499 with a1=1000."
+ },
+ {
+  "task_id": 503,
+  "index": 502,
+  "verdict": "incorrect",
+  "reason": "Builds decreasing then reverses; reversal misaligns which x is added where, breaks mod relation (verified on sample)."
+ },
+ {
+  "task_id": 504,
+  "index": 503,
+  "verdict": "correct",
+  "reason": "Correct cycle-prefix-then-stay strategy; matches worked example exactly (Bodya 10 vs Sasha 9)."
+ },
+ {
+  "task_id": 505,
+  "index": 504,
+  "verdict": "incorrect",
+  "reason": "Inner loop is 'for i in range(k)' with no cycle-length bound when neither cycle hits global max; O(k) up to 1e9, TLE/MLE."
+ },
+ {
+  "task_id": 506,
+  "index": 505,
+  "verdict": "correct",
+  "reason": "Bounded prefix-then-stay simulation (loop over n, breaks when k hits 0); matches worked example."
+ },
+ {
+  "task_id": 507,
+  "index": 506,
+  "verdict": "incorrect",
+  "reason": "Uses 'bm+=max(...)' instead of 'bm=max(...)', accumulates instead of tracking max, inflates score incorrectly."
+ },
+ {
+  "task_id": 508,
+  "index": 507,
+  "verdict": "correct",
+  "reason": "Correct bounded prefix/stay max via visited-cycle detection; uniform a[i]-=1 shift cancels in comparison, verified on sample."
+ },
+ {
+  "task_id": 509,
+  "index": 508,
+  "verdict": "incorrect",
+  "reason": "Never models 'stay' option, just simulates always-moving walk; gives Bodya=7,Sasha=9 on sample vs expected Bodya wins."
+ },
+ {
+  "task_id": 510,
+  "index": 509,
+  "verdict": "incorrect",
+  "reason": "Places all points in one column giving only n distinct distances; sample shows true maximum is larger (e.g. 4 for n=3, not 3)."
+ },
+ {
+  "task_id": 511,
+  "index": 510,
+  "verdict": "correct",
+  "reason": "Diagonal construction (1,1),(1,2),(i,i) provably hits full range 0..2(n-1), optimal for all n."
+ },
+ {
+  "task_id": 512,
+  "index": 511,
+  "verdict": "incorrect",
+  "reason": "For n=2 outputs 3 points incl. invalid (2,4) with y=4>n; wrong count/format."
+ },
+ {
+  "task_id": 513,
+  "index": 512,
+  "verdict": "correct",
+  "reason": "Correct a<b two-pointer/binary-search xor criterion; verified against sample traces."
+ },
+ {
+  "task_id": 514,
+  "index": 513,
+  "verdict": "correct",
+  "reason": "Same correct a<b (v1[it1]<v2[it2]) criterion via bisect, fast stdin read."
+ },
+ {
+  "task_id": 515,
+  "index": 514,
+  "verdict": "incorrect",
+  "reason": "Checks v1[it1]<=r and v2[it2]>=l (nearly vacuous) instead of a<b; gives false YES on constructed case."
+ },
+ {
+  "task_id": 516,
+  "index": 515,
+  "verdict": "correct",
+  "reason": "Checks v[v[i]]==i, the correct 2-cycle (mutual best friend) condition."
+ },
+ {
+  "task_id": 517,
+  "index": 516,
+  "verdict": "incorrect",
+  "reason": "Uses triple composition v[v[v[i]]]==i, wrongly true for any 3-cycle (e.g. n=3 derangement [2,3,1])."
+ },
+ {
+  "task_id": 518,
+  "index": 517,
+  "verdict": "correct",
+  "reason": "q=l[p-1], checks q==i+1, correct general 2-cycle detection."
+ },
+ {
+  "task_id": 519,
+  "index": 518,
+  "verdict": "incorrect",
+  "reason": "Only checks adjacent pair l[i]==i+2 and l[i+1]==i+1; misses non-adjacent 2-cycles like p=[3,4,1,5,2]."
+ },
+ {
+  "task_id": 520,
+  "index": 519,
+  "verdict": "correct",
+  "reason": "l[l[i]-1]==i+1 is the correct general 2-cycle check with for-else fallback to 3."
+ },
+ {
+  "task_id": 521,
+  "index": 520,
+  "verdict": "incorrect",
+  "reason": "Compares l[l[i]-1]==l[i]-1 (wrong RHS) instead of i+1; misses 2-cycles like p=[3,4,1,5,2]."
+ },
+ {
+  "task_id": 522,
+  "index": 521,
+  "verdict": "correct",
+  "reason": "Sum of (running #ones+1) per zero matches all given examples (2,0,9,5,11)."
+ },
+ {
+  "task_id": 523,
+  "index": 522,
+  "verdict": "correct",
+  "reason": "Two-pointer swap simulation reproduces identical costs on all sample cases; O(n)."
+ },
+ {
+  "task_id": 524,
+  "index": 523,
+  "verdict": "correct",
+  "reason": "Same running-ones-count formula as verified correct solution, matches samples."
+ },
+ {
+  "task_id": 525,
+  "index": 524,
+  "verdict": "incorrect",
+  "reason": "Reads s via input().split() then int(), mis-parsing the binary string entirely (e.g. '10' -> 0)."
+ },
+ {
+  "task_id": 526,
+  "index": 525,
+  "verdict": "correct",
+  "reason": "Greedy formula verified exactly against all 5 sample cases."
+ },
+ {
+  "task_id": 527,
+  "index": 526,
+  "verdict": "correct",
+  "reason": "Identical logic to 525, matches all sample cases."
+ },
+ {
+  "task_id": 528,
+  "index": 527,
+  "verdict": "correct",
+  "reason": "Heap-based regret technique on b-descending order; verified against sample case, sound."
+ },
+ {
+  "task_id": 529,
+  "index": 528,
+  "verdict": "incorrect",
+  "reason": "k_range undefined when k=0 causes NameError; also double-subtracts b in non-beneficial branch."
+ },
+ {
+  "task_id": 530,
+  "index": 529,
+  "verdict": "correct",
+  "reason": "Sort by (balance,-position) matches spec; verified against sample producing correct output."
+ },
+ {
+  "task_id": 531,
+  "index": 530,
+  "verdict": "correct",
+  "reason": "Same correct sort key as 529, just tuples instead of objects."
+ },
+ {
+  "task_id": 532,
+  "index": 531,
+  "verdict": "correct",
+  "reason": "Dict-based prefix balances with correct (balance,-index) sort, matches spec."
+ },
+ {
+  "task_id": 533,
+  "index": 532,
+  "verdict": "incorrect",
+  "reason": "Sorts only by balance, missing decreasing-position tiebreak; produces wrong output on given sample."
+ },
+ {
+  "task_id": 534,
+  "index": 533,
+  "verdict": "correct",
+  "reason": "Sort key (balance,-position) correct, matches required tie-break."
+ },
+ {
+  "task_id": 535,
+  "index": 534,
+  "verdict": "incorrect",
+  "reason": "Ignores actual tree/start node; just compares magnitudes of raw input pairs, no real game logic."
+ },
+ {
+  "task_id": 536,
+  "index": 535,
+  "verdict": "correct",
+  "reason": "Builds path via leaf-to-leaf traversal, computes idx distances correctly, matches samples."
+ },
+ {
+  "task_id": 537,
+  "index": 536,
+  "verdict": "incorrect",
+  "reason": "Uses min(t,idx) with t=1 instead of true distance; gives wrong answer on sample 2 (prints Ron not Hermione)."
+ },
+ {
+  "task_id": 538,
+  "index": 537,
+  "verdict": "incorrect",
+  "reason": "Directional lst/rev traversal depends on edge token order; fails for reordered/reoriented edges (verified by construction)."
+ },
+ {
+  "task_id": 539,
+  "index": 538,
+  "verdict": "incorrect",
+  "reason": "Never reads the start node from input; reuses n as start, only works when start happens to equal n."
+ },
+ {
+  "task_id": 540,
+  "index": 539,
+  "verdict": "correct",
+  "reason": "Robust BFS distance-to-each-leaf approach, order-independent, matches required parity logic."
+ },
+ {
+  "task_id": 541,
+  "index": 540,
+  "verdict": "incorrect",
+  "reason": "Fails given example 1: dist1=dist2=1(odd) gives Hermione, but expected Ron."
+ },
+ {
+  "task_id": 542,
+  "index": 541,
+  "verdict": "incorrect",
+  "reason": "Correct recursive game logic but no sys.setrecursionlimit; n up to 2e5 causes RecursionError."
+ },
+ {
+  "task_id": 543,
+  "index": 542,
+  "verdict": "incorrect",
+  "reason": "Wrong heuristic: 'any odd leaf distance'; fails on trees with nested branching (proven counterexample)."
+ },
+ {
+  "task_id": 544,
+  "index": 543,
+  "verdict": "incorrect",
+  "reason": "Never handles direct .Q ball-movement actions; KeyError crash when quaffle moves untouched."
+ },
+ {
+  "task_id": 545,
+  "index": 544,
+  "verdict": "incorrect",
+  "reason": "Bludger-into-player collision checked against stale initial grid, not live player positions."
+ },
+ {
+  "task_id": 546,
+  "index": 545,
+  "verdict": "incorrect",
+  "reason": "Eliminated carrier's pos set to [-1,-1], corrupting dropped-ball location vs stated rule."
+ },
+ {
+  "task_id": 547,
+  "index": 546,
+  "verdict": "incorrect",
+  "reason": "Quaffle stored in same dict as players; can be wrongly printed as '.Q ELIMINATED'."
+ },
+ {
+  "task_id": 548,
+  "index": 547,
+  "verdict": "incorrect",
+  "reason": "Same bug as sibling: quaffle can be mistakenly reported as eliminated via players dict."
+ },
+ {
+  "task_id": 549,
+  "index": 548,
+  "verdict": "incorrect",
+  "reason": "Hardcodes range(10) instead of reading t; breaks for t != 10."
+ },
+ {
+  "task_id": 550,
+  "index": 549,
+  "verdict": "correct",
+  "reason": "Reads t properly, prints min then max correctly."
+ },
+ {
+  "task_id": 551,
+  "index": 550,
+  "verdict": "incorrect",
+  "reason": "Prints max then min (reversed order); example expects min then max."
+ },
+ {
+  "task_id": 552,
+  "index": 551,
+  "verdict": "incorrect",
+  "reason": "Half-swap/reverse fallback can both equal s (e.g. 'abaaba'), outputting r==s."
+ },
+ {
+  "task_id": 553,
+  "index": 552,
+  "verdict": "correct",
+  "reason": "Sorted asc/desc trick correctly guarantees a differing permutation when >1 distinct char."
+ },
+ {
+  "task_id": 554,
+  "index": 553,
+  "verdict": "incorrect",
+  "reason": "Checks len(set)==2 for NO instead of ==1; contradicts given example 'xxxxy'."
+ },
+ {
+  "task_id": 555,
+  "index": 554,
+  "verdict": "correct",
+  "reason": "Handles single/uniform-char NO cases; rotation fallback provably differs from s."
+ },
+ {
+  "task_id": 556,
+  "index": 555,
+  "verdict": "incorrect",
+  "reason": "Only one random shuffle attempt; can wrongly print No when a rearrangement exists"
+ },
+ {
+  "task_id": 557,
+  "index": 556,
+  "verdict": "correct",
+  "reason": "Counts ascents/descents correctly implementing descents+1 or transitions formula"
+ },
+ {
+  "task_id": 558,
+  "index": 557,
+  "verdict": "correct",
+  "reason": "count=1+transitions, minus 1 if any ascent found; matches derived formula"
+ },
+ {
+  "task_id": 559,
+  "index": 558,
+  "verdict": "incorrect",
+  "reason": "Extra j+=1 on ascent skips checking next pair, undercounts transitions e.g. '0101'"
+ },
+ {
+  "task_id": 560,
+  "index": 559,
+  "verdict": "correct",
+  "reason": "count=transitions, +1 only if no ascent; matches correct formula"
+ },
+ {
+  "task_id": 561,
+  "index": 560,
+  "verdict": "incorrect",
+  "reason": "Only counts descents+1, ignores ascent count; wrong for multi-ascent strings like '0101'"
+ },
+ {
+  "task_id": 562,
+  "index": 561,
+  "verdict": "incorrect",
+  "reason": "Uses float division on products up to 1e18, precision loss can give wrong floor"
+ },
+ {
+  "task_id": 563,
+  "index": 562,
+  "verdict": "correct",
+  "reason": "Standard two-pointer greedy matches expected outputs and known solution"
+ },
+ {
+  "task_id": 564,
+  "index": 563,
+  "verdict": "incorrect",
+  "reason": "Buggy list mutation uses stale/shifted values in later comparisons, gives wrong cnt"
+ },
+ {
+  "task_id": 565,
+  "index": 564,
+  "verdict": "correct",
+  "reason": "Correct parity-of-U invariant, reads input correctly line by line"
+ },
+ {
+  "task_id": 566,
+  "index": 565,
+  "verdict": "incorrect",
+  "reason": "Hardcoded data[1]/data[2] never advance index; reuses first test case for all t"
+ },
+ {
+  "task_id": 567,
+  "index": 566,
+  "verdict": "correct",
+  "reason": "Correct parity-of-U rule, reads input correctly per test case"
+ },
+ {
+  "task_id": 568,
+  "index": 567,
+  "verdict": "incorrect",
+  "reason": "Adds spurious n%2==0 gate contradicting true parity-of-U winning condition"
+ },
+ {
+  "task_id": 569,
+  "index": 568,
+  "verdict": "correct",
+  "reason": "Correct parity-of-U rule with properly advancing index into token list"
+ },
+ {
+  "task_id": 570,
+  "index": 569,
+  "verdict": "incorrect",
+  "reason": "solve_coin_game() defined but call is commented out; program produces no output"
+ },
+ {
+  "task_id": 571,
+  "index": 570,
+  "verdict": "incorrect",
+  "reason": "reads m but never bounds loop by it; wrong when m < sqrt(n)"
+ },
+ {
+  "task_id": 572,
+  "index": 571,
+  "verdict": "correct",
+  "reason": "ceil-based term equals floor((n+i)/i^2); b=1 correction via cnt=-1 works"
+ },
+ {
+  "task_id": 573,
+  "index": 572,
+  "verdict": "incorrect",
+  "reason": "range(1,m) drops i=m; m=1 gives wrong hardcoded return via cnt==0 hack"
+ },
+ {
+  "task_id": 574,
+  "index": 573,
+  "verdict": "correct",
+  "reason": "term=floor((n+i)/i^2); mod hack cancels b=1 overcount exactly (-2 fix)"
+ },
+ {
+  "task_id": 575,
+  "index": 574,
+  "verdict": "incorrect",
+  "reason": "wrong filter/no b=1 correction; gives 2 instead of 3 for n=2,m=3"
+ },
+ {
+  "task_id": 576,
+  "index": 575,
+  "verdict": "correct",
+  "reason": "sums floor((n+i)/i^2) bounded by i<=m and natural cutoff, -1 fixes b=1"
+ },
+ {
+  "task_id": 577,
+  "index": 576,
+  "verdict": "incorrect",
+  "reason": "same formula as 576 but drops the i<=m bound entirely, wrong for small m"
+ },
+ {
+  "task_id": 578,
+  "index": 577,
+  "verdict": "incorrect",
+  "reason": "O(n log n) double loop w/ gcd calls in pure Python for n,m up to 2e6, TLE risk"
+ },
+ {
+  "task_id": 579,
+  "index": 578,
+  "verdict": "incorrect",
+  "reason": "uses n/(...) float division instead of //, yields wrong/float values"
+ },
+ {
+  "task_id": 580,
+  "index": 579,
+  "verdict": "correct",
+  "reason": "(T-max(0,p3-p1-p2))//2 equals min(T//2,p1+p2), matches known formula"
+ },
+ {
+  "task_id": 581,
+  "index": 580,
+  "verdict": "correct",
+  "reason": "linear search (bounded by p3<=30) finds correct min(T//2,p1+p2) equivalent"
+ },
+ {
+  "task_id": 582,
+  "index": 581,
+  "verdict": "incorrect",
+  "reason": "tightened search bounds skip valid x; wrong output for e.g. 10 11 11 (11 vs 16)"
+ },
+ {
+  "task_id": 583,
+  "index": 582,
+  "verdict": "correct",
+  "reason": "directly computes min(T//2,p1+p2), matches proven correct formula"
+ },
+ {
+  "task_id": 584,
+  "index": 583,
+  "verdict": "incorrect",
+  "reason": "hardcodes test cases, never reads stdin at all"
+ },
+ {
+  "task_id": 585,
+  "index": 584,
+  "verdict": "incorrect",
+  "reason": "searches i ascending, returns smallest feasible multiple not the max m"
+ },
+ {
+  "task_id": 586,
+  "index": 585,
+  "verdict": "incorrect",
+  "reason": "Compares remaining capacity m to test-case count a instead of to x; wrong for general t"
+ },
+ {
+  "task_id": 587,
+  "index": 586,
+  "verdict": "correct",
+  "reason": "Correct: ceil(y/2) screens, remaining=15*s-4y, extra ceil((x-rem)/15)"
+ },
+ {
+  "task_id": 588,
+  "index": 587,
+  "verdict": "incorrect",
+  "reason": "extra_screen uses space_x%15==0 branch with space_x//15 instead of extra_space; wrong e.g. x=30,y=6"
+ },
+ {
+  "task_id": 589,
+  "index": 588,
+  "verdict": "correct",
+  "reason": "Correctly computes ceil(y/2) then leftover x after filling remaining cells, ceil/15 for rest"
+ },
+ {
+  "task_id": 590,
+  "index": 589,
+  "verdict": "incorrect",
+  "reason": "Adds spurious +1 to bxsfory1, fails given example x=8,y=2 (gives 3 not 2)"
+ },
+ {
+  "task_id": 591,
+  "index": 590,
+  "verdict": "correct",
+  "reason": "Matches correct formula: ceil(y/2) screens, remaining=15t-4y, extra ceil(t2/15)"
+ },
+ {
+  "task_id": 592,
+  "index": 591,
+  "verdict": "incorrect",
+  "reason": "Computes ceil(2y/5) instead of ceil(y/2) screens; fails example y=9,x=0 (gives 4 not 5)"
+ },
+ {
+  "task_id": 593,
+  "index": 592,
+  "verdict": "incorrect",
+  "reason": "char_map uses len(b) (encoded string length) instead of len(r) (unique chars) in mapping formula"
+ },
+ {
+  "task_id": 594,
+  "index": 593,
+  "verdict": "correct",
+  "reason": "Correct symmetric mapping r[i]<->r[-(i+1)] applied to decode"
+ },
+ {
+  "task_id": 595,
+  "index": 594,
+  "verdict": "incorrect",
+  "reason": "Logic is broken: repeatedly replaces all occurrences and returns unique_chars join, not decoded string"
+ },
+ {
+  "task_id": 596,
+  "index": 595,
+  "verdict": "correct",
+  "reason": "Correct symmetric mapping built from sorted unique chars, applied per character"
+ },
+ {
+  "task_id": 597,
+  "index": 596,
+  "verdict": "incorrect",
+  "reason": "Builds mapping by first-appearance order to 'a','b',... not by alphabetical symmetric position; wrong decode"
+ },
+ {
+  "task_id": 598,
+  "index": 597,
+  "verdict": "correct",
+  "reason": "Finds first descent, verifies prefix/suffix sorted and wraparound condition; equivalent to correct rotation check"
+ },
+ {
+  "task_id": 599,
+  "index": 598,
+  "verdict": "correct",
+  "reason": "Checks if sorted array is a contiguous window of a+a, correctly tests rotation to sorted"
+ },
+ {
+  "task_id": 600,
+  "index": 599,
+  "verdict": "incorrect",
+  "reason": "Ignores rotation entirely, just checks if already sorted; fails given example 2 (7 9 2 2 3)"
+ },
+ {
+  "task_id": 601,
+  "index": 600,
+  "verdict": "correct",
+  "reason": "Max median of consecutive triplets (n=2 special-cased) matches known solution and example."
+ },
+ {
+  "task_id": 602,
+  "index": 601,
+  "verdict": "incorrect",
+  "reason": "Uses max of adjacent-pair mins; fails e.g. [5,1,5] where true answer is 5, gives 1."
+ },
+ {
+  "task_id": 603,
+  "index": 602,
+  "verdict": "correct",
+  "reason": "Checks letters/digits individually sorted and no digit immediately follows a letter."
+ },
+ {
+  "task_id": 604,
+  "index": 603,
+  "verdict": "correct",
+  "reason": "Concatenating sorted digits+sorted letters and comparing to original correctly captures all conditions."
+ },
+ {
+  "task_id": 605,
+  "index": 604,
+  "verdict": "incorrect",
+  "reason": "Any letter after any prior digit returns NO, wrongly rejecting valid password '12ac' from statement example."
+ },
+ {
+  "task_id": 606,
+  "index": 605,
+  "verdict": "incorrect",
+  "reason": "Special-cases m==n-1 as Yes, violating required same parity of n,m; e.g. n=3,m=2 wrongly Yes."
+ },
+ {
+  "task_id": 607,
+  "index": 606,
+  "verdict": "correct",
+  "reason": "n>=m and (n-m) even is exactly the right condition."
+ },
+ {
+  "task_id": 608,
+  "index": 607,
+  "verdict": "correct",
+  "reason": "Covers n>=m and parity match via b%2==c%2 (b==c branch redundant but harmless)."
+ },
+ {
+  "task_id": 609,
+  "index": 608,
+  "verdict": "incorrect",
+  "reason": "Parity check wrongly uses total test count 'a' instead of n%2==m%2; e.g. n=4,m=2 gives No instead of Yes."
+ },
+ {
+  "task_id": 610,
+  "index": 609,
+  "verdict": "correct",
+  "reason": "(n-m)%2==0 and n-m>=0 is exactly the right condition."
+ },
+ {
+  "task_id": 611,
+  "index": 610,
+  "verdict": "incorrect",
+  "reason": "Only checks n>=m, missing parity requirement; e.g. n=4,m=3 wrongly Yes."
+ },
+ {
+  "task_id": 612,
+  "index": 611,
+  "verdict": "incorrect",
+  "reason": "Carry propagation can leave adjacent nonzero digits, e.g. x=11 yields ...,1,1 adjacent, violating constraint."
+ },
+ {
+  "task_id": 613,
+  "index": 612,
+  "verdict": "incorrect",
+  "reason": "Same adjacency bug as sibling, plus a stray debug print adds an extra unexpected output line per case."
+ },
+ {
+  "task_id": 614,
+  "index": 613,
+  "verdict": "correct",
+  "reason": "Answer = max(a[0..n-2]) + a[n-1]; matches all provided examples exactly."
+ },
+ {
+  "task_id": 615,
+  "index": 614,
+  "verdict": "incorrect",
+  "reason": "Takes two globally largest values, ignoring index/order constraint; fails example 2 (expects 4, gives 6)."
+ },
+ {
+  "task_id": 616,
+  "index": 615,
+  "verdict": "incorrect",
+  "reason": "Float division on b*k sums loses precision for large n,a,b (~1e9); wrong integer result."
+ },
+ {
+  "task_id": 617,
+  "index": 616,
+  "verdict": "correct",
+  "reason": "Exact integer formula using k=min(n,b-a); matches all sample cases."
+ },
+ {
+  "task_id": 618,
+  "index": 617,
+  "verdict": "incorrect",
+  "reason": "Same correct logic as 617-item but uses float division; precision loss for large values."
+ },
+ {
+  "task_id": 619,
+  "index": 618,
+  "verdict": "correct",
+  "reason": "Exact integer formula k=min(n,b-a), b*k-k*(k-1)//2+(n-k)*a; verified vs all examples."
+ },
+ {
+  "task_id": 620,
+  "index": 619,
+  "verdict": "incorrect",
+  "reason": "Floors (2b-k+1)/2 before multiplying by k, dropping k/2 term; fails sample 2 (33 vs 35)."
+ },
+ {
+  "task_id": 621,
+  "index": 620,
+  "verdict": "correct",
+  "reason": "Binary search on concave profit(k); traced through all examples, matches correct outputs."
+ },
+ {
+  "task_id": 622,
+  "index": 621,
+  "verdict": "incorrect",
+  "reason": "can() check is vacuous (always true-ish); prints k value not profit, fails sample outright."
+ },
+ {
+  "task_id": 623,
+  "index": 622,
+  "verdict": "correct",
+  "reason": "Swap-based construction for target Manhattan k; verified correct on many traced cases."
+ },
+ {
+  "task_id": 624,
+  "index": 623,
+  "verdict": "correct",
+  "reason": "Rotation/insert construction for target k; verified correct across multiple traced cases."
+ },
+ {
+  "task_id": 625,
+  "index": 624,
+  "verdict": "correct",
+  "reason": "Peels top bit repeatedly to isolate lowest set bit of |x-y|=lowest bit of x^y; matches formula."
+ },
+ {
+  "task_id": 626,
+  "index": 625,
+  "verdict": "incorrect",
+  "reason": "Only peels top bit once (no loop); wrong when diff has >=3 set bits, e.g. x=8,y=1 gives 3 not 1."
+ },
+ {
+  "task_id": 627,
+  "index": 626,
+  "verdict": "incorrect",
+  "reason": "Uses float division (/) on huge products up to 20^50; precision loss gives wrong bets."
+ },
+ {
+  "task_id": 628,
+  "index": 627,
+  "verdict": "correct",
+  "reason": "Standard LCM-based solution with exact integer (//) arithmetic; matches all samples."
+ },
+ {
+  "task_id": 629,
+  "index": 628,
+  "verdict": "incorrect",
+  "reason": "Uses raw product instead of LCM; x_i can vastly exceed required 1e9 bound for larger n."
+ },
+ {
+  "task_id": 630,
+  "index": 629,
+  "verdict": "correct",
+  "reason": "Standard LCM-based solution with exact integer (//) arithmetic; matches all samples."
+ },
+ {
+  "task_id": 631,
+  "index": 630,
+  "verdict": "correct",
+  "reason": "Uses LCM so x_i stays bounded (<=1e9); matches sample outputs exactly."
+ },
+ {
+  "task_id": 632,
+  "index": 631,
+  "verdict": "incorrect",
+  "reason": "Uses full product instead of LCM; x_i blows way past 1e9 for larger n."
+ },
+ {
+  "task_id": 633,
+  "index": 632,
+  "verdict": "correct",
+  "reason": "Leaf-peel via degree queries + two-ended reconstruction; verified on forest and cyclic cases."
+ },
+ {
+  "task_id": 634,
+  "index": 633,
+  "verdict": "incorrect",
+  "reason": "Brute-force d loop ignores neighbor info, wrong order, far exceeds n queries."
+ },
+ {
+  "task_id": 635,
+  "index": 634,
+  "verdict": "correct",
+  "reason": "Correctly adds m for missing letters and shortfall for present ones; matches samples."
+ },
+ {
+  "task_id": 636,
+  "index": 635,
+  "verdict": "incorrect",
+  "reason": "p='ABCDEF' omits 'G'; misses shortfall when G is entirely absent from bank."
+ },
+ {
+  "task_id": 637,
+  "index": 636,
+  "verdict": "correct",
+  "reason": "Pre-inits all 7 letters to 0, sums max(0,m-count) via <= check (equiv); matches samples."
+ },
+ {
+  "task_id": 638,
+  "index": 637,
+  "verdict": "incorrect",
+  "reason": "Doesn't pre-init missing letters; dict keys skip absent letters, undercounts needed problems."
+ },
+ {
+  "task_id": 639,
+  "index": 638,
+  "verdict": "correct",
+  "reason": "Standard fixed-size count array over 'A'-'G', correct shortfall sum; matches samples."
+ },
+ {
+  "task_id": 640,
+  "index": 639,
+  "verdict": "incorrect",
+  "reason": "Never reads stdin; uses hardcoded example test_cases instead of actual input."
+ },
+ {
+  "task_id": 641,
+  "index": 640,
+  "verdict": "incorrect",
+  "reason": "Sorts values as strings (o.sort reverse) not numerically; breaks for multi-digit a_i up to 100."
+ },
+ {
+  "task_id": 642,
+  "index": 641,
+  "verdict": "correct",
+  "reason": "Sorts numerically, boundary tie-check via a[k+1]<x; matches all 12 sample outputs."
+ },
+ {
+  "task_id": 643,
+  "index": 642,
+  "verdict": "incorrect",
+  "reason": "Tie-break uses a[k-1] instead of a[k+1]; a[k-1]>=x always, wrongly yields MAYBE not YES (sample 9)."
+ },
+ {
+  "task_id": 644,
+  "index": 643,
+  "verdict": "correct",
+  "reason": "Counts favorite's value occurrences among top-k vs total; matches all 12 samples."
+ },
+ {
+  "task_id": 645,
+  "index": 644,
+  "verdict": "incorrect",
+  "reason": "greater_count>=k branch backwards; gives YES on sample 3 where expected NO."
+ }
+]
