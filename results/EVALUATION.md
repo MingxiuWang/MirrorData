@@ -13,11 +13,10 @@ This file records the result of running a Claude Code agent over all 645 cases i
 | Verdict | Cases | Share |
 |---|---:|---:|
 | `correct` — would be accepted | 327 | 50.7% |
-| `incorrect` — would be rejected | 311 | 48.2% |
-| `undetermined` — no usable specification | 7 | 1.1% |
+| `incorrect` — would be rejected | 318 | 49.3% |
 | **Total** | **645** | |
 
-Confidence: 634 high, 4 medium, 7 n/a. The split is close to even, consistent with a
+Confidence: 641 high, 4 medium. The split is close to even, consistent with a
 benchmark built to be label-free and non-trivial.
 
 The 645 candidates cover **159 distinct task statements** (median 4 candidates each).
@@ -77,7 +76,7 @@ Grading this dataset by sample-diffing would misclassify ~31% of it, in both dir
   artifact of static input; a real interactor showed it answers correctly within the
   query limit over 84 games.
 
-## Failure modes among the 311 incorrect cases
+## Failure modes among the 318 incorrect cases
 
 Approximate, from the recorded reasons: bugs found only off-sample (wrong greedy/DP,
 off-by-one, n=1 or all-equal edge cases, float precision) ~165; wrong answer already
@@ -90,12 +89,13 @@ complexity/TLE ~4; crashes and recursion errors ~3.
 1. **Task_ids 364–370 (indices 363–369) have a corrupted `description`.** The field
    holds no task statement — it contains an unrelated Python file-generation utility
    (with Chinese comments), byte-identical across all seven records. These are exactly
-   the 7 cases with no extractable sample. With no specification, "does the code satisfy
-   the description" is unanswerable, so they are recorded as `undetermined` rather than
-   guessed; the `candidate_code` is intact and appears to solve a binary-string YES/NO
-   task. A stricter reading is defensible - taking the corrupted text literally as the
-   spec, none of the seven programs implements it, which would make them 7 more
-   `incorrect` and the totals 327 correct / 318 incorrect.
+   the 7 cases with no extractable sample; the `candidate_code` is intact and appears to
+   solve a binary-string YES/NO task. They are judged `incorrect`: taking the description as the specification,
+   it asks for a filesystem utility (scan numbered subfolders, count .html files, create
+   matching -ac.py/-wa.py files), and all seven programs instead read stdin and classify
+   binary strings, performing no filesystem operation at all. The verdict rests on the
+   description being corrupt, so treat these seven as an artefact of the data rather than
+   a finding about the programs.
 
 2. **Every record carries a third field, `task_id`** (values 1–645, sequential), added
    by commits `c8b3a59` and `c7fba91`. The README still states each object has "exactly
@@ -124,6 +124,6 @@ names or scores anywhere in the file, and 645 distinct (description, candidate_c
 
 | File | Contents |
 |---|---|
-| `agent_verdicts.json` | Per-case verdict, confidence, reason, counterexample input, sample-test outcome |
+| `agent_verdicts.json` | Per-case verdict (correct/incorrect), confidence, reason, counterexample input, sample-test outcome |
 | `agent_verdicts.csv` | Same, flattened for spreadsheets |
 | `EVALUATION.md` | This report |
