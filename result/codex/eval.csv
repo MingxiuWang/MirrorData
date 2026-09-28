@@ -1,0 +1,646 @@
+task_id,satisfies_description,reason
+1,false,"It prints Bob for cases such as a=3,b=2 even though the total of five moves makes Alice win."
+2,true,The parity rule matches the game outcome and the input/output handling.
+3,false,The prompt passed to input() is printed to standard output and violates the required output format.
+4,true,It applies the correct total-sum parity rule with the specified input format.
+5,false,"Its output is outside the test-case loop, so it prints only once using the final case values."
+6,true,It implements the correct parity rule for every test case.
+7,false,"It prints P-M without absolute value, producing a negative penalty when minus signs are more numerous."
+8,true,"It returns the absolute final balance, which is the minimum penalty."
+9,false,It counts sign-balance segments rather than computing the minimum weighted subarray penalty.
+10,false,It prints a signed balance instead of the required nonnegative minimum penalty.
+11,true,The greedy assignment maintains the two smallest feasible tails and counts unavoidable increases.
+12,true,The two-tail greedy algorithm matches the stated subsequence partition objective.
+13,false,"The expression x==y does not assign y, so the tail update is incorrect after a third larger value."
+14,true,It uses the standard greedy two-tail construction and counts each required increase.
+15,true,Its greedy tail updates and increase count match the minimum partition penalty.
+16,false,It counts arrays by final prefix sum only and ignores whether the complete sorted prefix multiset equals p.
+17,true,It computes the tight interval and subtracts excluded values within that interval.
+18,true,It correctly handles interval bounds and distinct exclusions.
+19,false,It returns zero when the lower and upper bounds are equal even if that sole value is not excluded.
+20,true,"Despite variable names, it interprets each constraint type correctly and counts the interval."
+21,false,It prints the first admissible integer rather than the number of admissible integers.
+22,true,It evaluates all Alice removal counts using the correct sorted-array minimax transition.
+23,true,It evaluates the standard minimax cases after sorting and returns the best Alice outcome.
+24,true,Its running sum transition covers all allowed removals and includes the all-removed case.
+25,true,It applies the standard sorted sliding-window evaluation for every removal count.
+26,false,It prints the last computed value rather than the maximum over all removal choices.
+27,false,It explicitly materializes an exponentially large array and cannot satisfy the stated query constraints.
+28,false,"It computes squared distances between fixed input pairs, which can be diagonals and therefore not the square area."
+29,true,"For an axis-aligned square, the x-span squared is exactly its area."
+30,true,It identifies a side from the repeated x-coordinate pair and squares its length.
+31,true,Sorting the four corners pairs adjacent corners along the two sides and the product gives the area.
+32,false,It prints a floating-point value such as 9.0 although the required output is an integer.
+33,true,It computes moves as matched transfers plus the unavoidable additions or removals.
+34,true,The maximum of cats to add and cats to remove is the minimum operation count.
+35,true,It pairs adjacent opposite mismatches into moves and counts the remaining single changes.
+36,false,"It skips the first positions when balancing counts rather than matching actual additions and removals, overcounting cases such as s=0101,f=0010."
+37,true,For each interval it subtracts the cheaper continuous or restart cost and checks positive remaining charge.
+38,false,It omits the initial interval from time zero to the first message.
+39,false,Its strict comparison and aggregate cost calculation can choose the wrong cost at equality and does not model every interval correctly.
+40,true,The endpoint-choice heap greedily assigns distinct available b values to maximize each absolute difference.
+41,false,"It discards smaller b values by taking only the largest n, but those values can be optimal, for example a=[100,100], b=[1,2,100]."
+42,false,"Its pointer updates can reuse or skip incompatible b values, so the constructed pairing is not generally valid."
+43,false,"Its win condition uses unrelated expressions such as abs(x2-c)>=(x1+c), so it misclassifies valid board positions."
+44,true,It implements the standard parity and reachable-column interval conditions for the chip game.
+45,true,It applies the standard midpoint reachability test separately for odd and even row gaps.
+46,false,It does not treat equal row positions as an immediate draw and can declare a winner when xa equals xb.
+47,true,A position differing from c in both a and b is exactly the condition for a separating template.
+48,false,"The for-loop else resets the result to NO after every loop, even when a valid position was found."
+49,true,It checks each position for a character absent from both matching strings and handles identical c cases.
+50,false,It tests characters against the whole strings rather than the corresponding positions.
+51,true,It directly checks the exact per-position template feasibility conditions.
+52,true,Its constructed template matches a and b and rejects c exactly when a separating position exists.
+53,true,"A power-of-two triple is valid exactly when its two largest exponents are equal, which the frequency sweep counts."
+54,false,It computes total_count by excluding groups with equal frequencies rather than excluding the current exponent group.
+55,true,It counts all triples whose two largest exponent groups coincide using cumulative frequencies.
+56,false,It breaks the frequency sweep after j>1000 and therefore misses valid triples for larger distinct-exponent sets.
+57,true,"It counts triples with two sticks from the current exponent and one from any smaller exponent, plus equal triples."
+58,true,It builds forward and backward prefix costs using the nearest-gap rule and answers directional queries.
+59,false,"It prints the internal prefix array before answering queries, adding forbidden output lines."
+60,true,Its directional prefix costs correctly encode unit nearest-city moves versus direct distances.
+61,true,It constructs forward and backward nearest-city prefix costs and uses the appropriate direction per query.
+62,true,It computes both directional cost arrays and answers each query by monotone direction.
+63,true,Its forward and reversed traversals implement the nearest-gap cost rule for both query directions.
+64,true,The binary construction produces a short sequence whose increasing-subsequence count is exactly X.
+65,false,"For X=2 it calls generate_sequence(1), finds no decomposition, and recurses forever instead of producing an array."
+66,true,The recursive construction matches the required increasing-subsequence count and stays within the stated bounds.
+67,false,"It fails to subtract the empty subsequence, so for X=5 it outputs a two-element array with only four increasing subsequences."
+68,false,"For X=3, its loop produces [0], which has only two increasing subsequences including the empty one."
+69,true,"It removes input whitespace, counts zeros between the first and last chip, and outputs the minimum number of moves."
+70,false,"It searches for chips in a string containing spaces, so positions and the selected interval are incorrect for the specified tokenized input."
+71,true,It trims leading and trailing free cells and counts exactly the free cells between the first and last chip.
+72,false,"It prints the trimmed array before the required answer, producing extra output."
+73,true,"It processes monsters by arrival distance and spends each second's bullet budget before movement, matching the survival condition."
+74,true,The cumulative-health versus distance-times-bullets test is the correct feasibility criterion after sorting by distance.
+75,false,"It compares cumulative health with distance instead of distance multiplied by k, rejecting valid cases when k>1."
+76,true,"Its prefix calculation checks the required sum against the number of ones and interval length, including the singleton case."
+77,true,The prefix sums implement the equivalent condition that the interval sum is at least its length plus its number of ones.
+78,false,"It requires the interval sum to be at least twice its length, which is stricter than the stated condition."
+79,true,"It assigns cost one to values greater than one and cost two to ones, exactly matching the query criterion."
+80,false,"It prints the entire prefix-sum array before answering queries, causing invalid extra output."
+81,true,The two directional prefix-sum searches compute the minimum possible eating time for every slime.
+82,true,It greedily extracts complete alphabet sets and constructs a missing subsequence when fewer than n sets exist.
+83,true,It uses the same complete-set greedy and its selected missing character remains within the allowed alphabet.
+84,false,"Its remainder and missing-character construction is incorrect, including an off-by-one alphabet scan and unreliable suffix selection."
+85,true,It greedily counts complete alphabet sets and outputs one character absent from the final incomplete set.
+86,false,It prints a counterexample once for every missing character instead of exactly one required string.
+87,true,Repeating the first k letters n times contains every length-n string as a subsequence and has the minimum possible length nk.
+88,false,"It only provides 23 alphabet letters, so it fails when k is 24, 25, or 26."
+89,true,"It outputs the first k letters repeated n times, which is a minimum-length universal subsequence string."
+90,false,"For n greater than two it still outputs only two alphabet blocks, whose length is insufficient for the required minimum nk."
+91,true,"It enumerates divisors and returns the largest divisor of x not exceeding x/n, which is the maximum feasible gcd."
+92,false,"Its odd-step divisor enumeration misses valid divisors, such as divisor 4 for x=12 and n=3."
+93,true,It checks all divisor pairs and returns the largest divisor of x that permits n positive equal-gcd parts.
+94,false,"The exclusive elif skips the complementary divisor, so it can miss the maximum feasible divisor."
+95,true,Its formula combines the expected initial friendship values and expected repeated selections with the correct pair probability.
+96,false,It uses n(n-1) instead of the number of unordered pairs n(n-1)/2 in the probability denominator.
+97,false,"It ignores the random pair-selection probabilities and repeated-selection increments, so it does not compute the requested expectation."
+98,true,Its numerator and denominator are the correct closed-form expectation for initial values and repeat increments.
+99,true,"It counts A and B and returns the more frequent letter, with B correctly winning the impossible tie case for length five."
+100,true,It correctly counts both letters and prints the majority letter for every test case.
+101,false,"Its final output is outside the test-case loop, so it prints only one result using the last input string."
+102,true,"For valid shapes, comparing the counts of ones in the first two nonempty rows distinguishes triangles from squares."
+103,false,It prints the row-count list instead of printing the required SQUARE or TRIANGLE classification.
+104,true,"A valid triangle has a one-cell row while a valid square does not, so its classification logic is sufficient."
+105,true,It precomputes prefix sums of digit sums through the maximum allowed n and returns the corresponding prefix value.
+106,false,"Its precomputation loop uses the last input n rather than the maximum requested n, leaving earlier larger queries uncomputed."
+107,true,It precomputes prefix digit sums through 200000 and answers each query directly.
+108,true,It correctly builds prefix sums of decimal digit sums through the full allowed range.
+109,false,It sums digit values for 0 through n-1 instead of 1 through n and also carries the total across test cases.
+110,false,"Its complement-count bookkeeping starts matches at zero and fails on repeated complementary values, undercounting possible pairs."
+111,false,It prints the running answer inside the element loop instead of one answer per test case.
+112,true,It greedily pairs each number with its 31-bit complement and counts the resulting minimum groups.
+113,false,"It never removes exhausted complement counts, so repeated values can be paired more times than available."
+114,true,Its layer counting and position formula correctly identify the kth card in the odd-multiple ordering.
+115,true,It builds the card layers by repeated halving and applies the correct offset and power-of-two formula.
+116,false,"It never appends any layer to L, so it produces no answer for every test case."
+117,true,It accumulates card-layer sizes and applies the correct scaled odd-number formula to the target position.
+118,true,"It returns the distance from the first black cell through the last black cell, which is the minimum painted segment."
+119,false,"It reads and answers only one string, ignoring the required test-case count and remaining inputs."
+120,true,Selecting a letter whose prior count equals each trace value constructs a valid lowercase string for every guaranteed trace.
+121,true,It maintains per-letter occurrence counts and selects the first letter matching each trace value.
+122,false,"It keeps the occurrence-count array across test cases, corrupting all cases after the first."
+123,false,It treats each trace value as a letter index rather than selecting a letter whose current count equals that value.
+124,false,Its reverse-frequency mapping does not generally reconstruct a string with the supplied trace values.
+125,true,It greedily assigns required values between the arrays while balancing shared values and verifies both exact half-counts.
+126,true,It checks coverage of 1 through k and ensures values exclusive to either array fit within that array's half quota.
+127,false,"It counts all qualifying occurrences rather than distinct required values, so duplicates can falsely satisfy the quotas."
+128,false,It implements the unrelated two-array coverage problem instead of answering range queries for unequal array elements.
+129,true,Its run decomposition returns adjacent indices across a value change within each query and -1 -1 otherwise.
+130,false,"When the input has more than five test cases, the tc>5 branch suppresses the required query answers."
+131,true,The alternating low-high construction is a valid k-level permutation for every even k.
+132,true,Assigning consecutive values by positions modulo k gives the required balanced window sums.
+133,false,"The DFS initializes and records vertices with inconsistent zero- and one-based indexing, so the reported cycle can be invalid."
+134,false,The DSU minimum-edge tracking and subsequent DFS do not reliably produce a simple cycle whose lightest edge is globally minimal.
+135,false,"It checks only whether b is even, so it rejects valid cases such as a=2,b=1."
+136,true,The even-side split checks correctly exclude exactly the cases that only reproduce the original rectangle.
+137,false,"It accepts every rectangle with an even side, including impossible cases such as 2 by 1 and 6 by 3."
+138,false,"The tuple condition is always truthy, causing all non-both-even cases to be incorrectly rejected."
+139,true,It accepts precisely rectangles with an even side except when halving that side reproduces the other side.
+140,true,The distinct-value sliding window computes the standard maximum achievable frequency.
+141,true,The transformed distinct residues count the attainable common final values correctly.
+142,true,It enumerates the relevant divisors of both placement expressions and applies the necessary bounds.
+143,false,"The only output statement for valid cases is commented out, so the program can produce no answer."
+144,true,Its divisor enumeration and union of the two valid expressions match the required count of k values.
+145,false,"It uses the wrong halved divisor expressions and returns an incorrect count, for example on n=10,x=2."
+146,false,It repeats the incorrect divisor formula and therefore miscounts valid k values.
+147,false,"It returns zero for an already increasing array even though rearrangement can yield positive beauty, such as [1,2,3]."
+148,false,"It returns only max(a)-min(a), which is below the achievable maximum for arrays such as [1,2,3,4]."
+149,false,It computes only the range rather than the maximum sum of consecutive absolute differences.
+150,false,"Summing paired sorted extremes is not the maximum path beauty, for example it gives 4 instead of 7 on [1,2,3,4]."
+151,false,Sorting and summing adjacent differences produces only the range instead of the maximum rearranged beauty.
+152,true,Alternating largest and smallest remaining values yields a maximum absolute-difference path.
+153,false,It prints a sorted permutation instead of the required maximum beauty integer.
+154,true,"The formula ceil(k/2), with the full-diagonal exception, matches the minimum coloring count."
+155,true,Its threshold and ceil/floor cases match the minimum cells needed for the diagonal coverage.
+156,false,"For k above 2n it uses floor(k/2)+1, which overestimates cases such as n=3,k=6."
+157,true,It implements the correct piecewise diagonal-covering formula including both full-coverage boundary cases.
+158,false,"Its full-diagonal expression adds one too many cells, producing 2n+1 when k=4n-2."
+159,true,The recurrence computes the minimum capital needed to survive x consecutive losses.
+160,true,Its cases and recurrence are equivalent to the required minimum-capital condition.
+161,false,"The special-case thresholds are wrong, rejecting valid inputs such as k=2,x=1,a=3."
+162,false,It pairs elements in input order rather than optimally pairing sorted adjacent values and can also remove incorrect list positions.
+163,true,Sorting and summing every other element is the optimal pairing strategy.
+164,true,"It sorts the values and sums the smaller member of each adjacent pair, which is optimal."
+165,true,It correctly sorts and sums the smaller value from each pair.
+166,true,It sorts the board values and sums the values at even sorted positions.
+167,true,It selects the optimal alternating sorted elements and sums them.
+168,true,The parity-block permutation is a valid construction for the divisibility condition.
+169,true,Reversing the values at alternating positions provides a valid permutation construction.
+170,false,It prints Python list syntax rather than a whitespace-separated permutation accepted by the output format.
+171,true,The duplicate accounting and descending gap filling implement the lexicographically maximal set.
+172,true,It uses the standard sorted transformed values with duplicate-aware gap filling.
+173,true,The cases construct the lexicographically smallest three letters for every encoded sum.
+174,true,Its three sum ranges correctly construct the lexicographically smallest valid word.
+175,true,The greedy allocation of two low letters and then high letters yields the lexicographically smallest word.
+176,false,"For n=27 it leaves a zero letter value and attempts to print chr(96), which is not a valid lowercase letter."
+177,true,The prefix surplus check exactly characterizes whether water can be moved only to the right.
+178,false,It treats the first input value as n and never processes the required test-case structure.
+179,false,It reads only one case and uses an invalid condition based on the last container rather than prefix feasibility.
+180,true,Trimming equal boundary runs and choosing the cheaper remaining side gives the minimum replacement length.
+181,false,"Its inward matching and off-by-one calculation returns 1 instead of 2 for [1,2,2,1]."
+182,true,It correctly combines matching prefix and suffix runs to compute the minimum replacement length.
+183,true,It computes the untouched boundary runs and subtracts the largest preservable run(s).
+184,true,Its boundary trimming cases correctly calculate the minimum interval to repaint.
+185,false,It only defines a function with incompatible dictionary input and never parses or prints the required cases.
+186,true,The paired residue-frequency lookup matches both divisibility conditions while preserving index order.
+187,false,"It adds separate counts for the two residue conditions, overcounting pairs that do not satisfy both simultaneously."
+188,true,The paired residue map and input parsing correctly count beautiful pairs.
+189,true,It counts total digits after Anna's optimal reversals and applies the correct threshold.
+190,true,It implements the same correct trailing-zero game calculation as the standard solution.
+191,false,It prints the misspelled result Sashah instead of the required Sasha.
+192,false,It uses a non-optimal construction and tests strict greater-than instead of the required greater-than-or-equal threshold.
+193,true,It reconstructs a candidate base order from two screenshots and validates it against all remaining screenshots.
+194,false,"When only one screenshot requires insertion, it leaves an index at -1 and inserts at the wrong position."
+195,true,Taking a one-step move whenever safe and otherwise a two-step move greedily maximizes reachable coins.
+196,false,"Thorn cells retain zero DP values, so the recurrence can count coins beyond two consecutive thorns even when unreachable."
+197,false,"The expression thorn==0 does not reset thorn after an empty cell, causing a later isolated thorn to terminate scanning incorrectly."
+198,false,"The condition if b[::] is always true at the first thorn, so the code stops without allowing a legal jump over one thorn."
+199,true,The code selects the first multiple strictly after the previous occurrence for every sign.
+200,false,It solves the coin-path problem instead of reading periodicities and producing apocalypse years.
+201,true,The implementation advances each occurrence to the least multiple strictly greater than the previous year.
+202,true,Adding the period when divisible and otherwise adding the remainder yields the next strictly later multiple.
+203,false,"When the current year is not divisible by a period, it adds the remainder instead of the required distance to the next multiple."
+204,false,The formula uses (year+1)//period plus one and skips the correct next multiple for many nondivisible years.
+205,false,Dividing the unreduced product by removed factors after taking a modular remainder is not generally valid.
+206,true,It reconstructs the remaining array in reverse and computes each required product modulo m.
+207,false,"The reverse products are never reduced modulo m, so the output is not the required remainder."
+208,false,Its reverse indexing initialization does not correctly represent the current remaining interval for general command strings.
+209,true,The pairing keeps equal nontrump suits together and uses trump cards to cover unmatched suits or pair remaining trumps.
+210,true,The implementation forms valid same-suit pairs and pairs leftover trumps after sorting them by rank.
+211,false,The candidate is interactive and does not consume the hacked permutation input required by the stated noninteractive format.
+212,false,The candidate is interactive and does not consume the hacked permutation input required by the stated noninteractive format.
+213,false,The candidate is interactive and does not consume the hacked permutation input required by the stated noninteractive format.
+214,false,The candidate is interactive and does not consume the hacked permutation input required by the stated noninteractive format.
+215,false,"For a power-of-two input such as n=4, the floating-log comparison fails and returns 2 instead of 4."
+216,false,The condition power==n compares a logarithm-derived exponent with the array length and cannot detect power-of-two n correctly.
+217,true,The path construction chooses the first lexicographically minimizing turn and counts the matching continuation range.
+218,false,The path-count loop compares prefixes of the top row with the result instead of the required adjacent top-bottom continuation.
+219,true,It constructs the greedy lexicographically smallest path and counts the valid equal-choice continuation.
+220,true,The active Binary Path implementation follows the minimizing turn and counts matching edges correctly.
+221,false,"Its backward count loop compares s2[i-1] at i=0, incorrectly wrapping to the last column."
+222,false,The candidate is interactive and does not consume the hacked permutation input required by the stated noninteractive format.
+223,false,The candidate is interactive and does not consume the hacked permutation input required by the stated noninteractive format.
+224,false,The candidate is interactive and does not consume the hacked permutation input required by the stated noninteractive format.
+225,false,The candidate is interactive and does not consume the hacked permutation input required by the stated noninteractive format.
+226,false,The candidate is interactive and does not consume the hacked permutation input required by the stated noninteractive format.
+227,false,"The helper last references n as an undefined global, causing a runtime failure when its calculation is reached."
+228,false,"The helper last references n as an undefined global, causing a runtime failure when its calculation is reached."
+229,false,"In the right-moving branch it overwrites the previously computed b correction, producing incorrect escape times."
+230,false,"In the right-moving branch it overwrites the previously computed b correction, producing incorrect escape times."
+231,true,The left-to-right greedy elimination applies exactly the only possible operation count at each position and checks the final two cells.
+232,false,"It only checks endpoint parity conditions and misses valid cases such as [1,2,1], which one center operation solves."
+233,false,"The loop requires a center value greater than one, so it cannot apply a necessary operation when the center equals one."
+234,false,"It sets list[i-1] to zero before using it to update the center and right cells, so those updates always subtract zero."
+235,true,It performs the standard left-to-right elimination and accepts exactly when the final two values become zero.
+236,false,For the string mapie it deletes both forbidden substrings sequentially and reports two deletions although one deletion suffices.
+237,true,It counts map and pie occurrences and subtracts their single-character overlap in mapie.
+238,false,Overlapping occurrences such as mapie are counted twice even though one deletion can remove both forbidden substrings.
+239,true,The greedy scan removes each encountered forbidden length-three substring and skips its characters.
+240,false,For a standalone map it removes two characters instead of the one character needed to destroy the forbidden substring.
+241,true,The set transition applies each remembered direction modulo n and converts residue zero back to player n.
+242,false,"It prints the possible player set without sorting it, violating the required increasing order."
+243,true,The heap-based dynamic programming computes each row's minimum bridge cost and minimizes every consecutive block of k rows.
+244,false,"For n=1,m=3,d=1 and a row 0 3 0 it returns 5 although supports at the two banks cost 2 and satisfy the distance constraint."
+245,true,It examines the largest gap and binary-searches each model-function sum to minimize that gap.
+246,false,"When a new maximum gap is found it fails to update the previous maximum as next_max_diff, so the fallback gap can be wrong."
+247,false,"For k=1 it outputs range(n), containing 0 even though every array element must be at least 1."
+248,true,"Constant values give n sorted shifts when k=n, increasing values give exactly one, and all other k are impossible."
+249,true,The reverse construction uses the current MEX and updates it with the chosen permutation value as required.
+250,false,Its positive-case MEX update does not maintain the set of used values correctly and can produce an invalid permutation.
+251,false,"It increments a guessed MEX without tracking all used values, so the constructed values need not satisfy the given differences."
+252,true,It is the standard reverse MEX reconstruction and outputs the resulting permutation.
+253,true,"For y=0 it starts with x-2 and correctly adds the triangles created by one-vertex gaps, including the circular boundary cases."
+254,true,It counts adjacent selected vertices and correctly computes the circular gap before adding the base x-2 triangles.
+255,false,"Its circular gap omits the first selected vertex, so wraparound one-vertex gaps are missed."
+256,false,It always returns x-2 and misses additional triangles formed by selected vertices separated by one unselected vertex.
+257,true,The implementation handles immediate triangles and spends available chosen vertices across odd and even gaps using the standard optimization.
+258,false,It adds the one-gap triangle in the initial loop and then adds the same gap again during general gap processing.
+259,false,The wraparound branch uses stale adjacent-gap variable i instead of the wraparound gap when updating the answer.
+260,false,The wraparound branch uses stale i-based gap values and can update y and ans using unrelated data.
+261,true,The gap-based construction matches the standard maximization formula.
+262,true,The construction handles singleton gaps and caps the result at the polygon limit.
+263,true,The frequency-based minimax logic matches the optimal MEX result.
+264,false,"For counts [0:1, 2:2, 3:1], it prints 3 although the missing value 1 forces the answer to 1."
+265,false,"For [0,0,1,1,2,2], it prints 2 although the optimal score is 3."
+266,true,It implements the required first-missing-or-second-singleton criterion.
+267,true,It implements the required first-missing-or-second-singleton criterion.
+268,true,Diameter centers and distance layers cover every tree vertex with the minimum number of operations.
+269,false,In the even-diameter branch it outputs center indices instead of the corresponding vertex labels.
+270,true,"Disconnecting island 1 requires at least n-1 destroyed bridges, matching the condition."
+271,false,For n=4 and k=1 it prints 3 although all 4 islands remain reachable.
+272,false,For n=2 and k=0 it prints 1 although both islands are reachable.
+273,false,It does not clear left-half duplicate counts and can print more copies than the half contains.
+274,false,It similarly reuses duplicate counts and can output an invalid multiplicity.
+275,false,It treats k as the output length instead of producing 2k elements in each array.
+276,true,It pairs valid half-duplicates and shared singletons to obtain equal XORs and length 2k.
+277,true,The counter simulation matches the optimal MEX game criterion.
+278,true,The counter simulation matches the optimal MEX game criterion.
+279,true,It directly implements the standard first missing or second singleton rule.
+280,false,"For n=1 with array [0], it prints nothing instead of the answer 1."
+281,true,Its remainder feasibility check and ceiling tent count are correct.
+282,false,It ignores stdin and prints fixed diagnostic output rather than solving test cases.
+283,true,The compact formula correctly accounts for extrovert feasibility and rounded tent usage.
+284,true,It checks the exact extrovert remainder requirement and computes the rounded total.
+285,false,For b=2 and c=2 it prints -1 although the two extroverts can share a tent with one universal.
+286,true,The final formula counts the maximum visible launches from both periodic installations.
+287,true,The formula correctly counts floor(m/a)+1 and floor(m/b)+1 visible fireworks.
+288,true,Its cases are equivalent to the correct periodic-launch count.
+289,false,When m<a but m>=b it prints 2 and omits additional fireworks from the b-minute installation.
+290,true,It uses the correct sum of visible launches from both installations.
+291,false,"Using m+min(a,b) as the counting endpoint gives incorrect counts, such as a=2,b=100,m=1."
+292,true,The prefix counts and tie handling correctly select the closest valid road position.
+293,true,It checks both side-majority conditions at every split and preserves the smaller tie.
+294,true,Its prefix-sum checks correctly test the required rounded half conditions.
+295,true,The two directional searches identify valid splits nearest the midpoint.
+296,true,The two directional searches identify valid splits nearest the midpoint.
+297,true,Integer percentage comparisons correctly implement both half constraints and endpoint fallback.
+298,true,Ceiling percentage comparisons correctly implement both half constraints and endpoint fallback.
+299,true,The suffix minimum-cost formula is the standard optimum for reaching one of the first k positions.
+300,true,The reversed greedy computation evaluates the same optimal bribe transitions.
+301,true,The reverse greedy scan evaluates the permitted final positions correctly.
+302,false,The initial best value 10^12 can be below a valid answer under the 2e5*1e9 cost bound.
+303,true,It evaluates each candidate first position against the suffix minimum costs.
+304,true,The cost decomposition accounts for all people before the target position.
+305,false,Its two-swap construction does not correctly maintain the binary-search path invariants in general.
+306,false,It only performs one swap and therefore cannot handle cases requiring two swaps.
+307,false,It only performs one swap and therefore cannot handle cases requiring two swaps.
+308,false,It reports at most one swap and omits the required two-swap cases.
+309,false,It reports at most one swap and omits the required two-swap cases.
+310,true,The ordered removals and i-th-largest values evaluate the maximum elixir strength and minimum count.
+311,true,The negated multiset implementation evaluates the same optimal strength and count.
+312,true,The multiset of surviving powers and i-th-largest products match the required optimization.
+313,false,It hardcodes an answer for n>10000 and its repeated sorting loop does not implement the general solution.
+314,false,"It counts all occurrences of the median, including lower-half copies that need not be incremented."
+315,true,It counts exactly the median-and-upper-half values equal to the median.
+316,false,For even n it starts at the upper middle instead of the lower median index.
+317,false,Computing 2**k directly can require infeasible memory for the allowed large k.
+318,true,Kadane's maximum nonnegative subarray and iterative doubling give the standard formula modulo the prime.
+319,false,Computing 2**k directly can require infeasible memory for the allowed large k.
+320,false,Computing 2**k directly can require infeasible memory for the allowed large k.
+321,true,The iterative component check and binary search correctly enforce exactly k cuts.
+322,true,The recursive feasibility check and binary search correctly enforce the component-size threshold.
+323,true,The recursive feasibility check and binary search correctly enforce the component-size threshold.
+324,false,It accumulates per-node component state across binary-search checks without resetting it.
+325,true,The bitwise greedy partitioning approach matches the maximum-segment formulation.
+326,true,The recursive bitwise partition approach matches the required maximum-segment logic.
+327,false,It incorrectly requires the first suffix maximum index to equal n instead of requiring the last one to equal n.
+328,true,The combinatorial counting approach is consistent with the prefix and suffix maximum constraints.
+329,false,"For n=2 it outputs AB, which has zero special characters rather than two."
+330,true,For every allowed even n its repeated AAB construction has exactly n special characters and valid length.
+331,false,It outputs digits such as 110 rather than an uppercase Latin-letter string.
+332,false,For odd n greater than one its AAA-based construction does not contain exactly n special characters.
+333,true,The right-to-left inversion handling correctly tests whether splitting offending two-digit values can yield sorted digits.
+334,true,"It splits an offending two-digit predecessor and validates the resulting array, which covers the allowed values."
+335,true,It greedily splits a two-digit value only when its digits can be placed after the prior output value and checks final ordering.
+336,false,When splitting a value it stores only the first digit and drops the second digit from the constructed array.
+337,true,The single forward pass repeatedly handles newly exposed inversions and verifies the final array.
+338,true,Its forbidden-arrow checks match the standard reachability criterion for the two-row grid.
+339,false,Its state simulation does not model the required move-then-arrow transitions and rejects reachable sample-style paths.
+340,false,It prints loop indices as debug output and its reachability conditions are incomplete.
+341,true,It checks exactly the forbidden adjacent left-arrow configurations for odd indexed columns.
+342,false,It decides solely from the penultimate bottom-row arrow and ignores other blocking configurations.
+343,true,It checks every half-length offset and returns the largest compatible tandem repeat.
+344,false,"Its claimed clique blocks can violate the distance bound, such as the size-four block it constructs for k=4."
+345,true,The block permutation and group assignment keep each block within the distance bound and use the minimum block count.
+346,true,Its completion assigns unknown edges symmetrically by vertex groups while preserving all fixed entries.
+347,true,Its group-based completion preserves fixed edge types and meets the maximum-run construction.
+348,true,It builds the tangency graph and correctly tests bipartite component imbalance for a decreasing radius sum.
+349,false,"It never checks consistency of radius equations on already visited tangency edges, so odd-cycle constraints can be accepted."
+350,false,The unproven greedy sum-balancing distribution can reject valid three-group triangle partitions.
+351,false,It labels cases with a=b>c as PEAK even though a strict a<b>c condition is required.
+352,true,It implements the strict stair and peak predicates exactly.
+353,false,It prints STAIRS instead of the required output token STAIR.
+354,true,It implements both required strict comparisons and the NONE fallback.
+355,false,It ignores the input and generates 1000 random test cases instead of solving the supplied cases.
+356,true,It implements the required strict stair and peak classification.
+357,false,For a stair it prints both STAIR and NONE because the second condition is an independent if statement.
+358,false,It handles only n through 4 and prints an invalid message for allowed n up to 20.
+359,true,"Its hour conversion correctly handles midnight, noon, AM, PM, and preserved minute formatting."
+360,true,It correctly converts all 24-hour inputs to two-digit 12-hour output with the proper period.
+361,false,It labels ordinary hours 01 through 11 as PM and labels noon as AM.
+362,true,Its explicit hour mapping correctly covers all valid 24-hour times.
+363,false,"It maps noon to AM and midnight to PM, reversing both boundary periods."
+364,true,Its even-one-count and nonadjacent-pair criterion matches the binary-string requirement.
+365,false,It rejects every string containing exactly one adjacent 11 even when there are more than two ones and a valid answer exists.
+366,false,For exactly two adjacent ones it appends NO twice because the special case is handled before the general even-count branch.
+367,false,The candidate is an unrelated file-generation script and does not solve the stated binary-string task.
+368,false,It is an unrelated file-generation script rather than an implementation of the stated task.
+369,false,It is an unrelated file-generation script rather than an implementation of the stated task.
+370,false,It is an unrelated file-generation script rather than an implementation of the stated task.
+371,false,Its swap simulation uses an incorrectly derived swap index and does not reliably model the tournament positions.
+372,false,Its alternate-position calculation uses an off-by-one index when swapping the candidate cow.
+373,true,The scan and optional-swap calculation correctly count wins before the first stronger cow.
+374,true,It uses the positions of the first two stronger cows to evaluate the optimal no-swap and swap cases.
+375,true,It applies the same first-two-stronger-cows tournament formula with the correct zero-based index.
+376,true,It sorts usable days and applies the correct full and partial batch cost formulas.
+377,false,Its partial-batch formula omits the inflation cost between earlier full batches for three or more selected days.
+378,true,"Because the accumulated increase is common to all remaining days, repeatedly taking the cheapest base-price day is valid."
+379,true,Sorting days by base price and charging each batch with prior purchases gives the minimum spending formula.
+380,false,"It performs the cost calculation with floating-point division, losing exact integer results at the stated scale."
+381,true,Its feasibility condition and two-stall construction match the exact jewelry-count characterization.
+382,true,It uses the same exact feasibility inequality and valid one- or two-stall constructions.
+383,false,Its multi-stall construction does not correctly maintain the remaining coin and jewel counts and prints malformed output lines.
+384,false,"The active solution prints the stall count before YES, violating the required output order."
+385,false,"For a positive two-stall case it likewise prints the stall count before YES, violating the required format."
+386,false,Its ad hoc palindrome cases can reject a valid two-part partition when the selected split is not among its hard-coded conditions.
+387,false,It tests only part of the possible split positions and can report NO despite an existing nonpalindromic partition.
+388,false,Its fallback split is not verified for both parts being nonpalindromes before printing YES.
+389,true,"The condition compares k with the minimum unavoidable repaint count n-ceil(n/m), including equality correctly."
+390,true,"For the promised beautiful arrays, it returns -1 for constant arrays and the minimum relevant equal run length otherwise."
+391,false,"It counts occurrences of only the first value without resetting across runs, so it does not compute the minimum run length."
+392,false,"On a value change at the final array position it increments the index and accesses past the array, causing an IndexError."
+393,false,"On a value change at the final array position it increments the index and accesses past the array, causing an IndexError."
+394,false,It compares every element only with the initial value instead of tracking consecutive equal-value runs.
+395,false,For an all-equal array it prints -1 and then prints a second answer instead of producing one output.
+396,true,"It assigns the larger digit at the first differing position and balances later positions, which maximizes the product."
+397,false,"It switches digit assignment at the fixed midpoint rather than at the first differing digit, which can reduce the product."
+398,true,"It assigns the larger digit to one number at the first difference and the smaller digits thereafter, an optimal product arrangement."
+399,true,"It uses the first differing position to order the numbers and reverses later unequal pairs, which is optimal for the product."
+400,false,It compares and computes using a*b and c/2 instead of the required min of single purchases and two-yogurt promotions.
+401,false,For an odd n it adds (a*n)%2 instead of the required single-yogurt cost a.
+402,true,It correctly compares the promotion with two singles and handles even and odd purchase counts.
+403,false,"For odd n it prints an extra intermediate value before the cost, corrupting the required output."
+404,true,"It correctly chooses between all singles and promotions, including the odd leftover case."
+405,true,It constructs the expected progressive square from the minimum and compares the sorted multisets.
+406,false,The implementation is dominated by hardcoded special cases and its fallback does not implement the required alternating ship attacks generally.
+407,false,It independently counts prefix sums from both ends and can count ships as destroyed without modeling the shared attack budget correctly.
+408,false,When the remaining budget is insufficient to destroy both endpoints it breaks without checking whether one endpoint can be destroyed.
+409,true,It simulates complete paired endpoint attacks and correctly handles the remaining odd attack on the left endpoint.
+410,true,It simulates complete paired endpoint attacks and correctly handles the remaining odd attack on the smaller right endpoint.
+411,false,Its right-end partial attack check requires k==2*a[r] and misses the valid odd-budget case k==2*a[r]-1.
+412,true,It correctly simulates paired attacks and checks the one-endpoint odd-budget case on either side.
+413,true,It maintains multiset intersection counts while sliding every length-m window.
+414,true,It updates the bounded multiset intersection correctly when each window element exits or enters.
+415,true,Its Counter-based matching state correctly tracks common multiplicities across all sliding windows.
+416,false,Its update of the unmatched target counts uses an invalid comparison between C and D and can miscount matches after a slide.
+417,true,It tracks target multiplicities and the current matching count while sliding the window.
+418,false,It converts b to a set and therefore loses multiplicities required when a target value occurs twice.
+419,false,"For counts (3,3,2,0) it outputs 4 while the required maximum is 3."
+420,false,Its expression does not implement the XOR-game formula and can produce incorrect values for the count combinations.
+421,false,"It first rounds every count down to even, making its odd-count bonus condition permanently false."
+422,true,It computes the halves of all counts and adds the required bonus exactly when the first three counts are odd.
+423,false,"The bonus depends on all three counts being equal, whereas the rule depends on their parity pattern."
+424,false,"It prints the accumulated answers inside the query loop, producing multiple malformed lines instead of one result line per test case."
+425,false,It answers every query using only k_wali_list[0] instead of applying the iterative elimination process to each query.
+426,true,"Under the at-most-two occurrence constraint, it counts exactly the values whose two cards are in the player's hand."
+427,true,"It counts the duplicated values in the hand, which is the optimal score under the game rules."
+428,true,"Because each value occurs at most twice in the hand, summing max(0,count-1) counts exactly the achievable duplicate scores."
+429,false,"Its nested cards.count calls make the algorithm cubic in n, violating the stated constraints."
+430,true,"It counts repeated card values in each hand line, matching the score characterization."
+431,false,It counts triples even though a player's duplicate cards form pairs and the required score is based on repeated pairs.
+432,false,"For n=2 its identical row and column operations finish with sum 6, while the maximum required sum is 7."
+433,true,It selects the required number of rows and columns and uses valid permutations to attain the maximum sum.
+434,true,It performs all row and column operations with valid reversed permutations and uses the correct maximum-sum formula.
+435,true,It outputs the standard optimal row and column construction with the correct maximum sum.
+436,true,Its interval-improvement loop and MEX operation construction produce an optimal result within the small n constraint.
+437,false,Its singleton zero case performs no operation and leaves the value zero instead of applying the MEX operation to make it one.
+438,true,Its interval dynamic program and reconstruction cover the optimal MEX transformation cases for n at most 18.
+439,false,It ignores the array values and prints hardcoded outputs based only on the array length.
+440,true,Grouping equal-length sticks into triples maximizes the number of regular polygons because every polygon needs at least three equal sides.
+441,false,"It groups sticks only in fours, but regular polygons may use any number of sides starting at three."
+442,true,"It sums floor(count/3) for each length, which is the optimal number of polygons."
+443,false,"It counts at most one polygon per length instead of floor(count/3), so six equal sticks are undercounted."
+444,true,It correctly sums floor(count/3) over all stick lengths.
+445,false,It requires four sticks per polygon and therefore misses valid triangles and other polygons with three sides.
+446,true,It uses the standard construction of a maximal low-bit mask and the remaining sum to maximize OR popcount.
+447,true,Its two-number construction is an equivalent optimal OR-popcount construction and pads remaining entries with zeroes.
+448,false,"It distributes set bits directly and can be suboptimal, for example n=2,k=10 gives OR 10 instead of an arrangement with three set bits."
+449,true,It uses the standard optimal OR-popcount construction and preserves the required sum and length.
+450,false,"The input-processing loop is indented after an unconditional return inside the function, so the program reads no input and prints nothing."
+451,true,It applies the correct recurrence for the remaining free rows modulo 1000000007 and handles diagonal and mirrored moves.
+452,true,It counts remaining free rows and evaluates the standard recurrence with correct base cases and modulus.
+453,false,"When no free rows remain it prints 0, but the already fixed board has exactly one possible final configuration."
+454,true,It precomputes the correct recurrence and removes both coordinates of off-diagonal moves and one of diagonal moves.
+455,false,"It prints debugging data such as separator lines, arrays, and prefix tables, violating the required output format."
+456,false,"For input piles 1 and 7 it prints Alice, but the required winner is Bob."
+457,true,It uses the distinct sorted pile values and the correct consecutive-run parity rule.
+458,true,It correctly tracks the consecutive distinct values starting at one and returns the corresponding winner.
+459,false,"It checks only arr[0] for one, so an input such as 7 1 incorrectly returns Alice."
+460,true,It implements the correct winner rule from the sorted distinct pile values.
+461,false,"It declares Bob whenever one is present, but piles 1 2 3 are an Alice position."
+462,true,Its constructed sequence has at most 25 elements and realizes every required sum except k.
+463,true,Its output construction satisfies the forbidden-sum and coverage requirements within the size bound.
+464,true,The power-of-two construction with the omitted bit provides all required sums while avoiding k.
+465,false,"It always outputs powers including k itself, so the forbidden sum exists as a singleton for every k in range."
+466,true,It is a valid bounded-size standard construction for all allowed n and k.
+467,false,"For many inputs it outputs 26 elements, violating the maximum sequence size of 25."
+468,true,The odd-multiplicity subarray-sum reconstruction handles the omitted sum and produces a palindrome.
+469,true,It correctly reduces any available group to the minimum k-1 cards and otherwise leaves the hand unchanged.
+470,true,"It applies the same correct minimum-card criterion, including the k greater than n case."
+471,true,It correctly checks whether any number has at least k cards and returns k-1 when possible.
+472,false,"It always prints k-1 even when no number occurs k times, such as n=1 and k=2."
+473,true,It correctly identifies the only boundary obstructions when opposite corners differ.
+474,true,Its row and column boundary checks match the necessary and sufficient grid criterion.
+475,true,It correctly tests the uniform opposing boundary rows or columns that make the transformation impossible.
+476,false,"For distinct piles 1, 3, and 4 it returns Alice although the consecutive run from one has odd length and Bob wins."
+477,false,"It prints Alice unconditionally, but piles 1 and 7 require Bob."
+478,true,It counts the consecutive distinct values starting at one and applies the correct parity.
+479,false,"For values 1, 2, and 4 its mex branch prints Alice although the run length two requires Bob."
+480,false,"Its recursive difference logic returns Alice for distinct values 1, 2, and 4, but the correct result is Bob."
+481,true,It correctly water-fills sorted card counts and computes the resulting maximum window score.
+482,false,"With n=2, counts 1 1, and k=1 it prints 1 although arranging counts 1 and 2 gives score 2."
+483,true,"It correctly tracks the filled level, remainder, and resulting number of permutation windows."
+484,false,"It returns n! whenever k is at least n times the minimum count, although the attainable score is not generally n!."
+485,true,Its summation formula counts the valid pairs for each possible b.
+486,true,Its integer loop computes the same valid-pair count as the required divisor-based formula.
+487,true,"Despite using floating intermediates, the bounded integer values preserve the equivalent count before conversion to int."
+488,true,"y=x-1 always achieves the maximum possible value x for gcd(x,y)+y."
+489,false,"For x=7 it prints 3 with value 4, while y=6 achieves the maximum value 7."
+490,true,"It returns x-1, which always attains the maximum possible objective value x."
+491,false,"For x=9 it returns 1, while y=8 is valid and attains the maximum objective value 9."
+492,true,It exhaustively evaluates every y from 1 through x-1 and returns an optimum.
+493,true,It greedily matches each prefix character in order and stops exactly at the maximum feasible prefix.
+494,true,Its advancing subsequence scan returns the maximum prefix length.
+495,false,"It searches e from the beginning instead of the current position, so it can reuse an earlier character and overcount."
+496,true,It is the standard linear greedy subsequence matching algorithm.
+497,true,It correctly advances through b while matching the prefix of a.
+498,true,Its backward construction keeps each predecessor greater than the requested remainder and therefore realizes every modulo.
+499,true,It constructs each next value as a multiple of the predecessor plus the required remainder.
+500,true,Starting from 1000 ensures every added remainder is below the preceding modulus.
+501,true,Starting from 500 and adding each remainder keeps every requested remainder valid.
+502,true,Starting from 1000 and cumulatively adding the remainders satisfies all modulo equations within bounds.
+503,false,"Its reversed subtraction construction can produce nonpositive array entries, violating the 1-to-10^9 bounds."
+504,true,It evaluates the optimal stop-on-cycle score for both permutation paths.
+505,false,"When both paths reach the global maximum it inserts a remaining-score term and then multiplies it again, double-counting future turns."
+506,true,It evaluates each possible stopping point with the correct remaining-turn multiplier.
+507,false,"It adds each candidate score cumulatively instead of taking a maximum, producing incorrect game scores."
+508,false,"It decrements every a value before scoring, changing the input game and potentially making values zero."
+509,false,It compares only forced traversal sums and ignores the allowed option to stay at a position.
+510,false,"Its all-points-in-one-row construction gives only distances 0 through n-1, below the optimum for n=3."
+511,true,The emitted valid points realize the maximum possible set of Manhattan distances.
+512,true,Its explicit point construction is valid and achieves all possible distance values.
+513,false,Its custom lower-bound can return an index past the occurrence list when no matching prefix index is at least l.
+514,true,Its prefix-XOR occurrence checks correctly implement the two-segment characterization.
+515,true,It uses the correct prefix-XOR index ordering to answer each query.
+516,true,"It correctly detects a mutual best-friend pair, the only case solvable with two invitations."
+517,false,"It treats a 3-cycle as sufficient for two invitations, but a 3-cycle requires three invited friends."
+518,true,It correctly detects whether any pair forms a mutual best-friend 2-cycle.
+519,false,"It checks only adjacent indices, missing mutual pairs such as p=[3,1,2,5,4] at positions 4 and 5."
+520,true,It correctly detects any mutual best-friend pair and otherwise returns three invitations.
+521,false,"The mutual-best-friend check compares p[p_i] with p_i-1 instead of with i, so valid pairs can be missed."
+522,true,The accumulated cost matches the optimal contribution of each zero preceded by ones.
+523,true,The two-pointer swaps pair each inversion and adds its required substring length.
+524,true,The implementation computes the standard optimal sum for each zero preceded by ones.
+525,false,"It parses each binary string as one integer, so the digit loop does not process the string characters."
+526,true,The inversion and crossing contributions are counted with the correct optimal formula.
+527,true,The implementation uses the same correct cost formula for binary-string sorting.
+528,true,The heap-based selection approach reasonably computes Alice's optimal profit.
+529,false,"When k is zero and items remain, k_range is undefined and the program raises an exception."
+530,true,It records balances before each character and sorts by balance then decreasing position as required.
+531,false,It sorts by the balance after each character instead of the prefix balance before that character.
+532,true,It stores each character at its preceding-prefix balance and applies the required tie order.
+533,false,"It uses after-character balances and increasing positions for equal balances, contrary to the definition."
+534,true,It computes preceding-prefix balances and sorts them by increasing balance and decreasing position.
+535,false,It expects pairs of integers until EOF instead of reading the tree input and will fail on valid records.
+536,true,For the path tree it finds both endpoint distances and correctly identifies an odd available move count.
+537,true,Its path reconstruction and one-round distance test correctly determine whether Ron has a move.
+538,false,It treats the undirected tree edges as directed and only traverses input-oriented neighbors.
+539,false,It ignores the supplied starting node and always starts from node n.
+540,true,It computes distances to both leaves and correctly wins when at least one playable path has odd length.
+541,false,"It declares Ron when a leaf distance is even, whereas an even distance gives Hermione on that path."
+542,true,The recursive game-state evaluation correctly applies the winning-child condition on a tree.
+543,true,It correctly checks whether any path from the start to a leaf has odd length.
+544,false,"It ignores catch and carried-ball state, scoring based only on the player's position when throwing."
+545,false,"It never updates the Quaffle position when a player catches or carries it, so valid goals are missed."
+546,false,It does not track the Quaffle being carried and mishandles elimination state and movement consequences.
+547,false,"The catch branch uses comparison instead of assignment, so the Quaffle is never carried."
+548,false,"The catch branch again uses comparison instead of assignment, preventing all subsequent carried-ball behavior."
+549,false,It always reads and processes exactly ten cases instead of the input value t.
+550,true,It processes the stated number of cases and prints each pair in nondecreasing order.
+551,false,"It prints the larger value first when x is less than y, reversing the required order."
+552,true,The rotation or reversal fallback produces a rearrangement different from the input whenever one exists.
+553,true,Sorting ascending or descending supplies a different permutation for every nonuniform string.
+554,false,It reports NO for strings with exactly two distinct characters even though such strings generally have a different permutation.
+555,true,It reports impossible only for uniform strings and otherwise constructs a different permutation.
+556,false,Random sampling can return the original nonuniform string and incorrectly print NO.
+557,true,The transition count matches the minimum number of contiguous pieces for rearrangement into sorted order.
+558,true,"It computes the transition-based minimum piece count, including the sorted-string special case."
+559,false,"It skips a character after a 01 transition, producing the wrong count for strings such as 010."
+560,true,It implements the correct transition formula with the no-01 special case.
+561,false,"Counting only 10 transitions plus one is wrong for strings such as 0101, which need three pieces."
+562,true,It locates each segment by binary search and interpolates the travel time with floor conversion.
+563,true,The greedy scan correctly counts inserted problems needed to dominate the sorted limits.
+564,false,"Its mutation-based greedy scan undercounts, for example returning one instead of two for a=[5,5], b=[1,1]."
+565,true,The parity of the initially upward coins is the winning criterion for this game.
+566,false,It always reads data[1] and data[2] for every test case instead of advancing through all cases.
+567,true,It uses the correct odd-upward-coin parity criterion and accepted case-insensitive outputs.
+568,false,"It decides from n and whether ups exceed downs, but the game outcome depends on the parity of upward coins."
+569,true,It parses all cases and applies the correct upward-coin parity criterion.
+570,false,"The main solver call is commented out, so the program produces no required output."
+571,false,"It ignores m in its counting loop and therefore gives the wrong result when m is small, such as n=10,m=1."
+572,false,Its ad hoc ceiling sum does not implement the required gcd divisibility count.
+573,false,Its loop and fallback count do not enumerate the required valid pairs and can return incorrect totals.
+574,false,"The formula includes an unjustified extra increment and subtracts two, producing incorrect pair counts."
+575,false,"It uses a non-equivalent quotient sum and subtracts one, so it does not count the stated gcd condition."
+576,false,Its counting loop ignores m even though the valid-pair count depends on both bounds.
+577,false,It completely ignores the input m bound when computing the answer.
+578,true,The coprime-parameter enumeration and scaling count match the stated b·gcd divisibility condition.
+579,false,It uses true division for one count term and prints a floating-point result instead of the required integer.
+580,true,The parity check and maximum-draw formula match the feasible-score characterization.
+581,true,The even-total handling computes the maximum draws for the sorted score triples.
+582,true,Its even-total branch searches the feasible draw allocation and returns the maximum count.
+583,true,"The result min(total/2, p1+p2) after parity validation is the correct maximum-draw formula."
+584,false,It ignores stdin entirely and solves a hardcoded list of seven cases.
+585,false,It remains an interactive-query solution and does not parse or solve the hack-format array input.
+586,false,"It compares the available 1x1-cell space against the test-case count a instead of x, so valid inputs can return too few screens."
+587,true,It correctly reserves screens for 2x2 icons and fills their remaining cells with 1x1 icons.
+588,false,"When x is divisible by 15 it rounds extra_space using x instead, so x=15,y=1 incorrectly needs two screens."
+589,true,It computes the required 2x2-icon screens and then the exact additional 1x1-icon screens.
+590,false,It adds one unnecessary screen whenever a positive number of 1x1 icons remains after the base screens.
+591,true,It uses the correct ceiling screen count for 2x2 icons and exact residual capacity for 1x1 icons.
+592,false,"It computes screens for 2x2 icons as ceil(2y/5) rather than ceil(y/2), which fails for y=5."
+593,false,It maps sorted encoded characters to alphabet positions based on n instead of reflecting the distinct-character list.
+594,true,It builds the sorted distinct-character reflection map and applies it to every encoded character.
+595,false,It mutates and returns the distinct-character list rather than decoding the encoded string.
+596,true,It correctly reflects the sorted distinct characters to decode the string.
+597,false,"Its first-seen mapping is not the sorted distinct-character reflection, so encoded ttf decodes incorrectly."
+598,true,It checks the necessary single-rotation structure: sorted suffix and valid wraparound boundary.
+599,true,It tests whether the sorted array occurs as a cyclic rotation of the input.
+600,false,It accepts only already sorted arrays and rejects sortable rotations such as 7 9 2 2 3.
+601,true,"It returns the maximum median of every adjacent triple, with the correct special case for length two."
+602,true,"It returns the maximum minimum of adjacent pairs, which is the required value."
+603,true,"It separately verifies digit order, letter order, and the required digit-before-letter arrangement."
+604,true,It compares the password with its digits-sorted-then-letters-sorted form and enforces the ordering conditions.
+605,false,"Its digit-position scan rejects valid passwords with digits before letters, such as 12ac."
+606,false,"It accepts m=n-1 unconditionally even though reaching it requires an even number of net moves, so n=3,m=2 is rejected incorrectly."
+607,true,"It checks exactly m<=n and parity agreement, the necessary and sufficient reachability conditions."
+608,true,It correctly checks that n-m is nonnegative and even.
+609,false,"It compares parity with the number of test cases a instead of n, so its answer can depend on unrelated input."
+610,true,It correctly checks n>=m and even parity of n-m.
+611,false,"It checks only n>=m and ignores parity, accepting impossible n=3,m=2."
+612,false,"It prints the coefficient array before printing n, violating the required two-line output format."
+613,false,"It emits an extra binary-array line before n, so the output format is invalid."
+614,true,"It pairs the last book with the best earlier book, which maximizes the two pile maxima."
+615,true,"It selects the two largest page counts, which can always be the maxima of two nonempty piles."
+616,true,It chooses the optimal promotion length and sums the arithmetic price sequence correctly.
+617,true,It correctly handles both the profitable modified-price prefix and the usual-price alternative.
+618,false,"It uses floating-point division for profits up to 10^18, which can round the required integer result."
+619,true,It uses the exact optimal prefix length and integer arithmetic for the total profit.
+620,false,"It floors the arithmetic-series average before multiplication, so n=2,a=2,b=4 returns 6 instead of 7."
+621,false,Its can predicate is always true and the search can miss the optimum at k=0 when b<a.
+622,false,"It prints the search index rather than a valid vector of bets, so the required output is not produced."
+623,true,It constructs a permutation with the requested even Manhattan value and rejects odd or excessive values.
+624,true,It uses the standard endpoint-swapping construction to realize every feasible even Manhattan value.
+625,true,Its reduction of x xor y to the lowest set bit yields the longest common subsegment length.
+626,false,"For x=0,y=12 it prints 2 although the lowest set bit and correct answer are 4."
+627,true,It normalizes product-of-multipliers bets and correctly tests the strict profitability condition.
+628,true,"It uses the LCM construction, whose bets satisfy every payout inequality exactly when a solution exists."
+629,false,It uses unnormalized product bets that can exceed the required 10^9 bound for solvable cases with many outcomes.
+630,true,It computes the LCM bets and correctly outputs -1 precisely when their sum is not smaller than the LCM.
+631,true,It correctly uses LCM-based bets and the strict positive remainder test.
+632,false,Its product-based bets can exceed the mandated 10^9 maximum even when a valid bounded solution exists.
+633,true,It follows the interactive removal-and-reconstruction strategy within the query limit.
+634,false,It can issue far more than n queries by scanning every threshold for each remaining vertex.
+635,true,It counts all seven difficulty levels and sums each shortage relative to m.
+636,false,"It omits difficulty G, so a missing G problem contributes zero instead of m."
+637,true,It initializes and counts all seven required difficulty levels before summing shortages.
+638,false,It iterates only over difficulties present in the bank and never adds shortages for absent levels.
+639,true,It counts all seven levels and computes the exact missing count for each.
+640,false,It ignores stdin and always processes a hardcoded three-case example instead of the supplied tests.
+641,true,It correctly distinguishes favorite removal using the sorted position and tie block.
+642,true,It correctly compares the favorite value with the removal boundary and handles equal-value ties.
+643,false,"It labels a favorite as MAYBE when it is the only cube at the cutoff value, such as [2,1,0] with f=2,k=2."
+644,true,"It applies the correct counts of greater and equal values to classify YES, NO, or MAYBE."
+645,true,It correctly uses greater-than and equal-value counts to determine whether the favorite is removed.
