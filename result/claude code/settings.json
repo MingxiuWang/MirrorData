@@ -1,0 +1,63 @@
+{
+  "agent": "Claude Code",
+  "date": "2026-09-27",
+  "dataset": {
+    "file": "data/mirror_data.json",
+    "cases": 645,
+    "distinct_descriptions": 159
+  },
+  "model": {
+    "id": "claude-sonnet-5",
+    "effort": "low",
+    "thinking": "disabled",
+    "max_tokens": 64,
+    "temperature": "default (not set)"
+  },
+  "request": {
+    "api": "Anthropic Messages API, client.messages.create",
+    "sdk": "anthropic 0.92.0 (Python 3.9)",
+    "calls_per_task": 1,
+    "stateless": true,
+    "tools": [],
+    "web_search": false,
+    "code_execution": false,
+    "filesystem_access": false,
+    "output_config": {
+      "effort": "low",
+      "format": {
+        "type": "json_schema",
+        "schema": {
+          "type": "object",
+          "properties": {"verdict": {"type": "string", "enum": ["correct", "incorrect"]}},
+          "required": ["verdict"],
+          "additionalProperties": false
+        }
+      }
+    }
+  },
+  "isolation": {
+    "per_task_environment": "one directory per task containing only description.txt and candidate.py",
+    "context_shared_between_tasks": false,
+    "conversation_history": "none - every task is a fresh single-turn request",
+    "memory_between_tasks": "none - no state survives a call, so nothing needs clearing",
+    "cross_referencing_possible": false,
+    "note": "Concurrency is used for speed only; worker threads share no state and each writes its own result file."
+  },
+  "system_prompt": "You judge whether a Python program is a correct solution to a programming task.\nJudge it as a competitive-programming submission: it must give right answers for all inputs allowed by the stated constraints (not just the example in the statement), print output in the required format, run fast enough for the stated limits, and not crash. If the statement says any valid answer is accepted, any valid answer counts.\nThis is a quick judgement - do not deliberate at length.",
+  "user_message_template": "TASK DESCRIPTION:\n{description}\n\nCANDIDATE PROGRAM:\n{candidate_code}\n\nIs this program a correct solution to the task?",
+  "execution": {
+    "workers": 12,
+    "wall_clock_seconds": 91,
+    "retries": "SDK max_retries=5 plus up to 6 attempts with exponential backoff"
+  },
+  "usage": {
+    "input_tokens": 1009113,
+    "output_tokens": 8774,
+    "approx_cost_usd": 2.11
+  },
+  "results": {
+    "correct": 128,
+    "incorrect": 517,
+    "total": 645
+  }
+}
