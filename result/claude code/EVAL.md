@@ -5,7 +5,7 @@ Each case in [`data/mirror_data.json`](../data/mirror_data.json) judged for whet
 
 - Date: 2026-09-27
 - Model: `claude-sonnet-5`, effort `low`, thinking disabled
-- Runner: [`run_eval.py`](run_eval.py) · Settings: [`settings.json`](settings.json) · Results: [`eval.json`](eval.json), [`eval.csv`](eval.csv)
+- Prompt: [`prompt.md`](prompt.md) · Runner: [`run_eval.py`](run_eval.py) · Settings: [`settings.json`](settings.json) · Results: [`eval.json`](eval.json), [`eval.csv`](eval.csv)
 
 ## Result
 
@@ -77,6 +77,7 @@ result file per task; it skips tasks already done, so it can be re-run to resume
 | `eval.json` | Per-case `task_id`, `index`, `verdict` |
 | `eval.csv` | Same, flattened |
 | `run_eval.py` | The runner |
+| `prompt.md` | The exact prompt sent for every case, plus the response schema |
 | `settings.json` | Exact run configuration: model, effort, prompt, isolation, usage |
 | `EVAL.md` | This note |
 
